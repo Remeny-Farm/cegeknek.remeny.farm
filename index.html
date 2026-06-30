@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceges Tyukcsapat Program - Remeny Farm</title>
+  <meta name="description" content="Sajat ceges tyukcsapat a Remeny Farmon: logozott ol, webcam az irodaba, ketheti tojasnap, dolgozoi kodok es premium tartalomgyartasi lehetoseg.">
+  <link rel="canonical" href="https://cegeknek.remeny.farm/">
+  <meta property="og:title" content="Ceges Tyukcsapat Program - Remeny Farm">
+  <meta property="og:description" content="Nem stock CSR. Sajat ceges tyukcsapat, webcam, logozott ol es ketheti tojasnap a dolgozoknak.">
+  <meta property="og:image" content="https://cegeknek.remeny.farm/images/hero-chickens.jpg">
+  <meta property="og:url" content="https://cegeknek.remeny.farm/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Remeny Farm - Cegeknek">
+  <meta property="og:locale" content="hu_HU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Remeny Farm Kft.">
+  <meta name="theme-color" content="#004D40">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5VBCSBQPNL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5VBCSBQPNL');
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #fcf3de;
+      --cream-light: #fdf7e7;
+      --green-dark: #004d40;
+      --green-mid: #3b6d63;
+      --green-light: #678e86;
+      --green-pale: #e7edec;
+      --red: #d94b58;
+      --red-hover: #e16973;
+      --red-pale: #f9dcde;
+      --gold: #ffe4aa;
+      --ink-soft: rgba(0,77,64,0.76);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-soft: 0 28px 80px rgba(0,77,64,0.13);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+
+    body {
+      background: var(--cream);
+      color: var(--green-dark);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    p { color: var(--ink-soft); }
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.08; font-weight: 700; letter-spacing: 0; }
+    h2 { font-size: clamp(34px, 5vw, 58px); }
+    h3 { font-size: clamp(22px, 2.4vw, 30px); }
+
+    .container { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    .narrow { max-width: 760px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--green-mid);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ''; width: 34px; height: 1px; background: currentColor; opacity: 0.55; }
+
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 24px;
+      background: rgba(252,243,222,0.92);
+      border-bottom: 1px solid rgba(0,77,64,0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: box-shadow 0.25s ease, padding 0.25s ease;
+    }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(0,77,64,0.07); }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; min-width: 0; }
+    .nav-logo img { width: auto; height: 42px; flex: 0 0 auto; }
+    .nav-logo span {
+      color: var(--green-dark);
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .nav-links { display: flex; align-items: center; gap: 24px; font-size: 0.86rem; font-weight: 600; }
+    .nav-links a { color: rgba(0,77,64,0.78); text-decoration: none; transition: color 0.2s ease; }
+    .nav-links a:hover { color: var(--green-dark); }
+
+    .btn-primary,
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 22px;
+      color: #fff;
+      background: var(--red);
+      border: 0;
+      border-radius: 999px;
+      box-shadow: 0 14px 32px rgba(217,75,88,0.25);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    .nav-cta { padding: 8px 19px; font-size: 0.82rem; box-shadow: none; }
+    .btn-primary:hover,
+    .nav-cta:hover { background: var(--red-hover); transform: translateY(-2px); box-shadow: 0 18px 38px rgba(217,75,88,0.3); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 21px;
+      color: #fff;
+      background: rgba(0,0,0,0.16);
+      border: 1px solid rgba(252,243,222,0.55);
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      backdrop-filter: blur(8px);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .btn-secondary:hover { transform: translateY(-2px); background: rgba(0,0,0,0.26); }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--red);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .btn-ghost:hover { text-decoration: underline; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 124px 0 92px;
+      overflow: hidden;
+      color: #fff;
+      background: linear-gradient(145deg, #103d32, #6d5f34);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(0,36,30,0.93) 0%, rgba(0,48,40,0.72) 45%, rgba(0,0,0,0.24) 100%),
+        url('images/hero-chickens.jpg') center/cover no-repeat;
+      filter: saturate(1.03) contrast(1.02);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: auto -10% -18% -10%;
+      height: 30%;
+      background: linear-gradient(0deg, var(--cream) 0%, rgba(252,243,222,0) 100%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 2; max-width: 920px; }
+    .hero h1 {
+      max-width: 900px;
+      color: #fff;
+      font-size: clamp(42px, 6.4vw, 84px);
+      letter-spacing: 0;
+      text-shadow: 0 3px 24px rgba(0,0,0,0.36);
+      opacity: 0;
+      transform: translateY(22px);
+      animation: fadeUp 0.8s ease 0.1s forwards;
+    }
+    .hero h1 em { color: var(--gold); font-style: italic; font-weight: 600; }
+    .hero .lead {
+      max-width: 700px;
+      margin: 24px 0 16px;
+      color: rgba(255,255,255,0.91);
+      font-size: clamp(17px, 2vw, 21px);
+      text-shadow: 0 2px 12px rgba(0,0,0,0.28);
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.8s ease 0.25s forwards;
+    }
+    .hero .pick {
+      margin-bottom: 26px;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: clamp(19px, 2.4vw, 26px);
+      font-style: italic;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.8s ease 0.32s forwards;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.8s ease 0.45s forwards;
+    }
+    .hero-pilot {
+      max-width: 720px;
+      margin-top: 26px;
+      color: rgba(255,255,255,0.74);
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.6s forwards;
+    }
+    .hero-pilot strong { color: var(--gold); font-weight: 700; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+    .proof { position: relative; z-index: 4; margin-top: -64px; }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      overflow: hidden;
+      background: var(--cream-light);
+      border: 1px solid rgba(0,77,64,0.1);
+      border-radius: 30px;
+      box-shadow: var(--shadow-soft);
+    }
+    .proof-item {
+      min-height: 148px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px;
+      border-right: 1px solid rgba(0,77,64,0.08);
+    }
+    .proof-item:last-child { border-right: 0; }
+    .proof-item strong {
+      color: var(--green-dark);
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+    .proof-item span { color: rgba(0,77,64,0.7); font-size: 0.92rem; font-weight: 600; }
+
+    section { padding: clamp(72px, 9vw, 116px) 0; }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(34px, 7vw, 92px);
+      align-items: center;
+    }
+    .intro-text { margin-top: 20px; color: rgba(0,77,64,0.82); font-size: clamp(18px, 2vw, 22px); }
+
+    .organic-card {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(30px, 5vw, 54px);
+      color: #fff;
+      background: var(--green-dark);
+      border-radius: 44px 44px 44px 12px;
+      box-shadow: var(--shadow-soft);
+    }
+    .organic-card::after {
+      content: '';
+      position: absolute;
+      right: -118px;
+      bottom: -120px;
+      width: 280px;
+      height: 280px;
+      background: rgba(183,200,138,0.16);
+      border-radius: 50%;
+    }
+    .organic-card h3 { color: #fff; }
+    .organic-card p,
+    .organic-card li { color: rgba(255,255,255,0.84); }
+    .organic-card ul {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 16px;
+      margin-top: 22px;
+      list-style: none;
+    }
+    .organic-card li { position: relative; padding-left: 28px; }
+    .organic-card li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .brandline {
+      color: #fff;
+      background: var(--green-dark);
+      text-align: center;
+    }
+    .brandline h2 { max-width: 960px; margin: 0 auto; color: #fff; }
+    .brandline h2 em { color: var(--gold); font-style: italic; font-weight: 600; }
+    .brandline p { max-width: 680px; margin: 18px auto 0; color: rgba(255,255,255,0.78); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 42px;
+    }
+    .package {
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+      gap: 20px;
+      padding: 30px;
+      background: var(--cream-light);
+      border: 1px solid rgba(0,77,64,0.1);
+      border-radius: 28px;
+      box-shadow: 0 18px 50px rgba(0,77,64,0.08);
+    }
+    .package.featured {
+      color: #fff;
+      background: linear-gradient(145deg, var(--green-dark), var(--green-mid));
+      border-color: transparent;
+      transform: translateY(-14px);
+    }
+    .package .size {
+      display: inline-flex;
+      width: fit-content;
+      padding: 7px 13px;
+      color: var(--green-mid);
+      background: var(--green-pale);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .package.featured .size { color: var(--green-dark); background: var(--gold); }
+    .package p { color: var(--ink-soft); }
+    .package.featured p,
+    .package.featured li { color: rgba(255,255,255,0.84); }
+    .package.featured h3 { color: #fff; }
+    .package ul { display: grid; gap: 10px; padding-left: 18px; }
+    .package li { color: rgba(0,77,64,0.75); font-size: 0.92rem; }
+    .package .note {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid rgba(0,77,64,0.12);
+      color: rgba(0,77,64,0.66);
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .package.featured .note { border-color: rgba(255,255,255,0.18); color: var(--gold); }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 42px;
+    }
+    .feature {
+      padding: 28px;
+      background: var(--cream-light);
+      border: 1px solid rgba(0,77,64,0.1);
+      border-radius: 24px;
+    }
+    .feature .icon { margin-bottom: 14px; font-size: 2.1rem; }
+    .feature h3 { margin-bottom: 10px; font-size: clamp(22px, 2.2vw, 28px); }
+
+    .media-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 0;
+      overflow: hidden;
+      margin-top: 42px;
+      background: var(--cream-light);
+      border: 1px solid rgba(0,77,64,0.1);
+      border-radius: 34px;
+      box-shadow: var(--shadow-soft);
+    }
+    .media-image {
+      min-height: 420px;
+      background: linear-gradient(120deg, rgba(0,77,64,0.24), rgba(0,0,0,0.18)), url('images/anna-david-farm.jpg') center/cover no-repeat;
+    }
+    .media-content { padding: clamp(30px, 5vw, 56px); }
+    .media-list { display: grid; gap: 14px; margin-top: 24px; list-style: none; }
+    .media-list li {
+      position: relative;
+      padding-left: 28px;
+      color: var(--ink-soft);
+    }
+    .media-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 42px;
+    }
+    .step {
+      padding: 26px;
+      background: var(--cream-light);
+      border: 1px solid rgba(0,77,64,0.1);
+      border-radius: 24px;
+    }
+    .step .num {
+      margin-bottom: 24px;
+      color: var(--red);
+      font-family: var(--serif);
+      font-size: 2.1rem;
+      line-height: 1;
+    }
+    .step h3 { margin-bottom: 10px; font-size: 1.35rem; }
+    .step p { font-size: 0.9rem; }
+
+    .contract {
+      background: var(--green-pale);
+    }
+    .contract-box {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 34px;
+      align-items: start;
+      padding: clamp(30px, 5vw, 54px);
+      background: var(--cream-light);
+      border: 1px solid rgba(0,77,64,0.1);
+      border-radius: 34px;
+      box-shadow: var(--shadow-soft);
+    }
+    .contract-box ul { display: grid; gap: 12px; padding-left: 18px; color: var(--ink-soft); }
+
+    .final-cta {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(0,55,45,0.94), rgba(0,77,64,0.76)),
+        url('images/anna-eggs-apron.jpg') center/cover no-repeat;
+      text-align: center;
+    }
+    .final-cta h2 { max-width: 900px; margin: 0 auto; color: #fff; }
+    .final-cta p { max-width: 680px; margin: 20px auto 30px; color: rgba(255,255,255,0.82); font-size: 1.1rem; }
+
+    footer {
+      padding: 38px 0;
+      background: #00382f;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.88rem;
+    }
+    .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    footer a { color: rgba(255,255,255,0.78); text-decoration: none; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 940px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .proof-grid, .cards-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .split, .media-panel, .contract-box { grid-template-columns: 1fr; }
+      .package.featured { transform: none; }
+      .media-image { min-height: 300px; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 32px, 1120px); }
+      nav { padding: 12px 16px; }
+      .nav-logo span { font-size: 0.92rem; white-space: normal; line-height: 1.1; }
+      .nav-logo img { height: 36px; }
+      .nav-cta { padding: 8px 13px; white-space: nowrap; }
+      .hero { min-height: auto; padding: 108px 0 72px; }
+      .hero h1 { font-size: clamp(38px, 13vw, 58px); }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary { width: 100%; }
+      .proof { margin-top: -28px; }
+      .proof-grid, .cards-grid, .feature-grid, .process-grid { grid-template-columns: 1fr; }
+      .proof-item { min-height: 124px; border-right: 0; border-bottom: 1px solid rgba(0,77,64,0.08); }
+      .proof-item:last-child { border-bottom: 0; }
+      .organic-card, .package, .feature, .step, .contract-box, .media-panel { border-radius: 24px; }
+      .footer-row { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="nav" aria-label="Fő navigáció">
+    <a href="#top" class="nav-logo" aria-label="Remény Farm cégeknek kezdőlap">
+      <img src="images/logo-quarter.png" alt="Remény Farm logó" width="56" height="42" decoding="async">
+      <span>Remény Farm · Cégeknek</span>
+    </a>
+    <div class="nav-links">
+      <a href="#mi-ez">Mi ez?</a>
+      <a href="#csomagok">Csomagok</a>
+      <a href="#media">Tartalom</a>
+      <a href="#szerzodes">12 hónap</a>
+      <a class="nav-cta" href="mailto:info@remenyfarm.hu?subject=Ceges%20Tyukcsapat%20Program%20erdeklodes">Érdekel</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="eyebrow" style="color: var(--gold);">Céges Tyúkcsapat Program</div>
+        <h1 id="hero-title">Adj a dolgozóidnak valamit, <em>amiről tényleg beszélnek.</em></h1>
+        <p class="lead">Saját céges tyúkcsapat a Remény Farmon: logózott ól, élő webcam az irodába, kétheti tojásnap, dolgozói kódok és opcionális tartalomgyártás milliós elérésű farmcsatornákkal.</p>
+        <p class="pick">Nem stock CSR. Nem sablon juttatás. Egy működő farmon történik.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="mailto:info@remenyfarm.hu?subject=Ceges%20Tyukcsapat%20Program%20erdeklodes">Céges érdeklődést küldök</a>
+          <a class="btn-secondary" href="#csomagok">Csomagok megnézése</a>
+        </div>
+        <p class="hero-pilot"><strong>12 hónapos céges partnerség.</strong> Élő állatokkal, lekötött kapacitással, logózott ólmegjelenéssel és kéthetente érkező tojásokkal.</p>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Remény Farm számokban">
+      <div class="container">
+        <div class="proof-grid">
+          <div class="proof-item"><strong>500k+</strong><span>közösségi követő a Remény Farm körül</span></div>
+          <div class="proof-item"><strong>400k-4M</strong><span>TikTok view nagyságrend videónként</span></div>
+          <div class="proof-item"><strong>2 hetente</strong><span>tojásnap a cégnél, 30-as tálcákon</span></div>
+          <div class="proof-item"><strong>élő</strong><span>webcam a saját céges tyúkcsapatról</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mi-ez">
+      <div class="container split">
+        <div>
+          <div class="eyebrow">Mi ez?</div>
+          <h2>Saját céges tyúkcsapat, ami nem a prezentációban él, hanem a farmon.</h2>
+          <p class="intro-text">A cég 12 hónapra leköt egy tyúkcsapatot a Remény Farmon. Az ólnál megjelenik a logó, az irodában nézhető az élő webcam, kéthetente megérkeznek a tojások, a dolgozók pedig saját kóddal és saját történettel kapcsolódnak a programhoz.</p>
+        </div>
+        <div class="organic-card">
+          <h3>Miért működik céges programként?</h3>
+          <ul>
+            <li>Kézzelfogható dolgozói juttatás: a tojás tényleg megérkezik az irodába.</li>
+            <li>Folyamatos belső kommunikáció: webcam, tojásnap, app kódok és céges tyúkcsapat.</li>
+            <li>Fotózható és videózható történet: nem zöldre festett logó, hanem élő farmélmény.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="brandline" aria-labelledby="brandline-title">
+      <div class="container">
+        <h2 id="brandline-title">A dolgozók kéthetente tojást kapnak.<br><em>A cég egész évben történetet kap.</em></h2>
+        <p>A program egyszerre employer branding, belső közösségi rituálé, fenntarthatósági történet és valódi farmkapcsolat.</p>
+      </div>
+    </section>
+
+    <section id="csomagok" aria-labelledby="packages-title">
+      <div class="container">
+        <div class="narrow">
+          <div class="eyebrow">Csomagok</div>
+          <h2 id="packages-title">Három céges coop, eltérő méretre és kommunikációs ambícióra.</h2>
+          <p class="intro-text">Minden csomag 12 hónapos kapacitáslekötéssel működik, céges logóval, saját webcam streammel és kétheti tojásszállítással.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="package">
+            <span class="size">50 tyúk</span>
+            <h3>Iroda Coop</h3>
+            <p>Belépő céges csomag kisebb irodáknak, ügynökségeknek és vezetői csapatoknak.</p>
+            <ul>
+              <li>céges logó az ólnál</li>
+              <li>saját webcam stream</li>
+              <li>kétheti tojásszállítás</li>
+              <li>dolgozói kódok</li>
+              <li>co-branded digitális oldal</li>
+              <li>1 farm látogatás évente</li>
+            </ul>
+            <div class="note">Nincs egyedi tojásbélyegzés. Fajlagosan prémium belépő csomag.</div>
+          </article>
+
+          <article class="package">
+            <span class="size">100 tyúk</span>
+            <h3>Team Coop</h3>
+            <p>A fő céges ajánlat HR, employer branding és office egg program célra.</p>
+            <ul>
+              <li>nagyobb logó / részleges ponyva branding</li>
+              <li>webcamen látható céges megjelenés</li>
+              <li>egyedi tojásbélyegzés</li>
+              <li>kétheti tojásnap az irodában</li>
+              <li>csapatlátogatás vagy kisebb farmnap</li>
+              <li>opcionális faültetés add-on</li>
+            </ul>
+            <div class="note">A legtöbb cégnek ajánlott csomag.</div>
+          </article>
+
+          <article class="package featured">
+            <span class="size">250 tyúk</span>
+            <h3>Signature Coop</h3>
+            <p>Flagship saját céges tyúkcsapat multiknak és nagy employer branding történetekhez.</p>
+            <ul>
+              <li>teljes céges logózott ponyva</li>
+              <li>saját branded coop vizuális identitás</li>
+              <li>dedikált app / landing élmény</li>
+              <li>egyedi tojásbélyegzés</li>
+              <li>nagyobb farmnap és csapatépítés</li>
+              <li>éves CSR / employer branding anyag</li>
+            </ul>
+            <div class="note">A legerősebb kommunikációs platform.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="elmeny" aria-labelledby="features-title">
+      <div class="container">
+        <div class="narrow">
+          <div class="eyebrow">A mindennapi élmény</div>
+          <h2 id="features-title">A program akkor működik, ha az irodában is életre kel.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <div class="icon">📺</div>
+            <h3>Webcam az ólban</h3>
+            <p>A saját tyúkcsapat élőben nézhető az irodából. Kivetíthető, intranetre tehető, és folyamatos bizonyítéka annak, hogy a program valóban él.</p>
+          </article>
+          <article class="feature">
+            <div class="icon">🥚</div>
+            <h3>Kétheti tojásnap</h3>
+            <p>A tojások 30-as tálcákon érkeznek. A dolgozók saját 10-es tojástartóval viszik haza az adagjukat, felesleges csomagolás nélkül.</p>
+          </article>
+          <article class="feature">
+            <div class="icon">🏷️</div>
+            <h3>Logózott ólmegjelenés</h3>
+            <p>Minden csomagban van céges logókihelyezés. A nagyobb csomagokban egyre látványosabb, webcamen és tartalmakban is erős brand felülettel.</p>
+          </article>
+          <article class="feature">
+            <div class="icon">🌳</div>
+            <h3>Farmnap és faültetés</h3>
+            <p>A Liget és a faültetés kiegészítő élményként kapcsolódhat: dolgozói látogatás, ólépítés, faültetés és valódi csapatépítés.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="media" aria-labelledby="media-title">
+      <div class="container">
+        <div class="narrow">
+          <div class="eyebrow">Tartalomgyártás</div>
+          <h2 id="media-title">A Remény Farm nemcsak farm. Saját médiafelület is.</h2>
+          <p class="intro-text">A céges tyúkcsapat mellé külön tartalomgyártási csomag kérhető, ahol a programból valódi employer branding kampány készül.</p>
+        </div>
+        <div class="media-panel">
+          <div class="media-image" role="img" aria-label="Anna és Dávid a farmon"></div>
+          <div class="media-content">
+            <h3>Nem pár extra poszt. Gyártás, arcok, reach és jóváhagyási kör.</h3>
+            <p>A Remény Farm rövid videói rendszeresen több százezres, gyakran milliós elérést hoznak. A videós megjelenés külön média- és kreatív komponens: forgatási nappal, stábidővel, vágással és brand safety folyamattal.</p>
+            <ul class="media-list">
+              <li>Coop Launch Content: 1 forgatási nap, 1 fő short, 2-3 vágat.</li>
+              <li>Employer Branding Story Pack: tojásnap, farm és dolgozói felhasználásra kész anyagok.</li>
+              <li>Signature Media Campaign: éves mini sorozat a cég saját tyúkcsapatáról.</li>
+              <li>View-t nem garantálunk. Gyártást, darabszámot és historikus elérési nagyságrendet kommunikálunk.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="folyamat" aria-labelledby="process-title">
+      <div class="container">
+        <div class="narrow">
+          <div class="eyebrow">Hogyan indul?</div>
+          <h2 id="process-title">A céges coop nem kampánytrükk, hanem lekötött farmkapacitás.</h2>
+        </div>
+        <div class="process-grid">
+          <article class="step"><div class="num">01</div><h3>Csomagot választunk</h3><p>Megnézzük a cég méretét, tojáslogisztikáját és kommunikációs ambícióját.</p></article>
+          <article class="step"><div class="num">02</div><h3>Brandinget gyártunk</h3><p>Ólmegjelölés, ponyva, digitális oldal, dolgozói kódok és opcionális tojásbélyegzés.</p></article>
+          <article class="step"><div class="num">03</div><h3>Elindul a tojásnap</h3><p>Kéthetente érkeznek a 30-as tálcák, a dolgozók saját tartóval viszik haza.</p></article>
+          <article class="step"><div class="num">04</div><h3>Történet készül</h3><p>Webcam, fotók, belső kommunikáció és opcionális Remény Farm médiakampány.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="szerzodes" class="contract" aria-labelledby="contract-title">
+      <div class="container">
+        <div class="contract-box">
+          <div>
+            <div class="eyebrow">12 hónap</div>
+            <h2 id="contract-title">Éves céges partnerség, nem havi dobozelőfizetés.</h2>
+          </div>
+          <div>
+            <p>Élő állatokkal dolgozunk, ezért a Céges Tyúkcsapat Program 12 hónapos kapacitáslekötéssel indul. A csomaghoz tyúkállományt, brandinget, szállítási ritmust és tartalomgyártási kapacitást foglalunk.</p>
+            <ul style="margin-top: 20px;">
+              <li>Minimum időtartam: 12 hónap.</li>
+              <li>Korai lezárás esetén kapacitáslezárási díj érvényes.</li>
+              <li>Az egyedi gyártási elemek, például ponyva, bélyegző, címke és kreatív anyag külön kapacitást kötnek le.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="erdekel" class="final-cta" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="eyebrow" style="color: var(--gold);">Céges érdeklődés</div>
+        <h2 id="cta-title">Építsünk a cégeteknek saját tyúkcsapatot.</h2>
+        <p>Írd meg, mekkora a csapat, milyen gyakran jártok irodába, és employer branding vagy dolgozói juttatás felől közelítenétek-e. A többit kitaláljuk együtt.</p>
+        <a class="btn-primary" href="mailto:info@remenyfarm.hu?subject=Ceges%20Tyukcsapat%20Program%20erdeklodes&body=Szia%20Remeny%20Farm%2C%0A%0AErdekel%20a%20Ceges%20Tyukcsapat%20Program.%0A%0ACeg%20neve%3A%0ADolgozoi%20letszam%3A%0AIroda%20helyszine%3A%0AErdeklodo%20csomag%3A%20Iroda%20Coop%20%2F%20Team%20Coop%20%2F%20Signature%20Coop%0A%0AUdvozlettel%3A">Érdeklődést küldök</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© Remény Farm Kft. · Céges Tyúkcsapat Program</div>
+      <div class="footer-links">
+        <a href="https://www.remenyfarm.hu/">remenyfarm.hu</a>
+        <a href="https://tyuk.remeny.farm/">tyuk.remeny.farm</a>
+        <a href="https://liget.remeny.farm/">liget.remeny.farm</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+  </script>
+</body>
+</html>

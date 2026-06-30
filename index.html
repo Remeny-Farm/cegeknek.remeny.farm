@@ -840,6 +840,34 @@
         width: 100%;
         height: auto;
       }
+      /* IN-CONTEXT FARM PHOTOS (trust / mi-ez / experience) */
+      .photo-figure,
+      .trust-proof {
+        margin: clamp(20px, 3.5vw, 34px) 0 0;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        background: var(--surface);
+      }
+      .photo-figure img,
+      .trust-proof img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .photo-figure figcaption,
+      .trust-proof figcaption {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        color: var(--ink-soft);
+        padding: 10px 16px;
+        border-top: 1px solid var(--line);
+      }
+      .trust-proof {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+      }
       .upgrade-grid {
         display: grid;
         grid-template-columns: 0.9fr 1.1fr;
@@ -2342,6 +2370,20 @@
               tyúkcsapatotokból érkezik, kéthetente, megbízható ritmusban.
             </span>
           </p>
+          <figure class="trust-proof" data-reveal>
+            <img
+              src="images/tojas-szallitas.jpg"
+              alt="Anna a Remény Farm tojásait pakolja a szállítófurgonba kétheti céges kiszállításra"
+              width="1600"
+              height="1054"
+              loading="lazy"
+              onerror="this.closest('.trust-proof').style.display = 'none'"
+            />
+            <figcaption>
+              Saját céges tyúkcsapatotok tojása — kéthetente, dokumentált,
+              nyomonkövethető szállítással.
+            </figcaption>
+          </figure>
         </div>
       </section>
 
@@ -2362,6 +2404,16 @@
               történettel, miközben a friss tojás az egész csapathoz megérkezik.
             </p>
           </div>
+          <figure class="photo-figure" data-reveal>
+            <img
+              src="images/anna-tyukcsapat.jpg"
+              alt="Anna a saját tyúkcsapata között a Remény Farmon"
+              width="1600"
+              height="1066"
+              loading="lazy"
+              onerror="this.closest('.photo-figure').style.display = 'none'"
+            />
+          </figure>
           <div data-reveal>
             <h3 style="color: var(--forest-deep); margin-bottom: 0.2rem">
               Miért működik céges programként?
@@ -2879,6 +2931,20 @@
             <span class="eyebrow">A mindennapi élmény</span>
             <h2>A program akkor működik, ha az irodában is életre kel.</h2>
           </div>
+          <figure class="photo-figure" data-reveal>
+            <img
+              src="images/tojasbelyegzes.jpg"
+              alt="A cég pecsétje minden tojáson — egyedi tojásbélyegzés a Remény Farmon"
+              width="1600"
+              height="1066"
+              loading="lazy"
+              onerror="this.closest('.photo-figure').style.display = 'none'"
+            />
+            <figcaption>
+              Minden tojáson ott a cég pecsétje — apró márkapillanat minden
+              reggel.
+            </figcaption>
+          </figure>
           <div class="exp-grid">
             <div class="exp-card" data-reveal>
               <div class="em">

@@ -1128,6 +1128,35 @@
         grid-template-columns: 1fr 1fr;
         gap: 15px;
       }
+      .check-field {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 14px;
+        margin: -2px 0 15px;
+        background: color-mix(in srgb, var(--yolk) 13%, var(--surface));
+        border: 1px solid var(--line);
+        border-radius: 13px;
+      }
+      .check-field input {
+        flex: 0 0 auto;
+        width: 18px;
+        height: 18px;
+        margin-top: 0.2em;
+        accent-color: var(--forest);
+      }
+      .check-field label {
+        color: var(--ink);
+        font-size: 0.94rem;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+      .check-field span {
+        display: block;
+        margin-top: 3px;
+        color: var(--ink-soft);
+        font-weight: 400;
+      }
       .form-card .btn-primary {
         width: 100%;
         justify-content: center;
@@ -2372,7 +2401,6 @@
                 required
                 autocomplete="organization"
                 placeholder="Példa Kft."
-                required
               />
             </div>
             <div class="field-row">
@@ -2401,9 +2429,18 @@
                 <option>Iroda Coop (50 tyúk)</option>
                 <option>Team Coop (100 tyúk)</option>
                 <option>Signature Coop (250 tyúk)</option>
-                <option>Konstruktőrök Bajnoksága is érdekel</option>
                 <option>Még nem tudom — segítsetek választani</option>
               </select>
+            </div>
+            <div class="check-field">
+              <input id="f-championship" type="checkbox" />
+              <label for="f-championship">
+                A Konstruktőrök Bajnoksága is érdekel
+                <span
+                  >Opcionális céges coop-verseny, privát vagy opt-in publikus
+                  toplistával.</span
+                >
+              </label>
             </div>
             <div class="field-row">
               <div class="field">
@@ -2429,7 +2466,6 @@
                   required
                   autocomplete="email"
                   placeholder="nev@ceg.hu"
-                  required
                 />
               </div>
             </div>
@@ -2569,6 +2605,10 @@
           var el = document.getElementById(id);
           return el ? el.value.trim() : "";
         }
+        function checked(id) {
+          var el = document.getElementById(id);
+          return Boolean(el && el.checked);
+        }
         function showFormMessage(message, isError) {
           if (!formOk) return;
           formOk.textContent = message;
@@ -2593,6 +2633,9 @@
             (data.packageInterest ||
               "Iroda Coop / Team Coop / Signature Coop") +
             "\n" +
+            "Konstruktorok Bajnoksaga: " +
+            (data.championshipInterest ? "igen" : "nem") +
+            "\n" +
             (data.email ? "Email: " + data.email + "\n" : "") +
             (data.message ? "\nMegjegyzes:\n" + data.message + "\n" : "") +
             "\nUdvozlettel: " +
@@ -2612,6 +2655,7 @@
               teamSize: v("f-size"),
               location: v("f-loc"),
               packageInterest: v("f-pkg"),
+              championshipInterest: checked("f-championship"),
               name: v("f-name"),
               email: v("f-email"),
               message: v("f-msg"),

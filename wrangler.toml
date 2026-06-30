@@ -1,0 +1,10 @@
+name = "cegeknek-remeny-farm-leads"
+main = "worker.js"
+compatibility_date = "2026-06-30"
+
+routes = [
+  { pattern = "cegeknek.remeny.farm/api/lead", zone_name = "remeny.farm" }
+]
+
+[vars]
+MAILERLITE_GROUP_ID = "191694239954896441"

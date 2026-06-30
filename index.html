@@ -1057,6 +1057,17 @@
       .form-ok.show {
         display: block;
       }
+      .form-ok.error {
+        background: #fff4e4;
+        border-color: #e4c184;
+      }
+      .hp-field {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
 
       /* FOOTER */
       footer.foot {
@@ -2007,8 +2018,8 @@
             Megnézzük, van-e hozzá farmkapacitás, és a többit kitaláljuk együtt.
           </p>
           <p class="small">
-            A gomb a kitöltött adatokkal megnyitja a levelezőt az
-            <b>info@remenyfarm.hu</b> címre.
+            Az érdeklődés MailerLite-ba kerül, így nem kallódik el egy inboxban.
+            Ha bármi megakad, megadjuk az emailes fallbacket.
           </p>
         </div>
         <div class="form-card" data-reveal>
@@ -2019,6 +2030,7 @@
               type="text"
               autocomplete="organization"
               placeholder="Példa Kft."
+              required
             />
           </div>
           <div class="field-row">
@@ -2067,8 +2079,18 @@
                 type="email"
                 autocomplete="email"
                 placeholder="nev@ceg.hu"
+                required
               />
             </div>
+          </div>
+          <div class="hp-field" aria-hidden="true">
+            <label for="f-website">Weboldal</label>
+            <input
+              id="f-website"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+            />
           </div>
           <div class="field">
             <label for="f-msg"
@@ -2087,9 +2109,7 @@
             Nem küldünk spamet — csak az ajánlattal jelentkezünk.
           </p>
           <div class="form-ok" id="formOk">
-            Köszi! Megnyílt a levelezőtök a kitöltött adatokkal — már csak el
-            kell küldeni. Ha nem nyílt meg, írjatok ide:
-            <b>info@remenyfarm.hu</b>
+            Köszi, megkaptuk az érdeklődést. Jelentkezünk a részletekkel.
           </div>
         </div>
       </div>
@@ -2174,47 +2194,103 @@
         }
 
         var btn = document.getElementById("sendBtn");
+        var formOk = document.getElementById("formOk");
         function v(id) {
           var el = document.getElementById(id);
           return el ? el.value.trim() : "";
         }
+        function showFormMessage(message, isError) {
+          if (!formOk) return;
+          formOk.textContent = message;
+          formOk.classList.toggle("error", Boolean(isError));
+          formOk.classList.add("show");
+        }
+        function mailtoFallback(data) {
+          var subject = "Ceges Tyukcsapat Program erdeklodes";
+          var body =
+            "Szia Remeny Farm,\n\n" +
+            "Erdekel a Ceges Tyukcsapat Program.\n\n" +
+            "Ceg neve: " +
+            data.company +
+            "\n" +
+            "Dolgozoi letszam: " +
+            data.teamSize +
+            "\n" +
+            "Iroda helyszine: " +
+            data.location +
+            "\n" +
+            "Erdeklodo csomag: " +
+            (data.packageInterest ||
+              "Iroda Coop / Team Coop / Signature Coop") +
+            "\n" +
+            (data.email ? "Email: " + data.email + "\n" : "") +
+            (data.message ? "\nMegjegyzes:\n" + data.message + "\n" : "") +
+            "\nUdvozlettel: " +
+            data.name +
+            "\n";
+          window.location.href =
+            "mailto:info@remenyfarm.hu?subject=" +
+            encodeURIComponent(subject) +
+            "&body=" +
+            encodeURIComponent(body);
+        }
         if (btn) {
-          btn.addEventListener("click", function () {
-            var company = v("f-company") || "";
-            var size = v("f-size") || "";
-            var loc = v("f-loc") || "";
-            var pkg = v("f-pkg") || "";
-            var name = v("f-name") || "";
-            var email = v("f-email") || "";
-            var msg = v("f-msg") || "";
-            var subject = "Ceges Tyukcsapat Program erdeklodes";
-            var body =
-              "Szia Remeny Farm,\n\n" +
-              "Erdekel a Ceges Tyukcsapat Program.\n\n" +
-              "Ceg neve: " +
-              company +
-              "\n" +
-              "Dolgozoi letszam: " +
-              size +
-              "\n" +
-              "Iroda helyszine: " +
-              loc +
-              "\n" +
-              "Erdeklodo csomag: " +
-              (pkg || "Iroda Coop / Team Coop / Signature Coop") +
-              "\n" +
-              (email ? "Email: " + email + "\n" : "") +
-              (msg ? "\nMegjegyzes:\n" + msg + "\n" : "") +
-              "\nUdvozlettel: " +
-              name +
-              "\n";
-            window.location.href =
-              "mailto:info@remenyfarm.hu?subject=" +
-              encodeURIComponent(subject) +
-              "&body=" +
-              encodeURIComponent(body);
-            var ok = document.getElementById("formOk");
-            if (ok) ok.classList.add("show");
+          btn.addEventListener("click", async function () {
+            var data = {
+              company: v("f-company"),
+              teamSize: v("f-size"),
+              location: v("f-loc"),
+              packageInterest: v("f-pkg"),
+              name: v("f-name"),
+              email: v("f-email"),
+              message: v("f-msg"),
+              website: v("f-website"),
+            };
+
+            if (
+              !data.company ||
+              !data.email ||
+              !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)
+            ) {
+              showFormMessage(
+                "A cégnevet és egy érvényes email címet mindenképp add meg.",
+                true,
+              );
+              return;
+            }
+
+            btn.disabled = true;
+            btn.textContent = "Küldés...";
+            showFormMessage("Küldjük az érdeklődést...", false);
+
+            try {
+              var response = await fetch("/api/lead", {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(data),
+              });
+              var result = await response.json().catch(function () {
+                return {};
+              });
+
+              if (!response.ok || !result.ok) {
+                throw new Error(result.error || "submit_failed");
+              }
+
+              showFormMessage(
+                "Köszi, megkaptuk az érdeklődést. Jelentkezünk a részletekkel.",
+                false,
+              );
+              btn.textContent = "Elküldve";
+            } catch (error) {
+              showFormMessage(
+                "Most nem ment át automatikusan, megnyitjuk emailben is, hogy ne vesszen el.",
+                true,
+              );
+              mailtoFallback(data);
+              btn.disabled = false;
+              btn.textContent = "Érdeklődést küldök →";
+            }
           });
         }
       })();

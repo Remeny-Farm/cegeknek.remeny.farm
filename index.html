@@ -2671,13 +2671,15 @@
             </div>
             <div class="calc-out" aria-live="polite">
               <div class="calc-stat">
-                <b>75–95%</b><span>becsült tojáshozam</span>
+                <b>Becslés</b><span>élő állomány alapján</span>
               </div>
               <div class="calc-stat">
-                <b id="calcEggs">525–665</b><span>tojás kéthetente</span>
+                <b id="calcEggs">525–665 db</b>
+                <span>tojás érkezik kéthetente az irodába</span>
               </div>
               <div class="calc-stat">
-                <b id="calcPer">11–14</b><span>fejenként, kéthetente</span>
+                <b id="calcPer">11–14 db</b>
+                <span>jut fejenként a munkatársaknak</span>
               </div>
             </div>
             <p class="calc-note">
@@ -4038,17 +4040,16 @@
           var emp = calcInt(calcEmp);
           var bwLow = Math.round(hens * EGG_MATH.cycleDays * EGG_MATH.layMin);
           var bwHigh = Math.round(hens * EGG_MATH.cycleDays * EGG_MATH.layMax);
-          if (calcEggs) calcEggs.textContent = calcRange(bwLow, bwHigh);
+          if (calcEggs) calcEggs.textContent = calcRange(bwLow, bwHigh) + " db";
           if (calcPer) {
             if (emp <= 0) {
               calcPer.textContent = "–";
             } else if (bwHigh > 0 && Math.floor(bwHigh / emp) === 0) {
-              calcPer.textContent = "<1";
+              calcPer.textContent = "<1 db";
             } else {
-              calcPer.textContent = calcRange(
-                Math.floor(bwLow / emp),
-                Math.floor(bwHigh / emp),
-              );
+              calcPer.textContent =
+                calcRange(Math.floor(bwLow / emp), Math.floor(bwHigh / emp)) +
+                " db";
             }
           }
           return { hens: hens, employees: emp };

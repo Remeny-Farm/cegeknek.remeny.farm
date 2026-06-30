@@ -51,6 +51,7 @@ export default {
     const teamSize = cleanText(payload.teamSize, 80);
     const location = cleanText(payload.location, 180);
     const packageInterest = cleanText(payload.packageInterest, 180);
+    const championshipInterest = payload.championshipInterest ? "igen" : "nem";
     const message = cleanText(payload.message, 1000);
 
     if (!isEmail(email) || !company) {
@@ -65,6 +66,7 @@ export default {
         ceges_tyukcsapat_dolgozoi_letszam: teamSize,
         ceges_tyukcsapat_iroda_helyszin: location,
         ceges_tyukcsapat_csomag: packageInterest,
+        ceges_tyukcsapat_konstruktorok_bajnoksaga: championshipInterest,
         ceges_tyukcsapat_megjegyzes: message,
         referrer: "cegeknek.remeny.farm",
       },

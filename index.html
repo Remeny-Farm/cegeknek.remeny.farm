@@ -831,6 +831,58 @@
         font-weight: 700;
       }
 
+      /* CONSTRUCTORS CHAMPIONSHIP */
+      .championship {
+        background: var(--paper-2);
+      }
+      .champ-grid {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 42px;
+        align-items: start;
+      }
+      .champ-score {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        padding: clamp(26px, 4vw, 38px);
+        box-shadow: 0 26px 54px -42px rgba(0, 53, 44, 0.35);
+      }
+      .champ-score h3 {
+        color: var(--forest-deep);
+        font-size: clamp(1.45rem, 2.3vw, 2rem);
+        margin-bottom: 1rem;
+      }
+      .score-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 13px;
+      }
+      .score-list li {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 11px;
+        color: var(--ink-soft);
+        font-size: 0.97rem;
+      }
+      .score-list li::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--yolk);
+        margin-top: 0.55em;
+      }
+      .champ-note {
+        margin-top: 22px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        color: var(--forest);
+        font-weight: 700;
+      }
+
       /* MEDIA / CONTENT */
       .media .lead {
         max-width: 64ch;
@@ -1076,23 +1128,36 @@
         grid-template-columns: 1fr 1fr;
         gap: 15px;
       }
-      .consent {
-        display: grid;
-        grid-template-columns: 20px 1fr;
-        gap: 10px;
-        align-items: start;
-        margin: 4px 0 16px;
-        color: var(--ink-soft);
-        font-size: 0.86rem;
-        line-height: 1.45;
+      .check-field {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 14px;
+        margin: -2px 0 15px;
+        background: color-mix(in srgb, var(--yolk) 13%, var(--surface));
+        border: 1px solid var(--line);
+        border-radius: 13px;
       }
-      .consent input {
+      .check-field input {
+        flex: 0 0 auto;
         width: 18px;
         height: 18px;
-        margin: 2px 0 0;
+        margin-top: 0.2em;
         accent-color: var(--forest);
       }
-      .consent a,
+      .check-field label {
+        color: var(--ink);
+        font-size: 0.94rem;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+      .check-field span {
+        display: block;
+        margin-top: 3px;
+        color: var(--ink-soft);
+        font-weight: 400;
+      }
+      .check-field a,
       .privacy-note a {
         color: var(--forest);
         font-weight: 700;
@@ -1218,6 +1283,9 @@
         .upgrade-panel {
           position: static;
         }
+        .champ-grid {
+          grid-template-columns: 1fr;
+        }
         .aud-grid,
         .pkg-grid,
         .exp-grid,
@@ -1323,1057 +1391,1168 @@
     </header>
 
     <main id="main">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div data-reveal>
-          <span class="eyebrow">Céges Tyúkcsapat Program</span>
-          <h1>
-            Adj a dolgozóidnak valamit,
-            <span class="ital">amiről tényleg beszélnek.</span>
-          </h1>
-          <p class="hero-sub">
-            Saját céges tyúkcsapat a Remény Farmon: logózott ól, élő webcam az
-            irodába, kétheti tojásnap, dolgozói kódok és opcionális
-            tartalomgyártás milliós elérésű farmcsatornákkal.
-          </p>
-          <p class="hero-kick">
-            Nem stock CSR. Nem sablon juttatás. Egy működő farmon történik.
-          </p>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="#erdeklodes"
-              >Céges érdeklődést küldök →</a
-            >
-            <a class="btn btn-ghost" href="#csomagok">Csomagok megnézése</a>
-          </div>
-          <p class="hero-callout">
-            <b>Limitált első partnerkör.</b> Élő állatokkal, lekötött
-            ólkapacitással és kétheti szállítással dolgozunk, ezért egyszerre
-            csak néhány céggel tudunk indulni.
-          </p>
-        </div>
-        <div class="hero-media" data-reveal>
-          <img
-            src="images/hero-chickens.jpg"
-            alt="Tyúkok a Remény Farm legelőjén"
-            width="1920"
-            height="1280"
-            loading="eager"
-            onerror="
-              this.parentNode.style.background =
-                'linear-gradient(135deg,#0a5c4d,#00352c)'
-            "
-          />
-          <span class="hero-tag">Saját céges tyúkcsapat · élőben</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="section stats">
-      <div class="wrap stats-grid">
-        <div class="stat" data-reveal>
-          <b>500k+</b><span>közösségi követő a Remény Farm körül</span>
-        </div>
-        <div class="stat" data-reveal>
-          <b>400k–4M</b><span>TikTok view nagyságrend videónként</span>
-        </div>
-        <div class="stat" data-reveal>
-          <b>2 hetente</b><span>tojásnap a cégnél, 30-as tálcákon</span>
-        </div>
-        <div class="stat" data-reveal>
-          <b>élő</b><span>webcam a saját céges tyúkcsapatról</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- CAPACITY PRESSURE -->
-    <section class="section capacity" id="kapacitas">
-      <div class="wrap capacity-grid">
-        <div data-reveal>
-          <span class="eyebrow">Limitált helyek</span>
-          <h2>Nem tudunk minden cégnek saját tyúkcsapatot adni.</h2>
-          <p class="lead">
-            Ez nem korlátlanul skálázható céges ajándék. Tyúkokat, ólkapacitást,
-            brandinget, szállítási ritmust és farmoldali figyelmet foglalunk le,
-            ezért az első körben kurált partnerkört választunk.
-          </p>
-        </div>
-        <div class="cap-box" data-reveal>
-          <b>Első körben csak pár céges coop indul.</b>
-          <p>
-            Olyan cégeket keresünk, akik nem csak tojást szeretnének, hanem egy
-            egész éves, élő employer branding történetet.
-          </p>
-          <div class="cap-points">
-            <div class="cap-point">
-              A férőhelyeket farmkapacitás limitálja, nem hirdetési büdzsé.
-            </div>
-            <div class="cap-point">
-              A jobb belső történetek és hosszabb távú partnerségek előnyt
-              élveznek.
-            </div>
-            <div class="cap-point">
-              A jelentkezés után együtt döntjük el, melyik coop méret működik
-              operációsan.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MI EZ -->
-    <section class="section" id="mi-ez">
-      <div class="wrap">
-        <div class="head" data-reveal>
-          <span class="eyebrow">Mi ez?</span>
-          <h2>
-            Saját céges tyúkcsapat, ami nem a prezentációban él, hanem a farmon.
-          </h2>
-          <p class="lead">
-            A cég 12 hónapra leköt egy tyúkcsapatot a Remény Farmon. Az ólnál
-            megjelenik a logó, az irodában nézhető az élő webcam, kéthetente
-            megérkeznek a tojások, a dolgozók pedig saját kóddal és saját
-            történettel kapcsolódnak a programhoz.
-          </p>
-        </div>
-        <div data-reveal>
-          <h3 style="color: var(--forest-deep); margin-bottom: 0.2rem">
-            Miért működik céges programként?
-          </h3>
-          <ul class="bullets">
-            <li>
-              Kézzelfogható dolgozói juttatás: a tojás tényleg megérkezik az
-              irodába.
-            </li>
-            <li>
-              Folyamatos belső kommunikáció: webcam, tojásnap, app kódok és
-              céges tyúkcsapat.
-            </li>
-            <li>
-              Fotózható és videózható történet: nem zöldre festett logó, hanem
-              élő farmélmény.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- PULLQUOTE + AUDIENCE -->
-    <section class="section pq" style="background: var(--paper-2)">
-      <div class="wrap">
-        <div class="head center" data-reveal>
-          <h2>
-            A dolgozók kéthetente tojást kapnak.
-            <span class="ital">A cég egész évben történetet kap.</span>
-          </h2>
-          <p class="lead" style="margin: 1rem auto 0">
-            A program egyszerre employer branding, belső közösségi rituálé,
-            fenntarthatósági történet és valódi farmkapcsolat — három részleg,
-            egy döntés.
-          </p>
-        </div>
-        <div class="aud-grid">
-          <div class="aud" data-reveal>
-            <span class="role">HR &amp; employer branding</span>
-            <h3>Egy juttatás, amiről beszélnek</h3>
-            <p>
-              Nem a sokadik utalvány. Saját tyúkcsapat, kétheti tojásnap és
-              dolgozói kódok — perk, amit a kolléga hazavisz és elmesél.
+      <!-- HERO -->
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div data-reveal>
+            <span class="eyebrow">Céges Tyúkcsapat Program</span>
+            <h1>
+              Adj a dolgozóidnak valamit,
+              <span class="ital">amiről tényleg beszélnek.</span>
+            </h1>
+            <p class="hero-sub">
+              Saját céges tyúkcsapat a Remény Farmon: logózott ól, élő webcam az
+              irodába, kétheti tojásnap, dolgozóknak kiosztható saját tyúkok és
+              opcionális tartalomgyártás milliós elérésű farmcsatornákkal.
             </p>
-          </div>
-          <div class="aud" data-reveal>
-            <span class="role">Marketing &amp; brand</span>
-            <h3>Tartalom, ami magát adja</h3>
-            <p>
-              Logózott ól, webcam, a cég pecsétjével ellátott tojás.
-              Megosztható, hiteles vizuális anyag — opcionálisan milliós elérésű
-              farmcsatornákon.
+            <p class="hero-kick">
+              Nem stock CSR. Nem sablon juttatás. Egy működő farmon történik.
             </p>
-          </div>
-          <div class="aud" data-reveal>
-            <span class="role">Fenntarthatóság &amp; ESG</span>
-            <h3>Valódi munka, nem állítás</h3>
-            <p>
-              Bio háttér, faültetés, dokumentált farmélmény és éves anyag. Az
-              ESG-be ellenőrizhető tartalom kerül — nem zöldre festett logó.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LIVE PREVIEW (signature, merged in) -->
-    <section class="section preview" id="elonezet">
-      <div class="wrap">
-        <div class="head" data-reveal>
-          <span class="eyebrow">Élő előnézet</span>
-          <h2>Írjátok be a cégetek nevét — és nézzétek meg.</h2>
-          <p class="lead">
-            A céges csomag névre szól. Lássátok rögtön, hogy nézne ki a saját
-            tojásbélyegzőtök és a logózott ól ponyvája a farmon.
-          </p>
-        </div>
-        <div class="pv-grid">
-          <div class="pv-control" data-reveal>
-            <label for="brandName">A cégetek neve</label>
-            <input
-              class="pv-input"
-              id="brandName"
-              type="text"
-              maxlength="22"
-              placeholder="A Ti Cégetek Kft."
-              autocomplete="organization"
-            />
-            <p class="pv-note">
-              Gyors illusztráció. A végleges arculatot — logó, betűtípus, szín —
-              együtt gyártjuk le, mielőtt bármi az ólra vagy a tojásra kerül.
-              (Egyedi tojásbélyegzés a Team és a Signature csomagban.)
-            </p>
-          </div>
-          <div class="pv-stage" data-reveal>
-            <div class="pv-card">
-              <svg
-                viewBox="0 0 200 240"
-                role="img"
-                aria-label="Logós tojásbélyeg előnézet"
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="#erdeklodes"
+                >Céges érdeklődést küldök →</a
               >
-                <defs>
-                  <linearGradient id="egg" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0" stop-color="#FFFDF8" />
-                    <stop offset="1" stop-color="#F2E6CC" />
-                  </linearGradient>
-                </defs>
-                <ellipse cx="100" cy="124" rx="74" ry="96" fill="url(#egg)" />
-                <ellipse
-                  cx="74"
-                  cy="86"
-                  rx="22"
-                  ry="30"
-                  fill="#fff"
-                  opacity=".5"
-                />
-                <g transform="translate(100 128) rotate(-9)">
-                  <circle
-                    r="56"
-                    fill="none"
-                    stroke="#004D40"
-                    stroke-width="2.5"
-                    opacity=".9"
-                  />
-                  <circle
-                    r="48"
-                    fill="none"
-                    stroke="#004D40"
-                    stroke-width="1"
+              <a class="btn btn-ghost" href="#csomagok">Csomagok megnézése</a>
+            </div>
+            <p class="hero-callout">
+              <b>Limitált első partnerkör.</b> Élő állatokkal, lekötött
+              ólkapacitással és kétheti szállítással dolgozunk, ezért egyszerre
+              csak néhány céggel tudunk indulni.
+            </p>
+          </div>
+          <div class="hero-media" data-reveal>
+            <img
+              src="images/hero-chickens.jpg"
+              alt="Tyúkok a Remény Farm legelőjén"
+              width="1920"
+              height="1280"
+              loading="eager"
+              onerror="
+                this.parentNode.style.background =
+                  'linear-gradient(135deg,#0a5c4d,#00352c)'
+              "
+            />
+            <span class="hero-tag">Saját céges tyúkcsapat · élőben</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="section stats">
+        <div class="wrap stats-grid">
+          <div class="stat" data-reveal>
+            <b>500k+</b><span>közösségi követő a Remény Farm körül</span>
+          </div>
+          <div class="stat" data-reveal>
+            <b>400k–4M</b><span>TikTok view nagyságrend videónként</span>
+          </div>
+          <div class="stat" data-reveal>
+            <b>2 hetente</b><span>tojásnap a cégnél, 30-as tálcákon</span>
+          </div>
+          <div class="stat" data-reveal>
+            <b>élő</b><span>webcam a saját céges tyúkcsapatról</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAPACITY PRESSURE -->
+      <section class="section capacity" id="kapacitas">
+        <div class="wrap capacity-grid">
+          <div data-reveal>
+            <span class="eyebrow">Limitált helyek</span>
+            <h2>Nem tudunk minden cégnek saját tyúkcsapatot adni.</h2>
+            <p class="lead">
+              Ez nem korlátlanul skálázható céges ajándék. Tyúkokat,
+              ólkapacitást, brandinget, szállítási ritmust és farmoldali
+              figyelmet foglalunk le, ezért az első körben kurált partnerkört
+              választunk.
+            </p>
+          </div>
+          <div class="cap-box" data-reveal>
+            <b>Első körben csak pár céges coop indul.</b>
+            <p>
+              Olyan cégeket keresünk, akik nem csak tojást szeretnének, hanem
+              egy egész éves, élő employer branding történetet.
+            </p>
+            <div class="cap-points">
+              <div class="cap-point">
+                A férőhelyeket farmkapacitás limitálja, nem hirdetési büdzsé.
+              </div>
+              <div class="cap-point">
+                A jobb belső történetek és hosszabb távú partnerségek előnyt
+                élveznek.
+              </div>
+              <div class="cap-point">
+                A jelentkezés után együtt döntjük el, melyik coop méret működik
+                operációsan.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MI EZ -->
+      <section class="section" id="mi-ez">
+        <div class="wrap">
+          <div class="head" data-reveal>
+            <span class="eyebrow">Mi ez?</span>
+            <h2>
+              Saját céges tyúkcsapat, ami nem a prezentációban él, hanem a
+              farmon.
+            </h2>
+            <p class="lead">
+              A cég 12 hónapra leköt egy tyúkcsapatot a Remény Farmon. Az ólnál
+              megjelenik a logó, az irodában nézhető az élő webcam, kéthetente
+              megérkeznek a tojások, a dolgozók pedig saját kóddal saját tyúkot
+              kaphatnak. Nem csak a céges csapatot látják: mindenkinek lehet
+              saját madara, saját fotóval, aktivitással és történettel.
+            </p>
+          </div>
+          <div data-reveal>
+            <h3 style="color: var(--forest-deep); margin-bottom: 0.2rem">
+              Miért működik céges programként?
+            </h3>
+            <ul class="bullets">
+              <li>
+                Kézzelfogható dolgozói juttatás: a tojás tényleg megérkezik az
+                irodába.
+              </li>
+              <li>
+                Folyamatos belső kommunikáció: webcam, tojásnap, app kódok és
+                céges tyúkcsapat.
+              </li>
+              <li>
+                Fotózható és videózható történet: nem zöldre festett logó, hanem
+                élő farmélmény.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PULLQUOTE + AUDIENCE -->
+      <section class="section pq" style="background: var(--paper-2)">
+        <div class="wrap">
+          <div class="head center" data-reveal>
+            <h2>
+              A dolgozók kéthetente tojást kapnak.
+              <span class="ital">A cég egész évben történetet kap.</span>
+            </h2>
+            <p class="lead" style="margin: 1rem auto 0">
+              A program egyszerre employer branding, belső közösségi rituálé,
+              fenntarthatósági történet és valódi farmkapcsolat — három részleg,
+              egy döntés.
+            </p>
+          </div>
+          <div class="aud-grid">
+            <div class="aud" data-reveal>
+              <span class="role">HR &amp; employer branding</span>
+              <h3>Egy juttatás, amiről beszélnek</h3>
+              <p>
+                Nem a sokadik utalvány. A kolléga saját tyúkot kap, saját
+                történettel, amit a családnak is el lehet mesélni a reggeli
+                rántotta mellett.
+              </p>
+            </div>
+            <div class="aud" data-reveal>
+              <span class="role">Marketing &amp; brand</span>
+              <h3>Tartalom, ami magát adja</h3>
+              <p>
+                A logózott ól látszik az útról, a live webcamen és a videók
+                hátterében is. Ez nem banner, hanem a tájba épített reklámérték.
+              </p>
+            </div>
+            <div class="aud" data-reveal>
+              <span class="role">Fenntarthatóság &amp; ESG</span>
+              <h3>Valódi munka, nem állítás</h3>
+              <p>
+                A program segít regenerálni a tájat, és ez évről évre követhető.
+                Az ESG-be ellenőrizhető, dokumentált változás kerül.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LIVE PREVIEW (signature, merged in) -->
+      <section class="section preview" id="elonezet">
+        <div class="wrap">
+          <div class="head" data-reveal>
+            <span class="eyebrow">Élő előnézet</span>
+            <h2>Írjátok be a cégetek nevét — és nézzétek meg.</h2>
+            <p class="lead">
+              A céges csomag névre szól. Lássátok rögtön, hogy nézne ki a saját
+              tojásbélyegzőtök és a logózott ól ponyvája a farmon.
+            </p>
+          </div>
+          <div class="pv-grid">
+            <div class="pv-control" data-reveal>
+              <label for="brandName">A cégetek neve</label>
+              <input
+                class="pv-input"
+                id="brandName"
+                type="text"
+                maxlength="22"
+                placeholder="A Ti Cégetek Kft."
+                autocomplete="organization"
+              />
+              <p class="pv-note">
+                Gyors illusztráció. A végleges arculatot — logó, betűtípus, szín
+                — együtt gyártjuk le, mielőtt bármi az ólra vagy a tojásra
+                kerül. (Egyedi tojásbélyegzés a Team és a Signature csomagban.)
+              </p>
+            </div>
+            <div class="pv-stage" data-reveal>
+              <div class="pv-card">
+                <svg
+                  viewBox="0 0 200 240"
+                  role="img"
+                  aria-label="Logós tojásbélyeg előnézet"
+                >
+                  <defs>
+                    <linearGradient id="egg" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#FFFDF8" />
+                      <stop offset="1" stop-color="#F2E6CC" />
+                    </linearGradient>
+                  </defs>
+                  <ellipse cx="100" cy="124" rx="74" ry="96" fill="url(#egg)" />
+                  <ellipse
+                    cx="74"
+                    cy="86"
+                    rx="22"
+                    ry="30"
+                    fill="#fff"
                     opacity=".5"
                   />
-                  <path id="rTop" d="M -38 0 A 38 38 0 0 1 38 0" fill="none" />
-                  <path id="rBot" d="M -38 0 A 38 38 0 0 0 38 0" fill="none" />
-                  <text
-                    font-family="'IBM Plex Mono',monospace"
-                    font-size="8.5"
-                    font-weight="600"
-                    fill="#004D40"
-                    letter-spacing="2"
-                  >
-                    <textPath
-                      href="#rTop"
-                      startOffset="50%"
-                      text-anchor="middle"
+                  <g transform="translate(100 128) rotate(-9)">
+                    <circle
+                      r="56"
+                      fill="none"
+                      stroke="#004D40"
+                      stroke-width="2.5"
+                      opacity=".9"
+                    />
+                    <circle
+                      r="48"
+                      fill="none"
+                      stroke="#004D40"
+                      stroke-width="1"
+                      opacity=".5"
+                    />
+                    <path
+                      id="rTop"
+                      d="M -38 0 A 38 38 0 0 1 38 0"
+                      fill="none"
+                    />
+                    <path
+                      id="rBot"
+                      d="M -38 0 A 38 38 0 0 0 38 0"
+                      fill="none"
+                    />
+                    <text
+                      font-family="'IBM Plex Mono',monospace"
+                      font-size="8.5"
+                      font-weight="600"
+                      fill="#004D40"
+                      letter-spacing="2"
                     >
-                      REMÉNY FARM
-                    </textPath>
-                  </text>
-                  <text
-                    font-family="'IBM Plex Mono',monospace"
-                    font-size="8.5"
-                    font-weight="600"
-                    fill="#004D40"
-                    letter-spacing="2"
-                  >
-                    <textPath
-                      href="#rBot"
-                      startOffset="50%"
-                      text-anchor="middle"
+                      <textPath
+                        href="#rTop"
+                        startOffset="50%"
+                        text-anchor="middle"
+                      >
+                        REMÉNY FARM
+                      </textPath>
+                    </text>
+                    <text
+                      font-family="'IBM Plex Mono',monospace"
+                      font-size="8.5"
+                      font-weight="600"
+                      fill="#004D40"
+                      letter-spacing="2"
                     >
-                      · BIO TOJÁS ·
-                    </textPath>
-                  </text>
+                      <textPath
+                        href="#rBot"
+                        startOffset="50%"
+                        text-anchor="middle"
+                      >
+                        · BIO TOJÁS ·
+                      </textPath>
+                    </text>
+                    <text
+                      id="eggBrand"
+                      y="5"
+                      text-anchor="middle"
+                      font-family="'Inter',sans-serif"
+                      font-weight="800"
+                      font-size="16"
+                      fill="#004D40"
+                      textLength="70"
+                      lengthAdjust="spacingAndGlyphs"
+                    >
+                      A TI CÉGETEK
+                    </text>
+                  </g>
+                </svg>
+                <div class="cap">A tojásbélyegzőtök</div>
+              </div>
+              <div class="pv-card">
+                <svg
+                  viewBox="0 0 220 240"
+                  role="img"
+                  aria-label="Logózott ól ponyva előnézet"
+                >
+                  <rect
+                    x="20"
+                    y="92"
+                    width="180"
+                    height="96"
+                    rx="10"
+                    fill="#7B5836"
+                  />
+                  <path d="M6 96 L110 30 L214 96 Z" fill="#004D40" />
+                  <rect
+                    x="36"
+                    y="120"
+                    width="148"
+                    height="46"
+                    rx="7"
+                    fill="#F4B741"
+                  />
+                  <rect
+                    x="36"
+                    y="120"
+                    width="148"
+                    height="46"
+                    rx="7"
+                    fill="none"
+                    stroke="#E0991F"
+                    stroke-width="2"
+                  />
                   <text
-                    id="eggBrand"
-                    y="5"
+                    id="tarpBrand"
+                    x="110"
+                    y="149"
                     text-anchor="middle"
                     font-family="'Inter',sans-serif"
                     font-weight="800"
-                    font-size="16"
-                    fill="#004D40"
-                    textLength="70"
+                    font-size="18"
+                    fill="#00352C"
+                    textLength="130"
                     lengthAdjust="spacingAndGlyphs"
                   >
                     A TI CÉGETEK
                   </text>
-                </g>
-              </svg>
-              <div class="cap">A tojásbélyegzőtök</div>
+                  <rect x="92" y="166" width="36" height="22" fill="#3A2E22" />
+                  <circle cx="48" cy="192" r="12" fill="#3A2E22" />
+                  <circle cx="172" cy="192" r="12" fill="#3A2E22" />
+                </svg>
+                <div class="cap">A logózott ólatok</div>
+              </div>
             </div>
-            <div class="pv-card">
-              <svg
-                viewBox="0 0 220 240"
-                role="img"
-                aria-label="Logózott ól ponyva előnézet"
+          </div>
+        </div>
+      </section>
+
+      <!-- PACKAGES -->
+      <section class="section" id="csomagok">
+        <div class="wrap">
+          <div class="head" data-reveal>
+            <span class="eyebrow">Csomagok</span>
+            <h2>
+              Három céges coop, eltérő méretre és kommunikációs ambícióra.
+            </h2>
+            <p class="lead">
+              Minden csomag 12 hónapos kapacitáslekötéssel működik, céges
+              logóval, saját webcam streammel és kétheti tojásszállítással. A
+              helyek farmkapacitáshoz kötöttek, nem korlátlanul elérhetők.
+            </p>
+          </div>
+          <div class="pkg-grid">
+            <div class="pkg" data-reveal>
+              <div class="count"><b>50</b> tyúk</div>
+              <h3>Iroda Coop</h3>
+              <p class="desc">
+                Belépő céges csomag kisebb irodáknak, ügynökségeknek és vezetői
+                csapatoknak.
+              </p>
+              <ul>
+                <li>céges logó az ólnál</li>
+                <li>saját webcam stream</li>
+                <li>kétheti tojásszállítás</li>
+                <li>dolgozói kódok és kiosztható tyúkok</li>
+                <li>co-branded digitális oldal</li>
+                <li>1 farmlátogatás évente</li>
+              </ul>
+              <p class="note">
+                Nincs egyedi tojásbélyegzés. Fajlagosan prémium belépő csomag.
+              </p>
+              <a
+                class="btn btn-ghost"
+                href="#erdeklodes"
+                style="justify-content: center"
+                >Érdeklődöm</a
               >
-                <rect
-                  x="20"
-                  y="92"
-                  width="180"
-                  height="96"
-                  rx="10"
-                  fill="#7B5836"
-                />
-                <path d="M6 96 L110 30 L214 96 Z" fill="#004D40" />
-                <rect
-                  x="36"
-                  y="120"
-                  width="148"
-                  height="46"
-                  rx="7"
-                  fill="#F4B741"
-                />
-                <rect
-                  x="36"
-                  y="120"
-                  width="148"
-                  height="46"
-                  rx="7"
+            </div>
+            <div class="pkg feature" data-reveal>
+              <span class="flag">A legtöbb cégnek</span>
+              <div class="count"><b>100</b> tyúk</div>
+              <h3>Team Coop</h3>
+              <p class="desc">
+                A fő céges ajánlat HR, employer branding és office egg program
+                célra.
+              </p>
+              <ul>
+                <li>nagyobb logó / részleges ponyva branding</li>
+                <li>webcamen és videós háttérben látható céges megjelenés</li>
+                <li>egyedi tojásbélyegzés</li>
+                <li>dolgozói saját tyúk történetek</li>
+                <li>kétheti tojásnap az irodában</li>
+                <li>csapatlátogatás vagy kisebb farmnap</li>
+                <li>opcionális faültetés add-on</li>
+              </ul>
+              <p class="note">A legtöbb cégnek ajánlott csomag.</p>
+              <a
+                class="btn btn-primary"
+                href="#erdeklodes"
+                style="justify-content: center"
+                >Érdeklődöm</a
+              >
+            </div>
+            <div class="pkg" data-reveal>
+              <div class="count"><b>250</b> tyúk</div>
+              <h3>Signature Coop</h3>
+              <p class="desc">
+                Flagship saját céges tyúkcsapat multiknak és nagy employer
+                branding történetekhez.
+              </p>
+              <ul>
+                <li>teljes céges logózott ponyva</li>
+                <li>saját branded coop vizuális identitás</li>
+                <li>dedikált app / landing élmény</li>
+                <li>útról is látható, fotózható farmjelenlét</li>
+                <li>egyedi tojásbélyegzés</li>
+                <li>nagyobb farmnap és csapatépítés</li>
+                <li>éves CSR / employer branding anyag</li>
+              </ul>
+              <p class="note">A legerősebb kommunikációs platform.</p>
+              <a
+                class="btn btn-ghost"
+                href="#erdeklodes"
+                style="justify-content: center"
+                >Beszéljünk róla</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section exp" id="elmeny">
+        <div class="wrap">
+          <div class="head" data-reveal>
+            <span class="eyebrow">A mindennapi élmény</span>
+            <h2>A program akkor működik, ha az irodában is életre kel.</h2>
+          </div>
+          <div class="exp-grid">
+            <div class="exp-card" data-reveal>
+              <div class="em">
+                <svg
+                  viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#E0991F"
-                  stroke-width="2"
-                />
-                <text
-                  id="tarpBrand"
-                  x="110"
-                  y="149"
-                  text-anchor="middle"
-                  font-family="'Inter',sans-serif"
-                  font-weight="800"
-                  font-size="18"
-                  fill="#00352C"
-                  textLength="130"
-                  lengthAdjust="spacingAndGlyphs"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
                 >
-                  A TI CÉGETEK
-                </text>
-                <rect x="92" y="166" width="36" height="22" fill="#3A2E22" />
-                <circle cx="48" cy="192" r="12" fill="#3A2E22" />
-                <circle cx="172" cy="192" r="12" fill="#3A2E22" />
-              </svg>
-              <div class="cap">A logózott ólatok</div>
+                  <rect x="3" y="4" width="18" height="13" rx="2" />
+                  <path d="M8 21h8" />
+                  <path d="M12 17v4" />
+                  <circle cx="12" cy="10.5" r="2.5" />
+                </svg>
+              </div>
+              <div>
+                <h3>Webcam az ólban</h3>
+                <p>
+                  A saját tyúkcsapat élőben nézhető az irodából. Kivetíthető,
+                  intranetre tehető, és folyamatos bizonyítéka annak, hogy a
+                  program valóban él.
+                </p>
+              </div>
+            </div>
+            <div class="exp-card" data-reveal>
+              <div class="em">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 3c-3.3 0-6 4.5-6 9a6 6 0 0 0 12 0c0-4.5-2.7-9-6-9z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <h3>Kétheti tojásnap</h3>
+                <p>
+                  A tojások 30-as tálcákon érkeznek. A dolgozók saját 10-es
+                  tojástartóval viszik haza az adagjukat, felesleges csomagolás
+                  nélkül.
+                </p>
+              </div>
+            </div>
+            <div class="exp-card" data-reveal>
+              <div class="em">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3.5 3.5h7L20 13a2 2 0 0 1 0 2.8l-4.2 4.2a2 2 0 0 1-2.8 0L3.5 10.5z"
+                  />
+                  <circle cx="7.5" cy="7.5" r="1.4" />
+                </svg>
+              </div>
+              <div>
+                <h3>Logózott ólmegjelenés</h3>
+                <p>
+                  A céges logó nem egy sarokba tett matrica. Látszik az útról, a
+                  live webcamen, a farmnap fotóin és a Remény Farm videók
+                  hátterében is.
+                </p>
+              </div>
+            </div>
+            <div class="exp-card" data-reveal>
+              <div class="em">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="6.5" y="3" width="11" height="18" rx="2.5" />
+                  <path d="M10.5 18h3" />
+                </svg>
+              </div>
+              <div>
+                <h3>Dolgozói kódok</h3>
+                <p>
+                  A tyúkok kioszthatók a dolgozók között. A saját kóddal
+                  beváltható tyúknál látszik a fotó, az aktivitás és a történet
+                  — így Margit nem “egy tyúk”, hanem a családi reggeli sztorija.
+                </p>
+              </div>
+            </div>
+            <div class="exp-card" data-reveal>
+              <div class="em">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M9 3.5h6a1 1 0 0 1 1 1v2.8l1.2 3.3a1.4 1.4 0 0 1-1.3 1.9H8.1a1.4 1.4 0 0 1-1.3-1.9L8 7.3V4.5a1 1 0 0 1 1-1z"
+                  />
+                  <rect x="4.5" y="15.5" width="15" height="2.6" rx="1.1" />
+                  <path d="M5 21h14" />
+                </svg>
+              </div>
+              <div>
+                <h3>Egyedi tojásbélyegzés</h3>
+                <p>
+                  A Team és a Signature csomagban a cég pecsétje minden tojáson
+                  ott van — a konyhában minden reggel apró márkapillanat.
+                </p>
+              </div>
+            </div>
+            <div class="exp-card" data-reveal>
+              <div class="em">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="9" r="6" />
+                  <path d="M12 15v6" />
+                  <path d="M9 21h6" />
+                </svg>
+              </div>
+              <div>
+                <h3>Követhető tájregeneráció</h3>
+                <p>
+                  A Liget, a faültetés és a legeltetés nem egyszeri PR-pillanat.
+                  Évről évre látható, hogyan változik a táj, amiben a céges
+                  tyúkcsapat is dolgozik.
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- PACKAGES -->
-    <section class="section" id="csomagok">
-      <div class="wrap">
-        <div class="head" data-reveal>
-          <span class="eyebrow">Csomagok</span>
-          <h2>Három céges coop, eltérő méretre és kommunikációs ambícióra.</h2>
-          <p class="lead">
-            Minden csomag 12 hónapos kapacitáslekötéssel működik, céges logóval,
-            saját webcam streammel és kétheti tojásszállítással. A helyek
-            farmkapacitáshoz kötöttek, nem korlátlanul elérhetők.
-          </p>
+      <!-- COOP UPGRADES -->
+      <section class="section upgrade" id="fejlesztesek">
+        <div class="wrap upgrade-grid">
+          <div class="upgrade-panel" data-reveal>
+            <span class="eyebrow">Saját coop fejlesztések</span>
+            <h2>Legyen a tyúkól tényleg a cégeteké.</h2>
+            <p class="lead">
+              Jobb ólat szeretnétek? Saját brandes etetőt, napelemes ajtónyitót,
+              extra árnyékolást, vicces táblákat vagy belső csapatos ötletet?
+              Küldjétek el, és megtervezzük, hogyan fér bele a farm működésébe.
+            </p>
+            <p class="upgrade-cta">
+              Még jobb: gyertek ki csapatépítőre, és építsétek be ti a
+              fejlesztést bográcsozás és sörözés mellett.
+            </p>
+          </div>
+          <div class="upgrade-list">
+            <div class="upgrade-item" data-reveal>
+              <h3>Brandelt etető, itató vagy ólelem</h3>
+              <p>
+                Apró, fotózható részletek, amik a webcamen, a belső
+                kommunikációban és a farmnapon is saját történetté teszik a
+                coopot.
+              </p>
+            </div>
+            <div class="upgrade-item" data-reveal>
+              <h3>Okosabb, kényelmesebb ól</h3>
+              <p>
+                Napelemes ajtónyitó, jobb árnyékolás, extra ülőrúd, időjárásálló
+                megoldások. Amitől az állatoknak jobb, az a sztorinak is jobb.
+              </p>
+            </div>
+            <div class="upgrade-item" data-reveal>
+              <h3>Csapatépítő, ahol tényleg marad valami</h3>
+              <p>
+                Nem csak végighallgatjátok, hogy fenntarthatóság. Kijöttök,
+                megfogjátok a szerszámot, beépítitek a saját fejlesztéseteket,
+                aztán ott marad a farmon egész évben.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="pkg-grid">
-          <div class="pkg" data-reveal>
-            <div class="count"><b>50</b> tyúk</div>
-            <h3>Iroda Coop</h3>
-            <p class="desc">
-              Belépő céges csomag kisebb irodáknak, ügynökségeknek és vezetői
-              csapatoknak.
+      </section>
+
+      <!-- CONSTRUCTORS CHAMPIONSHIP -->
+      <section class="section championship" id="konstruktorok">
+        <div class="wrap champ-grid">
+          <div class="head" data-reveal>
+            <span class="eyebrow">Konstruktőrök Bajnoksága</span>
+            <h2>Építsetek jobb coopot, ne csak béreljetek tyúkokat.</h2>
+            <p class="lead">
+              A Céges Tyúkcsapat Programhoz opcionálisan csatlakozhattok egy
+              játékos, de nagyon is valós versenyhez is. Cégek és belső csapatok
+              azon dolgoznak, ki építi a legkomfortosabb, legaktívabb, legjobban
+              működő céges tyúkólat.
             </p>
-            <ul>
-              <li>céges logó az ólnál</li>
-              <li>saját webcam stream</li>
-              <li>kétheti tojásszállítás</li>
-              <li>dolgozói kódok</li>
-              <li>co-branded digitális oldal</li>
-              <li>1 farmlátogatás évente</li>
-            </ul>
-            <p class="note">
-              Nincs egyedi tojásbélyegzés. Fajlagosan prémium belépő csomag.
+            <p class="lead">
+              Nem az a cél, hogy a tyúkokat túlhajtsuk. Pont fordítva: azt
+              mérjük, ki tud jobb környezetet, okosabb ólat és egészségesebb,
+              aktívabb tyúkcsapatot építeni.
             </p>
-            <a
-              class="btn btn-ghost"
-              href="#erdeklodes"
-              style="justify-content: center"
-              >Érdeklődöm</a
+            <a class="btn btn-forest" href="#erdeklodes"
+              >Belépünk a bajnokságba is</a
             >
           </div>
-          <div class="pkg feature" data-reveal>
-            <span class="flag">A legtöbb cégnek</span>
-            <div class="count"><b>100</b> tyúk</div>
-            <h3>Team Coop</h3>
-            <p class="desc">
-              A fő céges ajánlat HR, employer branding és office egg program
-              célra.
-            </p>
-            <ul>
-              <li>nagyobb logó / részleges ponyva branding</li>
-              <li>webcamen látható céges megjelenés</li>
-              <li>egyedi tojásbélyegzés</li>
-              <li>kétheti tojásnap az irodában</li>
-              <li>csapatlátogatás vagy kisebb farmnap</li>
-              <li>opcionális faültetés add-on</li>
+          <div class="champ-score" data-reveal>
+            <h3>A pontszám nem csak tojásszám.</h3>
+            <ul class="score-list">
+              <li>relatív tojáshozam, állatjóléti szorzóval</li>
+              <li>tyúkaktivitás és napi mozgás</li>
+              <li>komfortfejlesztések: árnyék, porfürdő, ülőrúd, okos ajtó</li>
+              <li>farm által jóváhagyott takarmányozási finomhangolások</li>
+              <li>
+                dolgozói engagement: saját tyúkok, webcam, belső aktivitás
+              </li>
+              <li>
+                legjobb coop-fejlesztés, legjobb történet, legjobb csapatépítő
+                pillanat
+              </li>
             </ul>
-            <p class="note">A legtöbb cégnek ajánlott csomag.</p>
-            <a
-              class="btn btn-primary"
-              href="#erdeklodes"
-              style="justify-content: center"
-              >Érdeklődöm</a
-            >
-          </div>
-          <div class="pkg" data-reveal>
-            <div class="count"><b>250</b> tyúk</div>
-            <h3>Signature Coop</h3>
-            <p class="desc">
-              Flagship saját céges tyúkcsapat multiknak és nagy employer
-              branding történetekhez.
+            <p class="champ-note">
+              A leaderboard opt-in: ha szeretnétek, nyilvánosan versenyeztek. Ha
+              nem, a pontszámok privát dashboardban maradnak.
             </p>
-            <ul>
-              <li>teljes céges logózott ponyva</li>
-              <li>saját branded coop vizuális identitás</li>
-              <li>dedikált app / landing élmény</li>
-              <li>egyedi tojásbélyegzés</li>
-              <li>nagyobb farmnap és csapatépítés</li>
-              <li>éves CSR / employer branding anyag</li>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEDIA / CONTENT -->
+      <section class="section media" id="media">
+        <div class="wrap">
+          <div class="head" data-reveal>
+            <span class="eyebrow">Tartalomgyártás</span>
+            <h2>A Remény Farm nemcsak farm. Saját médiafelület is.</h2>
+            <p class="lead">
+              A céges tyúkcsapat mellé külön tartalomgyártási csomag kérhető,
+              ahol a programból valódi employer branding kampány készül.
+            </p>
+          </div>
+          <div data-reveal>
+            <p class="media-sub">
+              Nem pár extra poszt. Gyártás, arcok, reach és jóváhagyási kör.
+            </p>
+            <p class="lead" style="max-width: 64ch">
+              A Remény Farm rövid videói rendszeresen több százezres, gyakran
+              milliós elérést hoznak. A videós megjelenés külön média- és
+              kreatív komponens: forgatási nappal, stábidővel, vágással és brand
+              safety folyamattal.
+            </p>
+            <ul class="bullets">
+              <li>
+                <b>Tájba épített reklámérték:</b> a céges coop látszik az útról,
+                a webcamen, a farmnapokon, a videók hátterében és a farmra
+                érkező látogatók előtt is.
+              </li>
+              <li>
+                <b>Coop Launch Content:</b> 1 forgatási nap, 1 fő short, 2–3
+                vágat.
+              </li>
+              <li>
+                <b>Employer Branding Story Pack:</b> tojásnap, farm és dolgozói
+                felhasználásra kész anyagok.
+              </li>
+              <li>
+                <b>Signature Media Campaign:</b> éves mini sorozat a cég saját
+                tyúkcsapatáról.
+              </li>
+              <li>
+                View-t nem garantálunk. Gyártást, darabszámot és historikus
+                elérési nagyságrendet kommunikálunk.
+              </li>
             </ul>
-            <p class="note">A legerősebb kommunikációs platform.</p>
-            <a
-              class="btn btn-ghost"
-              href="#erdeklodes"
-              style="justify-content: center"
-              >Beszéljünk róla</a
-            >
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section exp" id="elmeny">
-      <div class="wrap">
-        <div class="head" data-reveal>
-          <span class="eyebrow">A mindennapi élmény</span>
-          <h2>A program akkor működik, ha az irodában is életre kel.</h2>
-        </div>
-        <div class="exp-grid">
-          <div class="exp-card" data-reveal>
-            <div class="em">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="3" y="4" width="18" height="13" rx="2" />
-                <path d="M8 21h8" />
-                <path d="M12 17v4" />
-                <circle cx="12" cy="10.5" r="2.5" />
-              </svg>
-            </div>
-            <div>
-              <h3>Webcam az ólban</h3>
+      <!-- HOW -->
+      <section class="section" style="background: var(--paper-2)">
+        <div class="wrap">
+          <div class="head" data-reveal>
+            <span class="eyebrow">Hogyan indul?</span>
+            <h2>
+              A céges coop nem kampánytrükk, hanem lekötött farmkapacitás.
+            </h2>
+          </div>
+          <div class="steps">
+            <div class="step" data-reveal>
+              <div class="n">01</div>
+              <h3>Csomagot választunk</h3>
               <p>
-                A saját tyúkcsapat élőben nézhető az irodából. Kivetíthető,
-                intranetre tehető, és folyamatos bizonyítéka annak, hogy a
-                program valóban él.
+                Megnézzük a cég méretét, tojáslogisztikáját és kommunikációs
+                ambícióját.
               </p>
             </div>
-          </div>
-          <div class="exp-card" data-reveal>
-            <div class="em">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M12 3c-3.3 0-6 4.5-6 9a6 6 0 0 0 12 0c0-4.5-2.7-9-6-9z" />
-              </svg>
-            </div>
-            <div>
-              <h3>Kétheti tojásnap</h3>
+            <div class="step" data-reveal>
+              <div class="n">02</div>
+              <h3>Brandinget gyártunk</h3>
               <p>
-                A tojások 30-as tálcákon érkeznek. A dolgozók saját 10-es
-                tojástartóval viszik haza az adagjukat, felesleges csomagolás
-                nélkül.
+                Ólmegjelölés, ponyva, digitális oldal, dolgozói kódok és
+                opcionális tojásbélyegzés.
               </p>
             </div>
-          </div>
-          <div class="exp-card" data-reveal>
-            <div class="em">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M3.5 3.5h7L20 13a2 2 0 0 1 0 2.8l-4.2 4.2a2 2 0 0 1-2.8 0L3.5 10.5z"
-                />
-                <circle cx="7.5" cy="7.5" r="1.4" />
-              </svg>
-            </div>
-            <div>
-              <h3>Logózott ólmegjelenés</h3>
+            <div class="step" data-reveal>
+              <div class="n">03</div>
+              <h3>Elindul a tojásnap</h3>
               <p>
-                Minden csomagban van céges logókihelyezés. A nagyobb csomagokban
-                egyre látványosabb, webcamen és tartalmakban is erős brand
-                felülettel.
+                Kéthetente érkeznek a 30-as tálcák, a dolgozók saját tartóval
+                viszik haza.
               </p>
             </div>
-          </div>
-          <div class="exp-card" data-reveal>
-            <div class="em">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <rect x="6.5" y="3" width="11" height="18" rx="2.5" />
-                <path d="M10.5 18h3" />
-              </svg>
-            </div>
-            <div>
-              <h3>Dolgozói kódok</h3>
+            <div class="step" data-reveal>
+              <div class="n">04</div>
+              <h3>Történet készül</h3>
               <p>
-                Minden munkatárs saját kóddal lép be a fiókba, és követheti a
-                céges tyúkcsapat történetét. Webfiók most — iPhone- és
-                Android-app hamarosan.
-              </p>
-            </div>
-          </div>
-          <div class="exp-card" data-reveal>
-            <div class="em">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M9 3.5h6a1 1 0 0 1 1 1v2.8l1.2 3.3a1.4 1.4 0 0 1-1.3 1.9H8.1a1.4 1.4 0 0 1-1.3-1.9L8 7.3V4.5a1 1 0 0 1 1-1z"
-                />
-                <rect x="4.5" y="15.5" width="15" height="2.6" rx="1.1" />
-                <path d="M5 21h14" />
-              </svg>
-            </div>
-            <div>
-              <h3>Egyedi tojásbélyegzés</h3>
-              <p>
-                A Team és a Signature csomagban a cég pecsétje minden tojáson
-                ott van — a konyhában minden reggel apró márkapillanat.
-              </p>
-            </div>
-          </div>
-          <div class="exp-card" data-reveal>
-            <div class="em">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.75"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="9" r="6" />
-                <path d="M12 15v6" />
-                <path d="M9 21h6" />
-              </svg>
-            </div>
-            <div>
-              <h3>Farmnap és faültetés</h3>
-              <p>
-                A Liget és a faültetés kiegészítő élményként kapcsolódhat:
-                dolgozói látogatás, ólépítés, faültetés és valódi csapatépítés.
+                Webcam, fotók, belső kommunikáció és opcionális Remény Farm
+                médiakampány.
               </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- COOP UPGRADES -->
-    <section class="section upgrade" id="fejlesztesek">
-      <div class="wrap upgrade-grid">
-        <div class="upgrade-panel" data-reveal>
-          <span class="eyebrow">Saját coop fejlesztések</span>
-          <h2>Legyen a tyúkól tényleg a cégeteké.</h2>
-          <p class="lead">
-            Jobb ólat szeretnétek? Saját brandes etetőt, napelemes ajtónyitót,
-            extra árnyékolást, vicces táblákat vagy belső csapatos ötletet?
-            Küldjétek el, és megtervezzük, hogyan fér bele a farm működésébe.
-          </p>
-          <p class="upgrade-cta">
-            Még jobb: gyertek ki csapatépítőre, és építsétek be ti a fejlesztést
-            bográcsozás és sörözés mellett.
-          </p>
-        </div>
-        <div class="upgrade-list">
-          <div class="upgrade-item" data-reveal>
-            <h3>Brandelt etető, itató vagy ólelem</h3>
-            <p>
-              Apró, fotózható részletek, amik a webcamen, a belső
-              kommunikációban és a farmnapon is saját történetté teszik a
-              coopot.
+      <!-- PROMISE (merged in) -->
+      <section class="section">
+        <div class="wrap">
+          <div class="head center" data-reveal>
+            <span class="eyebrow">Bizalom</span>
+            <h2>Mit ígérünk — és mit nem?</h2>
+            <p class="lead" style="margin: 0 auto">
+              Élő állatokkal és valódi médiagyártással dolgozunk. Inkább mondjuk
+              meg őszintén, mire számíthattok.
             </p>
           </div>
-          <div class="upgrade-item" data-reveal>
-            <h3>Okosabb, kényelmesebb ól</h3>
-            <p>
-              Napelemes ajtónyitó, jobb árnyékolás, extra ülőrúd, időjárásálló
-              megoldások. Amitől az állatoknak jobb, az a sztorinak is jobb.
-            </p>
-          </div>
-          <div class="upgrade-item" data-reveal>
-            <h3>Csapatépítő, ahol tényleg marad valami</h3>
-            <p>
-              Nem csak végighallgatjátok, hogy fenntarthatóság. Kijöttök,
-              megfogjátok a szerszámot, beépítitek a saját fejlesztéseteket,
-              aztán ott marad a farmon egész évben.
-            </p>
+          <div class="promise-grid">
+            <div class="promise yes" data-reveal>
+              <h3>Amit ígérünk</h3>
+              <ul>
+                <li>
+                  Lekötött tyúkcsapat, logózott ól és élő webcam a saját
+                  coopotokról
+                </li>
+                <li>
+                  Kéthetenkénti tojásnap, 30-as tálcákon, megbízható ritmusban
+                </li>
+                <li>
+                  Egyedi tojásbélyegzés és branded megjelenés (csomag szerint)
+                </li>
+                <li>
+                  Profi tartalomgyártás forgatással, vágással és brand safety
+                  körrel
+                </li>
+                <li>Őszinte kommunikáció arról, mi él már és mi kiegészítő</li>
+              </ul>
+            </div>
+            <div class="promise no" data-reveal>
+              <h3>Amit nem ígérünk</h3>
+              <ul>
+                <li>
+                  Nem garantált videós elérés — gyártást és historikus
+                  nagyságrendet közlünk
+                </li>
+                <li>Nem fix tojásdarabszám: élő állat, nem gép</li>
+                <li>
+                  Az iPhone-app még készül: a dolgozói webfiók indul először
+                </li>
+                <li>
+                  Nem korlátlanul bejárható látogatás (állatjólét,
+                  járványvédelem)
+                </li>
+                <li>Nem zöldre festett logó egy meglévő működésre</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- MEDIA / CONTENT -->
-    <section class="section media" id="media">
-      <div class="wrap">
-        <div class="head" data-reveal>
-          <span class="eyebrow">Tartalomgyártás</span>
-          <h2>A Remény Farm nemcsak farm. Saját médiafelület is.</h2>
-          <p class="lead">
-            A céges tyúkcsapat mellé külön tartalomgyártási csomag kérhető, ahol
-            a programból valódi employer branding kampány készül.
-          </p>
-        </div>
-        <div data-reveal>
-          <p class="media-sub">
-            Nem pár extra poszt. Gyártás, arcok, reach és jóváhagyási kör.
-          </p>
-          <p class="lead" style="max-width: 64ch">
-            A Remény Farm rövid videói rendszeresen több százezres, gyakran
-            milliós elérést hoznak. A videós megjelenés külön média- és kreatív
-            komponens: forgatási nappal, stábidővel, vágással és brand safety
-            folyamattal.
-          </p>
-          <ul class="bullets">
+      <!-- COMMITMENT -->
+      <section class="section commit" id="szerzodes">
+        <div class="wrap">
+          <div class="head" data-reveal>
+            <span class="eyebrow">12 hónap</span>
+            <h2>Éves céges partnerség, nem havi dobozelőfizetés.</h2>
+            <p class="lead">
+              Élő állatokkal dolgozunk, ezért a Céges Tyúkcsapat Program 12
+              hónapos kapacitáslekötéssel indul. A csomaghoz tyúkállományt,
+              brandinget, szállítási ritmust és tartalomgyártási kapacitást
+              foglalunk.
+            </p>
+          </div>
+          <ul class="bullets" data-reveal>
+            <li>Minimum időtartam: 12 hónap.</li>
+            <li>Korai lezárás esetén kapacitáslezárási díj érvényes.</li>
             <li>
-              <b>Coop Launch Content:</b> 1 forgatási nap, 1 fő short, 2–3
-              vágat.
-            </li>
-            <li>
-              <b>Employer Branding Story Pack:</b> tojásnap, farm és dolgozói
-              felhasználásra kész anyagok.
-            </li>
-            <li>
-              <b>Signature Media Campaign:</b> éves mini sorozat a cég saját
-              tyúkcsapatáról.
-            </li>
-            <li>
-              View-t nem garantálunk. Gyártást, darabszámot és historikus
-              elérési nagyságrendet kommunikálunk.
+              Az egyedi gyártási elemek — ponyva, bélyegző, címke, kreatív anyag
+              — külön kapacitást kötnek le.
             </li>
           </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- HOW -->
-    <section class="section" style="background: var(--paper-2)">
-      <div class="wrap">
-        <div class="head" data-reveal>
-          <span class="eyebrow">Hogyan indul?</span>
-          <h2>A céges coop nem kampánytrükk, hanem lekötött farmkapacitás.</h2>
+      <!-- FAQ (merged in) -->
+      <section class="section" style="background: var(--paper-2)">
+        <div class="wrap">
+          <div class="head center" data-reveal>
+            <span class="eyebrow">Céges kérdések</span>
+            <h2>Gyakran ismételt kérdések</h2>
+          </div>
+          <div class="faq-list">
+            <details class="faq" data-reveal>
+              <summary>Hova szállítotok, és milyen gyakran?</summary>
+              <div class="a">
+                A tojás kéthetente érkezik, 30-as tálcákon, közvetlenül az
+                irodátokba; a dolgozók saját 10-es tartóval viszik haza az
+                adagjukat. A pontos szállítási kört és ritmust az
+                ajánlatkérésnél egyeztetjük a telephelyetek alapján.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>Mennyibe kerül egy csomag?</summary>
+              <div class="a">
+                Az ár a választott coop méretétől (50 / 100 / 250 tyúk), a
+                branding- és tartalomgyártási elemektől és a szállítási körtől
+                függ, ezért egyedi ajánlatot adunk. Írjátok meg a kereteket az
+                érdeklődésben, és testreszabott ajánlattal jelentkezünk.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>Melyik csomag illik hozzánk?</summary>
+              <div class="a">
+                Kisebb irodának és vezetői csapatnak az Iroda Coop (50), a
+                legtöbb HR/employer branding célra a Team Coop (100, egyedi
+                tojásbélyegzéssel), nagy márkatörténethez és multiknak a
+                Signature Coop (250, teljes branded identitással). Az
+                érdeklődésnél segítünk választani.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>Tényleg minden tojáson rajta lehet a logónk?</summary>
+              <div class="a">
+                Igen, az egyedi tojásbélyegzés a Team és a Signature csomag
+                része. A bélyegző arculatát közösen véglegesítjük, mielőtt
+                élesedik. A tojás a saját, lekötött céges tyúkcsapatotokból
+                érkezik.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>Mit kapunk az ESG-jelentésünkbe?</summary>
+              <div class="a">
+                Dokumentált, valódi tartalmat: bio farmélmény, a Ligetben
+                telepített fák, a coopotokról készült fotó/videó és évről évre
+                követhető tájregeneráció. Fontos: ez dokumentált terepi munka és
+                tartalom, nem garantált karbonsemlegesítés és nem zöldre festett
+                logó.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>Hogyan működik a tartalomgyártás?</summary>
+              <div class="a">
+                Külön média-komponens: forgatási nappal, stábidővel, vágással és
+                brand safety jóváhagyási körrel. A Remény Farm rövid videói
+                rendszeresen több százezres, gyakran milliós elérést hoznak — de
+                view-t nem garantálunk, gyártást, darabszámot és historikus
+                elérési nagyságrendet kommunikálunk.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>Ez tojástermelési verseny?</summary>
+              <div class="a">
+                Nem. A nyers tojásszám önmagában nem cél. A Konstruktőrök
+                Bajnokságában a relatív tojáshozam csak állatjóléti és
+                aktivitási mutatókkal együtt számít. A cél a jobb coop, nem a
+                túlhajtott tyúk.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>
+                Mi döntjük el, mit változtatunk az ólon vagy a takarmányozáson?
+              </summary>
+              <div class="a">
+                Ötletelhettek, de minden változtatást a Remény Farm hagy jóvá.
+                Élő állatokkal dolgozunk, ezért csak olyan fejlesztés kerülhet
+                be, ami a tyúkoknak is jó.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>Kötelező nyilvánosan szerepelni a toplistán?</summary>
+              <div class="a">
+                Nem. A leaderboard opt-in. Ha szeretnétek, nyilvánosan
+                versenyeztek. Ha nem, a pontszámok és riportok privát
+                dashboardban maradnak.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>Bizalmasan kezelitek a cégünk adatait és terveit?</summary>
+              <div class="a">
+                Igen. A megadott cégadatokat, HR- és employer branding célokat,
+                valamint az üzeneteket csak az ajánlatkérés feldolgozásához,
+                egyeztetéshez és szerződés-előkészítéshez használjuk. Nyilvános
+                kommunikáció, logóhasználat vagy esettanulmány csak külön
+                jóváhagyás után történik.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>Kész már a dolgozói app?</summary>
+              <div class="a">
+                A dolgozói belépés most webfiókkal indul: minden munkatárs saját
+                kóddal válthatja be a hozzá kiosztott tyúkot. A tyúknál látszik
+                a fotó, az aktivitás és a történet, így a program nem csak céges
+                dashboard, hanem hazavihető családi sztori is. Az iPhone- és
+                Android-app későbbi, külön jelzett bővítés.
+              </div>
+            </details>
+            <details class="faq" data-reveal>
+              <summary>Miért 12 hónap, és lemondható-e?</summary>
+              <div class="a">
+                Élő állatokkal dolgozunk, ezért a program 12 hónapos
+                kapacitáslekötéssel indul — tyúkállományt, brandinget,
+                szállítási ritmust és gyártási kapacitást foglalunk le. Korai
+                lezárás esetén kapacitáslezárási díj érvényes; a részleteket a
+                szerződésben rögzítjük.
+              </div>
+            </details>
+          </div>
         </div>
-        <div class="steps">
-          <div class="step" data-reveal>
-            <div class="n">01</div>
-            <h3>Csomagot választunk</h3>
-            <p>
-              Megnézzük a cég méretét, tojáslogisztikáját és kommunikációs
-              ambícióját.
+      </section>
+
+      <!-- LEAD FORM -->
+      <section class="section lead-sec" id="erdeklodes">
+        <div class="wrap lead-grid">
+          <div class="lead-intro" data-reveal>
+            <span class="eyebrow">Céges érdeklődés</span>
+            <h2>Jelentkezzetek az első partnerkörbe.</h2>
+            <p class="lead">
+              Írd meg, mekkora a csapat, milyen gyakran jártok irodába, és
+              employer branding vagy dolgozói juttatás felől közelítenétek-e.
+              Megnézzük, van-e hozzá farmkapacitás, és a többit kitaláljuk
+              együtt.
+            </p>
+            <p class="small">
+              Az érdeklődés MailerLite-ba kerül, és csak ajánlat-előkészítésre,
+              kapcsolatfelvételre használjuk. Külön marketinget külön
+              hozzájárulás nélkül nem küldünk.
             </p>
           </div>
-          <div class="step" data-reveal>
-            <div class="n">02</div>
-            <h3>Brandinget gyártunk</h3>
-            <p>
-              Ólmegjelölés, ponyva, digitális oldal, dolgozói kódok és
-              opcionális tojásbélyegzés.
-            </p>
-          </div>
-          <div class="step" data-reveal>
-            <div class="n">03</div>
-            <h3>Elindul a tojásnap</h3>
-            <p>
-              Kéthetente érkeznek a 30-as tálcák, a dolgozók saját tartóval
-              viszik haza.
-            </p>
-          </div>
-          <div class="step" data-reveal>
-            <div class="n">04</div>
-            <h3>Történet készül</h3>
-            <p>
-              Webcam, fotók, belső kommunikáció és opcionális Remény Farm
-              médiakampány.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROMISE (merged in) -->
-    <section class="section">
-      <div class="wrap">
-        <div class="head center" data-reveal>
-          <span class="eyebrow">Bizalom</span>
-          <h2>Mit ígérünk — és mit nem?</h2>
-          <p class="lead" style="margin: 0 auto">
-            Élő állatokkal és valódi médiagyártással dolgozunk. Inkább mondjuk
-            meg őszintén, mire számíthattok.
-          </p>
-        </div>
-        <div class="promise-grid">
-          <div class="promise yes" data-reveal>
-            <h3>Amit ígérünk</h3>
-            <ul>
-              <li>
-                Lekötött tyúkcsapat, logózott ól és élő webcam a saját
-                coopotokról
-              </li>
-              <li>
-                Kéthetenkénti tojásnap, 30-as tálcákon, megbízható ritmusban
-              </li>
-              <li>
-                Egyedi tojásbélyegzés és branded megjelenés (csomag szerint)
-              </li>
-              <li>
-                Profi tartalomgyártás forgatással, vágással és brand safety
-                körrel
-              </li>
-              <li>Őszinte kommunikáció arról, mi él már és mi kiegészítő</li>
-            </ul>
-          </div>
-          <div class="promise no" data-reveal>
-            <h3>Amit nem ígérünk</h3>
-            <ul>
-              <li>
-                Nem garantált videós elérés — gyártást és historikus
-                nagyságrendet közlünk
-              </li>
-              <li>Nem fix tojásdarabszám: élő állat, nem gép</li>
-              <li>
-                Az iPhone-app még készül: a dolgozói webfiók indul először
-              </li>
-              <li>
-                Nem korlátlanul bejárható látogatás (állatjólét, járványvédelem)
-              </li>
-              <li>Nem zöldre festett logó egy meglévő működésre</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COMMITMENT -->
-    <section class="section commit" id="szerzodes">
-      <div class="wrap">
-        <div class="head" data-reveal>
-          <span class="eyebrow">12 hónap</span>
-          <h2>Éves céges partnerség, nem havi dobozelőfizetés.</h2>
-          <p class="lead">
-            Élő állatokkal dolgozunk, ezért a Céges Tyúkcsapat Program 12
-            hónapos kapacitáslekötéssel indul. A csomaghoz tyúkállományt,
-            brandinget, szállítási ritmust és tartalomgyártási kapacitást
-            foglalunk.
-          </p>
-        </div>
-        <ul class="bullets" data-reveal>
-          <li>Minimum időtartam: 12 hónap.</li>
-          <li>Korai lezárás esetén kapacitáslezárási díj érvényes.</li>
-          <li>
-            Az egyedi gyártási elemek — ponyva, bélyegző, címke, kreatív anyag —
-            külön kapacitást kötnek le.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- FAQ (merged in) -->
-    <section class="section" style="background: var(--paper-2)">
-      <div class="wrap">
-        <div class="head center" data-reveal>
-          <span class="eyebrow">Céges kérdések</span>
-          <h2>Gyakran ismételt kérdések</h2>
-        </div>
-        <div class="faq-list">
-          <details class="faq" data-reveal>
-            <summary>Hova szállítotok, és milyen gyakran?</summary>
-            <div class="a">
-              A tojás kéthetente érkezik, 30-as tálcákon, közvetlenül az
-              irodátokba; a dolgozók saját 10-es tartóval viszik haza az
-              adagjukat. A pontos szállítási kört és ritmust az ajánlatkérésnél
-              egyeztetjük a telephelyetek alapján.
-            </div>
-          </details>
-          <details class="faq" data-reveal>
-            <summary>Mennyibe kerül egy csomag?</summary>
-            <div class="a">
-              Az ár a választott coop méretétől (50 / 100 / 250 tyúk), a
-              branding- és tartalomgyártási elemektől és a szállítási körtől
-              függ, ezért egyedi ajánlatot adunk. Írjátok meg a kereteket az
-              érdeklődésben, és testreszabott ajánlattal jelentkezünk.
-            </div>
-          </details>
-          <details class="faq" data-reveal>
-            <summary>Melyik csomag illik hozzánk?</summary>
-            <div class="a">
-              Kisebb irodának és vezetői csapatnak az Iroda Coop (50), a legtöbb
-              HR/employer branding célra a Team Coop (100, egyedi
-              tojásbélyegzéssel), nagy márkatörténethez és multiknak a Signature
-              Coop (250, teljes branded identitással). Az érdeklődésnél segítünk
-              választani.
-            </div>
-          </details>
-          <details class="faq" data-reveal>
-            <summary>Tényleg minden tojáson rajta lehet a logónk?</summary>
-            <div class="a">
-              Igen, az egyedi tojásbélyegzés a Team és a Signature csomag része.
-              A bélyegző arculatát közösen véglegesítjük, mielőtt élesedik. A
-              tojás a saját, lekötött céges tyúkcsapatotokból érkezik.
-            </div>
-          </details>
-          <details class="faq" data-reveal>
-            <summary>Mit kapunk az ESG-jelentésünkbe?</summary>
-            <div class="a">
-              Dokumentált, valódi tartalmat: bio farmélmény, a Ligetben
-              telepített fák, a coopotokról készült fotó/videó és — igény esetén
-              — éves CSR / employer branding anyag. Fontos: ez dokumentált
-              terepi munka és tartalom, nem garantált karbonsemlegesítés és nem
-              zöldre festett logó.
-            </div>
-          </details>
-          <details class="faq" data-reveal>
-            <summary>Hogyan működik a tartalomgyártás?</summary>
-            <div class="a">
-              Külön média-komponens: forgatási nappal, stábidővel, vágással és
-              brand safety jóváhagyási körrel. A Remény Farm rövid videói
-              rendszeresen több százezres, gyakran milliós elérést hoznak — de
-              view-t nem garantálunk, gyártást, darabszámot és historikus
-              elérési nagyságrendet kommunikálunk.
-            </div>
-          </details>
-          <details class="faq" data-reveal>
-            <summary>Bizalmasan kezelitek a cégünk adatait és terveit?</summary>
-            <div class="a">
-              Igen. A megadott cégadatokat, HR- és employer branding célokat,
-              valamint az üzeneteket csak az ajánlatkérés feldolgozásához,
-              egyeztetéshez és szerződés-előkészítéshez használjuk. Nyilvános
-              kommunikáció, logóhasználat vagy esettanulmány csak külön
-              jóváhagyás után történik.
-            </div>
-          </details>
-          <details class="faq" data-reveal>
-            <summary>Kész már a dolgozói app?</summary>
-            <div class="a">
-              A dolgozói belépés most a webfiókkal indul: minden munkatárs saját
-              kóddal lép be, és követheti a céges tyúkcsapatot. Az iPhone- és
-              Android-app, valamint a részletes farmadatok későbbi, külön
-              jelzett bővítések. Nem ígérünk olyat, ami még nem él.
-            </div>
-          </details>
-          <details class="faq" data-reveal>
-            <summary>Miért 12 hónap, és lemondható-e?</summary>
-            <div class="a">
-              Élő állatokkal dolgozunk, ezért a program 12 hónapos
-              kapacitáslekötéssel indul — tyúkállományt, brandinget, szállítási
-              ritmust és gyártási kapacitást foglalunk le. Korai lezárás esetén
-              kapacitáslezárási díj érvényes; a részleteket a szerződésben
-              rögzítjük.
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- LEAD FORM -->
-    <section class="section lead-sec" id="erdeklodes">
-      <div class="wrap lead-grid">
-        <div class="lead-intro" data-reveal>
-          <span class="eyebrow">Céges érdeklődés</span>
-          <h2>Jelentkezzetek az első partnerkörbe.</h2>
-          <p class="lead">
-            Írd meg, mekkora a csapat, milyen gyakran jártok irodába, és
-            employer branding vagy dolgozói juttatás felől közelítenétek-e.
-            Megnézzük, van-e hozzá farmkapacitás, és a többit kitaláljuk együtt.
-          </p>
-          <p class="small">
-            Az érdeklődés MailerLite-ba kerül, és csak ajánlat-előkészítésre,
-            kapcsolatfelvételre használjuk. Külön marketinget külön hozzájárulás
-            nélkül nem küldünk.
-          </p>
-        </div>
-        <form class="form-card" id="leadForm" data-reveal novalidate>
-          <div class="field">
-            <label for="f-company"
-              >Cég neve <span class="req" aria-hidden="true">*</span></label
-            >
-            <input
-              id="f-company"
-              type="text"
-              required
-              autocomplete="organization"
-              placeholder="Példa Kft."
-              required
-            />
-          </div>
-          <div class="field-row">
+          <form class="form-card" id="leadForm" data-reveal novalidate>
             <div class="field">
-              <label for="f-size">Dolgozói létszám</label>
-              <input
-                id="f-size"
-                type="text"
-                inputmode="numeric"
-                placeholder="pl. 45 fő"
-              />
-            </div>
-            <div class="field">
-              <label for="f-loc">Iroda helyszíne</label>
-              <input
-                id="f-loc"
-                type="text"
-                placeholder="pl. Budapest, IX. ker."
-              />
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-pkg">Érdeklődő csomag</label>
-            <select id="f-pkg">
-              <option value="">Válasszatok…</option>
-              <option>Iroda Coop (50 tyúk)</option>
-              <option>Team Coop (100 tyúk)</option>
-              <option>Signature Coop (250 tyúk)</option>
-              <option>Még nem tudom — segítsetek választani</option>
-            </select>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-name"
-                >Kapcsolattartó <span class="req" aria-hidden="true">*</span></label
+              <label for="f-company"
+                >Cég neve <span class="req" aria-hidden="true">*</span></label
               >
               <input
-                id="f-name"
+                id="f-company"
                 type="text"
                 required
-                autocomplete="name"
-                placeholder="Teljes név"
+                autocomplete="organization"
+                placeholder="Példa Kft."
+              />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-size">Dolgozói létszám</label>
+                <input
+                  id="f-size"
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="pl. 45 fő"
+                />
+              </div>
+              <div class="field">
+                <label for="f-loc">Iroda helyszíne</label>
+                <input
+                  id="f-loc"
+                  type="text"
+                  placeholder="pl. Budapest, IX. ker."
+                />
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-pkg">Érdeklődő csomag</label>
+              <select id="f-pkg">
+                <option value="">Válasszatok…</option>
+                <option>Iroda Coop (50 tyúk)</option>
+                <option>Team Coop (100 tyúk)</option>
+                <option>Signature Coop (250 tyúk)</option>
+                <option>Még nem tudom — segítsetek választani</option>
+              </select>
+            </div>
+            <div class="check-field">
+              <input id="f-championship" type="checkbox" />
+              <label for="f-championship">
+                A Konstruktőrök Bajnoksága is érdekel
+                <span
+                  >Opcionális céges coop-verseny, privát vagy opt-in publikus
+                  toplistával.</span
+                >
+              </label>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-name"
+                  >Kapcsolattartó
+                  <span class="req" aria-hidden="true">*</span></label
+                >
+                <input
+                  id="f-name"
+                  type="text"
+                  required
+                  autocomplete="name"
+                  placeholder="Teljes név"
+                />
+              </div>
+              <div class="field">
+                <label for="f-email"
+                  >E-mail <span class="req" aria-hidden="true">*</span></label
+                >
+                <input
+                  id="f-email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  placeholder="nev@ceg.hu"
+                />
+              </div>
+            </div>
+            <div class="hp-field" aria-hidden="true">
+              <label for="f-website">Weboldal</label>
+              <input
+                id="f-website"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
               />
             </div>
             <div class="field">
-              <label for="f-email"
-                >E-mail <span class="req" aria-hidden="true">*</span></label
+              <label for="f-msg"
+                >Megközelítés / megjegyzés
+                <span class="opt">(opcionális)</span></label
               >
-              <input
-                id="f-email"
-                type="email"
-                required
-                autocomplete="email"
-                placeholder="nev@ceg.hu"
-                required
-              />
+              <textarea
+                id="f-msg"
+                placeholder="Pl. employer branding fókusz, őszi indulás, tartalomgyártás is érdekel."
+              ></textarea>
             </div>
-          </div>
-          <div class="hp-field" aria-hidden="true">
-            <label for="f-website">Weboldal</label>
-            <input
-              id="f-website"
-              type="text"
-              tabindex="-1"
-              autocomplete="off"
-            />
-          </div>
-          <div class="field">
-            <label for="f-msg"
-              >Megközelítés / megjegyzés
-              <span class="opt">(opcionális)</span></label
-            >
-            <textarea
-              id="f-msg"
-              placeholder="Pl. employer branding fókusz, őszi indulás, tartalomgyártás is érdekel."
-            ></textarea>
-          </div>
-          <label class="consent" for="f-privacy">
-            <input id="f-privacy" type="checkbox" required />
-            <span>
-              Elfogadom, hogy a Remény Farm Kft. az adataimat az ajánlatkérés
-              feldolgozásához kezelje, az
+            <div class="check-field">
+              <input id="f-privacy" type="checkbox" required />
+              <label for="f-privacy">
+                Elfogadom az adatkezelést
+                <span>
+                  A Remény Farm Kft. az adataimat az ajánlatkérés
+                  feldolgozásához kezeli, az
+                  <a
+                    href="https://www.remenyfarm.hu/adatvedelem/"
+                    target="_blank"
+                    rel="noopener"
+                    >adatvédelmi tájékoztató</a
+                  >
+                  szerint.
+                </span>
+              </label>
+            </div>
+            <button class="btn btn-primary" id="sendBtn" type="submit">
+              Érdeklődést küldök →
+            </button>
+            <p class="form-foot">
+              <span class="req" aria-hidden="true">*</span> kötelező mező. Nem
+              küldünk spamet — csak az ajánlattal jelentkezünk.
+            </p>
+            <p class="privacy-note">
+              Az adatokat ajánlatadás és kapcsolattartás céljából kezeljük. Az
+              érdeklődés MailerLite-ba kerül, részletek az
               <a
                 href="https://www.remenyfarm.hu/adatvedelem/"
                 target="_blank"
                 rel="noopener"
-                >adatvédelmi tájékoztató</a
-              >
-              szerint.
-            </span>
-          </label>
-          <button class="btn btn-primary" id="sendBtn" type="submit">
-            Érdeklődést küldök →
-          </button>
-          <p class="form-foot">
-            <span class="req" aria-hidden="true">*</span> kötelező mező. Nem
-            küldünk spamet — csak az ajánlattal jelentkezünk.
-          </p>
-          <p class="privacy-note">
-            Az adatokat ajánlatadás és kapcsolattartás céljából kezeljük. Az
-            érdeklődés MailerLite-ba kerül, részletek az
-            <a
-              href="https://www.remenyfarm.hu/adatvedelem/"
-              target="_blank"
-              rel="noopener"
-              >adatvédelmi tájékoztatóban</a
-            >.
-          </p>
-          <div class="form-ok" id="formOk" role="status" aria-live="polite">
-            Köszi, megkaptuk az érdeklődést. Jelentkezünk a részletekkel.
-          </div>
-        </form>
-      </div>
-    </section>
+                >adatvédelmi tájékoztatóban</a
+              >.
+            </p>
+            <div class="form-ok" id="formOk" role="status" aria-live="polite">
+              Köszi, megkaptuk az érdeklődést. Jelentkezünk a részletekkel.
+            </div>
+          </form>
+        </div>
+      </section>
     </main>
 
     <!-- FOOTER -->
@@ -2480,6 +2659,10 @@
           var el = document.getElementById(id);
           return el ? el.value.trim() : "";
         }
+        function checked(id) {
+          var el = document.getElementById(id);
+          return Boolean(el && el.checked);
+        }
         function showFormMessage(message, isError) {
           if (!formOk) return;
           formOk.textContent = message;
@@ -2504,6 +2687,9 @@
             (data.packageInterest ||
               "Iroda Coop / Team Coop / Signature Coop") +
             "\n" +
+            "Konstruktorok Bajnoksaga: " +
+            (data.championshipInterest ? "igen" : "nem") +
+            "\n" +
             (data.email ? "Email: " + data.email + "\n" : "") +
             (data.message ? "\nMegjegyzes:\n" + data.message + "\n" : "") +
             "\nUdvozlettel: " +
@@ -2523,6 +2709,7 @@
               teamSize: v("f-size"),
               location: v("f-loc"),
               packageInterest: v("f-pkg"),
+              championshipInterest: checked("f-championship"),
               name: v("f-name"),
               email: v("f-email"),
               message: v("f-msg"),

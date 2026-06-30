@@ -1708,10 +1708,15 @@
         margin-bottom: 0;
         flex: 1 1 160px;
       }
+      .calc-emp {
+        margin-top: 18px;
+        margin-bottom: 0;
+        max-width: 280px;
+      }
       .calc-out {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 14px;
         margin-top: 24px;
       }
       .calc-stat {
@@ -1722,10 +1727,10 @@
       }
       .calc-stat b {
         display: block;
-        font-size: clamp(1.9rem, 4vw, 2.8rem);
+        font-size: clamp(1.35rem, 3.2vw, 1.95rem);
         font-weight: 800;
         color: var(--forest);
-        line-height: 1;
+        line-height: 1.05;
         letter-spacing: -0.02em;
       }
       .calc-stat span {
@@ -2604,13 +2609,14 @@
             <span class="eyebrow">Tojásmatek</span>
             <h2>Mennyi tojás landol az irodában?</h2>
             <p class="lead" style="margin: 0.6rem auto 0">
-              Válasszatok coop méretet, és nézzétek meg, hány tojás és hány
-              dolgozói adag jön ki egy kétheti tojásnapra.
+              Adjátok meg a coop méretét és a csapat létszámát – megmutatjuk,
+              nagyságrendileg mennyi friss tojás jut kéthetente, és mennyi ebből
+              egy emberre.
             </p>
           </div>
           <div class="calc-card" data-reveal>
             <div class="calc-control">
-              <div class="calc-presets" role="group" aria-label="Coop méret">
+              <div class="calc-presets" role="group" aria-label="Tyúkok száma">
                 <button
                   type="button"
                   class="calc-preset"
@@ -2638,30 +2644,46 @@
               </div>
               <span class="calc-or">vagy</span>
               <div class="field">
-                <label for="calcSize">Saját létszám (tyúk)</label>
+                <label for="calcHens">Tyúkok száma</label>
                 <input
-                  id="calcSize"
+                  id="calcHens"
                   type="number"
                   inputmode="numeric"
                   min="1"
-                  max="2000"
+                  max="5000"
                   step="1"
                   value="50"
                 />
               </div>
             </div>
+            <div class="field calc-emp">
+              <label for="calcEmp">Munkatársak száma</label>
+              <input
+                id="calcEmp"
+                type="number"
+                inputmode="numeric"
+                min="1"
+                max="100000"
+                step="1"
+                value="45"
+                placeholder="pl. 45"
+              />
+            </div>
             <div class="calc-out" aria-live="polite">
               <div class="calc-stat">
-                <b id="calcEggs">500</b
-                ><span>tojás egy kétheti tojásnapon</span>
+                <b>75–95%</b><span>becsült tojáshozam</span>
               </div>
               <div class="calc-stat">
-                <b id="calcPortions">50</b><span>dolgozói 10-es adag</span>
+                <b id="calcEggs">525–665</b><span>tojás kéthetente</span>
+              </div>
+              <div class="calc-stat">
+                <b id="calcPer">11–14</b><span>fejenként, kéthetente</span>
               </div>
             </div>
             <p class="calc-note">
-              Becslés ~5 tojás/tyúk/hét alapján, kétheti ritmussal. Élő állatnál
-              a pontos hozam ingadozik – de a ritmus fix.
+              Becslés 75–95%-os tojáshozammal (tyúkonként napi ~0,75–0,95 tojás),
+              kétheti ciklusra. Élő állatnál a darabszám ingadozik – a tartomány
+              ezt mutatja, nem fix darabszámot ígér.
             </p>
           </div>
         </div>
@@ -3993,64 +4015,76 @@
           );
         }
 
-        /* Tojás-kalkulátor */
-        var EGG_MATH = {
-          eggsPerHenPerWeek: 5,
-          weeksPerCycle: 2,
-          portionSize: 10,
-        };
-        var calcInput = document.getElementById("calcSize");
+        /* Tojás-kalkulátor (tartományos) */
+        var EGG_MATH = { layMin: 0.75, layMax: 0.95, cycleDays: 14 };
+        var calcHens = document.getElementById("calcHens");
+        var calcEmp = document.getElementById("calcEmp");
         var calcEggs = document.getElementById("calcEggs");
-        var calcPortions = document.getElementById("calcPortions");
+        var calcPer = document.getElementById("calcPer");
         var calcPresets = [].slice.call(
           document.querySelectorAll(".calc-preset"),
         );
-        function eggCalc(hens) {
-          hens = Math.max(0, Math.floor(hens) || 0);
-          var eggs = Math.round(
-            hens * EGG_MATH.eggsPerHenPerWeek * EGG_MATH.weeksPerCycle,
-          );
-          return {
-            eggs: eggs,
-            portions: Math.floor(eggs / EGG_MATH.portionSize),
-          };
+        function calcInt(el) {
+          if (!el) return 0;
+          var n = parseInt(el.value, 10);
+          return isNaN(n) || n < 0 ? 0 : n;
+        }
+        function calcFmt(n) {
+          return n.toLocaleString("hu-HU");
+        }
+        function calcRange(lo, hi) {
+          return lo === hi ? calcFmt(lo) : calcFmt(lo) + "–" + calcFmt(hi);
         }
         function renderCalc() {
-          if (!calcInput) return { eggs: 0, portions: 0 };
-          var r = eggCalc(parseInt(calcInput.value, 10));
-          if (calcEggs) calcEggs.textContent = r.eggs.toLocaleString("hu-HU");
-          if (calcPortions)
-            calcPortions.textContent = r.portions.toLocaleString("hu-HU");
-          return r;
+          var hens = calcInt(calcHens);
+          var emp = calcInt(calcEmp);
+          var bwLow = Math.round(hens * EGG_MATH.cycleDays * EGG_MATH.layMin);
+          var bwHigh = Math.round(hens * EGG_MATH.cycleDays * EGG_MATH.layMax);
+          if (calcEggs) calcEggs.textContent = calcRange(bwLow, bwHigh);
+          if (calcPer) {
+            if (emp <= 0) {
+              calcPer.textContent = "–";
+            } else if (bwHigh > 0 && Math.floor(bwHigh / emp) === 0) {
+              calcPer.textContent = "<1";
+            } else {
+              calcPer.textContent = calcRange(
+                Math.floor(bwLow / emp),
+                Math.floor(bwHigh / emp),
+              );
+            }
+          }
+          return { hens: hens, employees: emp };
         }
-        if (calcInput) {
-          calcInput.addEventListener("input", function () {
-            calcPresets.forEach(function (b) {
-              b.setAttribute("aria-pressed", "false");
-            });
-            renderCalc();
+        function syncPresets() {
+          var val = calcHens ? calcHens.value : "";
+          calcPresets.forEach(function (b) {
+            b.setAttribute(
+              "aria-pressed",
+              b.getAttribute("data-size") === val ? "true" : "false",
+            );
           });
-          calcInput.addEventListener("change", function () {
-            var r = renderCalc();
-            track("calculator_interaction", {
-              size: parseInt(calcInput.value, 10) || 0,
-              eggs: r.eggs,
-              portions: r.portions,
+        }
+        if (calcHens || calcEmp) {
+          if (calcHens) {
+            calcHens.addEventListener("input", function () {
+              syncPresets();
+              renderCalc();
             });
-          });
+            calcHens.addEventListener("change", function () {
+              track("calculator_interaction", renderCalc());
+            });
+          }
+          if (calcEmp) {
+            calcEmp.addEventListener("input", renderCalc);
+            calcEmp.addEventListener("change", function () {
+              track("calculator_interaction", renderCalc());
+            });
+          }
           calcPresets.forEach(function (b) {
             b.addEventListener("click", function () {
-              calcPresets.forEach(function (x) {
-                x.setAttribute("aria-pressed", "false");
-              });
-              b.setAttribute("aria-pressed", "true");
-              calcInput.value = b.getAttribute("data-size");
-              var r = renderCalc();
-              track("calculator_interaction", {
-                size: parseInt(b.getAttribute("data-size"), 10),
-                eggs: r.eggs,
-                portions: r.portions,
-              });
+              if (calcHens) calcHens.value = b.getAttribute("data-size");
+              syncPresets();
+              track("calculator_interaction", renderCalc());
             });
           });
           renderCalc();

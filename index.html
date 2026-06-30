@@ -641,6 +641,48 @@
         color: var(--yolk);
         margin-top: 12px;
       }
+      .preview-proof {
+        display: grid;
+        grid-template-columns: 0.9fr minmax(320px, 0.82fr);
+        gap: clamp(28px, 5vw, 52px);
+        align-items: center;
+        margin-top: clamp(34px, 5vw, 58px);
+        padding-top: clamp(30px, 4.5vw, 48px);
+        border-top: 1px solid var(--line-dark);
+      }
+      .preview-proof h3 {
+        color: var(--on-forest);
+        font-size: clamp(1.45rem, 2.7vw, 2.15rem);
+        max-width: 18ch;
+      }
+      .preview-proof p {
+        color: #cfe0d8;
+        max-width: 48ch;
+        margin-top: 1rem;
+      }
+      .proof-photo {
+        justify-self: end;
+        max-width: 430px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 18px;
+        box-shadow: 0 28px 58px -34px rgba(0, 0, 0, 0.72);
+        background: #082f28;
+      }
+      .proof-photo img {
+        width: 100%;
+        height: auto;
+      }
+      .proof-photo figcaption {
+        padding: 12px 14px 14px;
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        line-height: 1.45;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--yolk);
+        background: rgba(0, 53, 44, 0.94);
+      }
 
       /* PACKAGES */
       .pkg-grid {
@@ -1286,6 +1328,13 @@
         .champ-grid {
           grid-template-columns: 1fr;
         }
+        .preview-proof {
+          grid-template-columns: 1fr;
+        }
+        .proof-photo {
+          justify-self: start;
+          max-width: 520px;
+        }
         .aud-grid,
         .pkg-grid,
         .exp-grid,
@@ -1750,6 +1799,27 @@
                 <div class="cap">A logózott ólatok</div>
               </div>
             </div>
+          </div>
+          <div class="preview-proof" data-reveal>
+            <div>
+              <span class="eyebrow">Tájba épített megjelenés</span>
+              <h3>Nem matrica egy sarokban. Látszik a farmból.</h3>
+              <p>
+                A céges coop vizuális jelenlétet kap: útról, webcamen,
+                farmnapon és videós háttérben is azonnal érthető, hogy ez a ti
+                saját tyúkcsapatotok.
+              </p>
+            </div>
+            <figure class="proof-photo">
+              <img
+                src="images/ti-olatok-sajat-logoval.jpg"
+                alt="Tájban álló tyúkól, amelyre céges logó kerülhet"
+                width="768"
+                height="1004"
+                loading="lazy"
+              />
+              <figcaption>Ti ólatok saját logóval - látványterv</figcaption>
+            </figure>
           </div>
         </div>
       </section>

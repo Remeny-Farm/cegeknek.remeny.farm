@@ -827,6 +827,19 @@
       .upgrade {
         background: var(--paper);
       }
+      .upgrade-blueprint {
+        margin: 0 0 clamp(28px, 5vw, 54px);
+        overflow: hidden;
+        border: 1px solid color-mix(in srgb, var(--line) 72%, #6b4b2d);
+        border-radius: var(--r-lg);
+        background: #f6ead3;
+        box-shadow: 0 26px 54px -42px rgba(69, 45, 24, 0.45);
+      }
+      .upgrade-blueprint img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
       .upgrade-grid {
         display: grid;
         grid-template-columns: 0.9fr 1.1fr;
@@ -3002,50 +3015,64 @@
 
       <!-- COOP UPGRADES -->
       <section class="section upgrade" id="fejlesztesek">
-        <div class="wrap upgrade-grid">
-          <div class="upgrade-panel" data-reveal>
-            <span class="phase-badge">2. fázis · opcionális</span>
-            <span class="eyebrow">Saját coop fejlesztések</span>
-            <h2>Legyen a tyúkól tényleg a cégeteké.</h2>
-            <p class="lead">
-              Jobb ólat szeretnétek? Saját brandes etetőt, napelemes
-              ajtónyitót, extra árnyékolást, vicces táblákat vagy egy belső
-              csapatos ötletet? Küldjétek el, és a marketinges csapatotokkal
-              együtt kitaláljuk, hogyan valósulhat meg szépen, hasznosan és
-              farmkompatibilisen.
-            </p>
-            <p class="upgrade-cta">
-              Még jobb: gyertek ki csapatépítőre, és építsétek be ti a
-              fejlesztést bográcsozás mellett.
-            </p>
-            <p class="upgrade-note">
-              * Minden fejlesztést a hatósági szabályozások és az állatjóléti
-              szempontok figyelembevételével tervezünk meg.
-            </p>
-          </div>
-          <div class="upgrade-list">
-            <div class="upgrade-item" data-reveal>
-              <h3>Brandelt etető, itató vagy ólelem</h3>
-              <p>
-                Apró, fotózható részletek, amik a webcamen, a belső
-                kommunikációban és a farmnapon is saját történetté teszik a
-                coopot.
+        <div class="wrap">
+          <figure class="upgrade-blueprint" data-reveal>
+            <img
+              src="images/konstruktorok-bajnoksaga-header.png"
+              alt="Csirkekollektív tyúkól szerkezeti tervrajz"
+              width="1058"
+              height="750"
+              loading="lazy"
+            />
+          </figure>
+          <div class="upgrade-grid">
+            <div class="upgrade-panel" data-reveal>
+              <span class="phase-badge">2. fázis · opcionális</span>
+              <span class="eyebrow">
+                Konstruktőrök Bajnoksága - Saját coop fejlesztések
+              </span>
+              <h2>Legyen a tyúkól tényleg a cégeteké.</h2>
+              <p class="lead">
+                Jobb ólat szeretnétek? Saját brandes etetőt, napelemes
+                ajtónyitót, extra árnyékolást, vicces táblákat vagy egy belső
+                csapatos ötletet? Küldjétek el, és a marketinges csapatotokkal
+                együtt kitaláljuk, hogyan valósulhat meg szépen, hasznosan és
+                farmkompatibilisen.
+              </p>
+              <p class="upgrade-cta">
+                Még jobb: gyertek ki csapatépítőre, és építsétek be ti a
+                fejlesztést bográcsozás mellett.
+              </p>
+              <p class="upgrade-note">
+                * Minden fejlesztést a hatósági szabályozások és az állatjóléti
+                szempontok figyelembevételével tervezünk meg.
               </p>
             </div>
-            <div class="upgrade-item" data-reveal>
-              <h3>Okosabb, kényelmesebb ól</h3>
-              <p>
-                Napelemes ajtónyitó, jobb árnyékolás, extra ülőrúd, időjárásálló
-                megoldások. Amitől az állatoknak jobb, az a sztorinak is jobb.
-              </p>
-            </div>
-            <div class="upgrade-item" data-reveal>
-              <h3>Csapatépítő, ahol tényleg marad valami</h3>
-              <p>
-                Nem csak végighallgatjátok, hogy fenntarthatóság. Kijöttök,
-                megfogjátok a szerszámot, beépítitek a saját fejlesztéseteket,
-                aztán ott marad a farmon egész évben.
-              </p>
+            <div class="upgrade-list">
+              <div class="upgrade-item" data-reveal>
+                <h3>Brandelt etető, itató vagy ólelem</h3>
+                <p>
+                  Apró, fotózható részletek, amik a webcamen, a belső
+                  kommunikációban és a farmnapon is saját történetté teszik a
+                  coopot.
+                </p>
+              </div>
+              <div class="upgrade-item" data-reveal>
+                <h3>Okosabb, kényelmesebb ól</h3>
+                <p>
+                  Napelemes ajtónyitó, jobb árnyékolás, extra ülőrúd,
+                  időjárásálló megoldások. Amitől az állatoknak jobb, az a
+                  sztorinak is jobb.
+                </p>
+              </div>
+              <div class="upgrade-item" data-reveal>
+                <h3>Csapatépítő, ahol tényleg marad valami</h3>
+                <p>
+                  Nem csak végighallgatjátok, hogy fenntarthatóság. Kijöttök,
+                  megfogjátok a szerszámot, beépítitek a saját fejlesztéseteket,
+                  aztán ott marad a farmon egész évben.
+                </p>
+              </div>
             </div>
           </div>
         </div>

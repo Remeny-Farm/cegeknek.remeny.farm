@@ -1076,6 +1076,29 @@
         grid-template-columns: 1fr 1fr;
         gap: 15px;
       }
+      .consent {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        gap: 10px;
+        align-items: start;
+        margin: 4px 0 16px;
+        color: var(--ink-soft);
+        font-size: 0.86rem;
+        line-height: 1.45;
+      }
+      .consent input {
+        width: 18px;
+        height: 18px;
+        margin: 2px 0 0;
+        accent-color: var(--forest);
+      }
+      .consent a,
+      .privacy-note a {
+        color: var(--forest);
+        font-weight: 700;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+      }
       .form-card .btn-primary {
         width: 100%;
         justify-content: center;
@@ -1087,6 +1110,13 @@
         color: var(--ink-soft);
         margin-top: 13px;
         text-align: center;
+      }
+      .privacy-note {
+        margin: 12px 0 0;
+        color: var(--ink-soft);
+        font-size: 0.78rem;
+        line-height: 1.45;
+        text-align: left;
       }
       .form-ok {
         display: none;
@@ -2169,6 +2199,16 @@
             </div>
           </details>
           <details class="faq" data-reveal>
+            <summary>Bizalmasan kezelitek a cégünk adatait és terveit?</summary>
+            <div class="a">
+              Igen. A megadott cégadatokat, HR- és employer branding célokat,
+              valamint az üzeneteket csak az ajánlatkérés feldolgozásához,
+              egyeztetéshez és szerződés-előkészítéshez használjuk. Nyilvános
+              kommunikáció, logóhasználat vagy esettanulmány csak külön
+              jóváhagyás után történik.
+            </div>
+          </details>
+          <details class="faq" data-reveal>
             <summary>Kész már a dolgozói app?</summary>
             <div class="a">
               A dolgozói belépés most a webfiókkal indul: minden munkatárs saját
@@ -2203,8 +2243,9 @@
             Megnézzük, van-e hozzá farmkapacitás, és a többit kitaláljuk együtt.
           </p>
           <p class="small">
-            Az érdeklődés MailerLite-ba kerül, így nem kallódik el egy inboxban.
-            Ha bármi megakad, megadjuk az emailes fallbacket.
+            Az érdeklődés MailerLite-ba kerül, és csak ajánlat-előkészítésre,
+            kapcsolatfelvételre használjuk. Külön marketinget külön hozzájárulás
+            nélkül nem küldünk.
           </p>
         </div>
         <form class="form-card" id="leadForm" data-reveal novalidate>
@@ -2296,12 +2337,36 @@
               placeholder="Pl. employer branding fókusz, őszi indulás, tartalomgyártás is érdekel."
             ></textarea>
           </div>
+          <label class="consent" for="f-privacy">
+            <input id="f-privacy" type="checkbox" required />
+            <span>
+              Elfogadom, hogy a Remény Farm Kft. az adataimat az ajánlatkérés
+              feldolgozásához kezelje, az
+              <a
+                href="https://www.remenyfarm.hu/adatvedelem/"
+                target="_blank"
+                rel="noopener"
+                >adatvédelmi tájékoztató</a
+              >
+              szerint.
+            </span>
+          </label>
           <button class="btn btn-primary" id="sendBtn" type="submit">
             Érdeklődést küldök →
           </button>
           <p class="form-foot">
             <span class="req" aria-hidden="true">*</span> kötelező mező. Nem
             küldünk spamet — csak az ajánlattal jelentkezünk.
+          </p>
+          <p class="privacy-note">
+            Az adatokat ajánlatadás és kapcsolattartás céljából kezeljük. Az
+            érdeklődés MailerLite-ba kerül, részletek az
+            <a
+              href="https://www.remenyfarm.hu/adatvedelem/"
+              target="_blank"
+              rel="noopener"
+              >adatvédelmi tájékoztatóban</a
+            >.
           </p>
           <div class="form-ok" id="formOk" role="status" aria-live="polite">
             Köszi, megkaptuk az érdeklődést. Jelentkezünk a részletekkel.
@@ -2335,6 +2400,7 @@
             <a href="https://www.remenyfarm.hu/">remenyfarm.hu</a>
             <a href="https://tyuk.remeny.farm/">tyuk.remeny.farm</a>
             <a href="https://liget.remeny.farm/">liget.remeny.farm</a>
+            <a href="https://www.remenyfarm.hu/adatvedelem/">Adatvédelem</a>
             <a
               href="mailto:info@remenyfarm.hu?subject=Ceges%20Tyukcsapat%20Program%20erdeklodes"
               >info@remenyfarm.hu</a
@@ -2394,6 +2460,7 @@
         var btn = document.getElementById("sendBtn");
         var formOk = document.getElementById("formOk");
         var form = document.getElementById("leadForm");
+        var privacy = document.getElementById("f-privacy");
 
         var navToggle = document.querySelector(".nav-toggle");
         var navLinks = document.getElementById("navLinks");
@@ -2460,6 +2527,7 @@
               email: v("f-email"),
               message: v("f-msg"),
               website: v("f-website"),
+              privacyConsent: privacy ? privacy.checked : false,
             };
 
             if (
@@ -2471,6 +2539,15 @@
                 "A cégnevet és egy érvényes email címet mindenképp add meg.",
                 true,
               );
+              return;
+            }
+
+            if (!data.privacyConsent) {
+              showFormMessage(
+                "Az adatkezelési elfogadás nélkül nem tudjuk elküldeni az ajánlatkérést.",
+                true,
+              );
+              if (privacy) privacy.focus();
               return;
             }
 

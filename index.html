@@ -740,6 +740,57 @@
         margin: 0;
       }
 
+      /* COOP UPGRADES */
+      .upgrade {
+        background: var(--paper);
+      }
+      .upgrade-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 42px;
+        align-items: start;
+      }
+      .upgrade-panel {
+        background: var(--forest-deep);
+        color: var(--paper);
+        border-radius: var(--r-lg);
+        padding: clamp(28px, 4vw, 42px);
+        position: sticky;
+        top: 92px;
+      }
+      .upgrade-panel h2 {
+        color: #fff;
+      }
+      .upgrade-panel p {
+        color: #cfe0d8;
+      }
+      .upgrade-list {
+        display: grid;
+        gap: 16px;
+      }
+      .upgrade-item {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: 24px;
+      }
+      .upgrade-item h3 {
+        color: var(--forest-deep);
+        margin-bottom: 0.45rem;
+      }
+      .upgrade-item p {
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+        margin: 0;
+      }
+      .upgrade-cta {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        color: var(--yolk);
+        font-weight: 700;
+      }
+
       /* MEDIA / CONTENT */
       .media .lead {
         max-width: 64ch;
@@ -1076,6 +1127,12 @@
         .capacity-grid {
           grid-template-columns: 1fr;
         }
+        .upgrade-grid {
+          grid-template-columns: 1fr;
+        }
+        .upgrade-panel {
+          position: static;
+        }
         .aud-grid,
         .pkg-grid,
         .exp-grid,
@@ -1121,6 +1178,7 @@
           <a href="#kapacitas">Limitált helyek</a>
           <a href="#csomagok">Csomagok</a>
           <a href="#elmeny">Élmény</a>
+          <a href="#fejlesztesek">Fejlesztések</a>
           <a href="#media">Tartalom</a>
           <a href="#szerzodes">12 hónap</a>
           <a class="btn btn-primary" href="#erdeklodes">Érdeklődöm</a>
@@ -1637,6 +1695,50 @@
                 dolgozói látogatás, ólépítés, faültetés és valódi csapatépítés.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COOP UPGRADES -->
+    <section class="section upgrade" id="fejlesztesek">
+      <div class="wrap upgrade-grid">
+        <div class="upgrade-panel" data-reveal>
+          <span class="eyebrow">Saját coop fejlesztések</span>
+          <h2>Legyen a tyúkól tényleg a cégeteké.</h2>
+          <p class="lead">
+            Jobb ólat szeretnétek? Saját brandes etetőt, napelemes ajtónyitót,
+            extra árnyékolást, vicces táblákat vagy belső csapatos ötletet?
+            Küldjétek el, és megtervezzük, hogyan fér bele a farm működésébe.
+          </p>
+          <p class="upgrade-cta">
+            Még jobb: gyertek ki csapatépítőre, és építsétek be ti a fejlesztést
+            bográcsozás és sörözés mellett.
+          </p>
+        </div>
+        <div class="upgrade-list">
+          <div class="upgrade-item" data-reveal>
+            <h3>Brandelt etető, itató vagy ólelem</h3>
+            <p>
+              Apró, fotózható részletek, amik a webcamen, a belső
+              kommunikációban és a farmnapon is saját történetté teszik a
+              coopot.
+            </p>
+          </div>
+          <div class="upgrade-item" data-reveal>
+            <h3>Okosabb, kényelmesebb ól</h3>
+            <p>
+              Napelemes ajtónyitó, jobb árnyékolás, extra ülőrúd, időjárásálló
+              megoldások. Amitől az állatoknak jobb, az a sztorinak is jobb.
+            </p>
+          </div>
+          <div class="upgrade-item" data-reveal>
+            <h3>Csapatépítő, ahol tényleg marad valami</h3>
+            <p>
+              Nem csak végighallgatjátok, hogy fenntarthatóság. Kijöttök,
+              megfogjátok a szerszámot, beépítitek a saját fejlesztéseteket,
+              aztán ott marad a farmon egész évben.
+            </p>
           </div>
         </div>
       </div>

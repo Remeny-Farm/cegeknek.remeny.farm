@@ -3123,54 +3123,140 @@
               </div>
               <div class="pv-card">
                 <svg
-                  viewBox="0 0 220 240"
+                  viewBox="0 0 240 240"
                   role="img"
-                  aria-label="Logózott ól ponyva előnézet"
+                  aria-label="Logózott mobil ól előnézet"
                 >
-                  <rect
-                    x="20"
-                    y="92"
-                    width="180"
-                    height="96"
-                    rx="10"
-                    fill="#7B5836"
-                  />
-                  <path d="M6 96 L110 30 L214 96 Z" fill="#004D40" />
-                  <rect
-                    x="36"
-                    y="120"
-                    width="148"
-                    height="46"
-                    rx="7"
-                    fill="#F4B741"
-                  />
-                  <rect
-                    x="36"
-                    y="120"
-                    width="148"
-                    height="46"
-                    rx="7"
-                    fill="none"
-                    stroke="#E0991F"
-                    stroke-width="2"
-                  />
-                  <text
-                    id="tarpBrand"
-                    x="110"
-                    y="149"
-                    text-anchor="middle"
-                    font-family="'Inter',sans-serif"
-                    font-weight="800"
-                    font-size="18"
-                    fill="#00352C"
-                    textLength="130"
-                    lengthAdjust="spacingAndGlyphs"
-                  >
-                    A TI CÉGETEK
-                  </text>
-                  <rect x="92" y="166" width="36" height="22" fill="#3A2E22" />
-                  <circle cx="48" cy="192" r="12" fill="#3A2E22" />
-                  <circle cx="172" cy="192" r="12" fill="#3A2E22" />
+                  <defs>
+                    <linearGradient id="coopSide" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#B84832" />
+                      <stop offset="1" stop-color="#7D2D24" />
+                    </linearGradient>
+                    <linearGradient id="coopFront" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#963827" />
+                      <stop offset="1" stop-color="#5B221B" />
+                    </linearGradient>
+                    <linearGradient id="coopRoof" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#69706A" />
+                      <stop offset="0.55" stop-color="#3E4542" />
+                      <stop offset="1" stop-color="#222A28" />
+                    </linearGradient>
+                    <pattern
+                      id="roofShingles"
+                      width="28"
+                      height="16"
+                      patternUnits="userSpaceOnUse"
+                      patternTransform="skewX(-13)"
+                    >
+                      <rect width="28" height="16" fill="url(#coopRoof)" />
+                      <path
+                        d="M0 15.5H28M14 0v15.5M0 7.5h28"
+                        fill="none"
+                        stroke="#141C1A"
+                        stroke-opacity=".42"
+                        stroke-width="1"
+                      />
+                      <path
+                        d="M1 1.5h26"
+                        fill="none"
+                        stroke="#87908A"
+                        stroke-opacity=".18"
+                        stroke-width="1"
+                      />
+                    </pattern>
+                    <linearGradient id="brandPanel" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0" stop-color="#FFD66B" />
+                      <stop offset="1" stop-color="#F1AB26" />
+                    </linearGradient>
+                    <filter id="coopShadow" x="-20%" y="-20%" width="140%" height="150%">
+                      <feDropShadow
+                        dx="0"
+                        dy="8"
+                        stdDeviation="7"
+                        flood-color="#001F1A"
+                        flood-opacity=".38"
+                      />
+                    </filter>
+                  </defs>
+                  <g filter="url(#coopShadow)">
+                    <ellipse cx="121" cy="206" rx="82" ry="12" fill="#001F1A" opacity=".22" />
+                    <path
+                      d="M43 96 L159 78 L202 106 L85 124 Z"
+                      fill="#2A332F"
+                      opacity=".45"
+                    />
+                    <path
+                      d="M42 91 L157 73 L204 102 L89 121 Z"
+                      fill="url(#roofShingles)"
+                    />
+                    <path
+                      d="M157 73 L190 83 L216 113 L204 102 Z"
+                      fill="#4B524F"
+                    />
+                    <path
+                      d="M42 91 L157 73 L204 102"
+                      fill="none"
+                      stroke="#9AA19B"
+                      stroke-opacity=".38"
+                      stroke-width="1.4"
+                    />
+                    <path
+                      d="M45 116 L159 98 L202 124 L202 176 L87 194 L45 166 Z"
+                      fill="url(#coopSide)"
+                    />
+                    <path
+                      d="M202 124 L223 113 L223 166 L202 176 Z"
+                      fill="url(#coopFront)"
+                    />
+                    <path
+                      d="M58 128 L149 115 L188 136 L188 164 L97 178 L58 156 Z"
+                      fill="url(#brandPanel)"
+                    />
+                    <path
+                      d="M58 128 L149 115 L188 136 L188 164 L97 178 L58 156 Z"
+                      fill="none"
+                      stroke="#D88C18"
+                      stroke-width="2"
+                      stroke-linejoin="round"
+                    />
+                    <text
+                      id="tarpBrand"
+                      x="123"
+                      y="151"
+                      text-anchor="middle"
+                      font-family="'Inter',sans-serif"
+                      font-weight="800"
+                      font-size="15"
+                      fill="#00352C"
+                      textLength="96"
+                      lengthAdjust="spacingAndGlyphs"
+                      transform="rotate(-6 123 151)"
+                    >
+                      A TI CÉGETEK
+                    </text>
+                    <path
+                      d="M143 171 L165 168 L165 189 L143 192 Z"
+                      fill="#35231C"
+                    />
+                    <path
+                      d="M52 167 L88 190 M199 177 L219 165"
+                      stroke="#211815"
+                      stroke-width="4"
+                      stroke-linecap="round"
+                    />
+                    <g>
+                      <circle cx="76" cy="194" r="13" fill="#2A211D" />
+                      <circle cx="76" cy="194" r="6" fill="#F3EEE5" />
+                      <circle cx="178" cy="191" r="13" fill="#2A211D" />
+                      <circle cx="178" cy="191" r="6" fill="#F3EEE5" />
+                    </g>
+                    <path
+                      d="M217 165 L231 172"
+                      stroke="#211815"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                  </g>
                 </svg>
                 <div class="cap">A logózott ólatok</div>
               </div>

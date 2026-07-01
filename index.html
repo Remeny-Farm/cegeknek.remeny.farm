@@ -1962,11 +1962,29 @@
         border-radius: var(--r-lg);
         padding: clamp(24px, 4vw, 36px);
       }
+      .calc-form {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(210px, 0.72fr);
+        gap: 16px;
+        align-items: end;
+      }
+      .calc-label,
+      .calc-group > label {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+      }
       .calc-control {
-        display: flex;
-        gap: 18px;
-        align-items: flex-end;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: auto auto minmax(130px, 1fr);
+        gap: 10px;
+        align-items: center;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 10px;
       }
       .calc-presets {
         display: inline-flex;
@@ -1979,8 +1997,18 @@
         background: var(--paper);
         color: var(--forest);
         border-radius: 999px;
-        padding: 0.5em 1.1em;
+        min-height: 42px;
+        padding: 0.5em 1.05em;
         cursor: pointer;
+        transition:
+          background 0.18s,
+          border-color 0.18s,
+          color 0.18s,
+          transform 0.18s;
+      }
+      .calc-preset:hover {
+        border-color: color-mix(in srgb, var(--forest) 42%, var(--line));
+        transform: translateY(-1px);
       }
       .calc-preset[aria-pressed="true"] {
         background: var(--forest);
@@ -1990,16 +2018,19 @@
       .calc-or {
         color: var(--ink-soft);
         font-size: 0.85rem;
-        padding-bottom: 0.7em;
+        font-weight: 600;
+        text-align: center;
+        white-space: nowrap;
       }
-      .calc-control .field {
-        margin-bottom: 0;
-        flex: 1 1 160px;
+      .calc-custom {
+        margin: 0;
+      }
+      .calc-custom input,
+      .calc-emp input {
+        min-height: 42px;
       }
       .calc-emp {
-        margin-top: 18px;
         margin-bottom: 0;
-        max-width: 280px;
       }
       .calc-out {
         display: grid;
@@ -2033,7 +2064,37 @@
         font-style: italic;
         margin-top: 16px;
       }
+      @media (max-width: 700px) {
+        .calc-form {
+          grid-template-columns: 1fr;
+        }
+      }
       @media (max-width: 520px) {
+        .calc-control {
+          grid-template-columns: 1fr;
+        }
+        .calc-presets {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .calc-preset {
+          width: 100%;
+          padding-left: 0.75em;
+          padding-right: 0.75em;
+        }
+        .calc-or {
+          position: relative;
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+          gap: 10px;
+          align-items: center;
+        }
+        .calc-or::before,
+        .calc-or::after {
+          content: "";
+          height: 1px;
+          background: var(--line);
+        }
         .calc-out {
           grid-template-columns: 1fr;
         }
@@ -3142,59 +3203,67 @@
             </p>
           </div>
           <div class="calc-card" data-reveal>
-            <div class="calc-control">
-              <div class="calc-presets" role="group" aria-label="Tyúkok száma">
-                <button
-                  type="button"
-                  class="calc-preset"
-                  data-size="50"
-                  aria-pressed="true"
-                >
-                  50
-                </button>
-                <button
-                  type="button"
-                  class="calc-preset"
-                  data-size="100"
-                  aria-pressed="false"
-                >
-                  100
-                </button>
-                <button
-                  type="button"
-                  class="calc-preset"
-                  data-size="250"
-                  aria-pressed="false"
-                >
-                  250
-                </button>
-              </div>
-              <span class="calc-or">vagy</span>
-              <div class="field">
+            <div class="calc-form">
+              <div class="calc-group">
                 <label for="calcHens">Tyúkok száma</label>
+                <div class="calc-control">
+                  <div
+                    class="calc-presets"
+                    role="group"
+                    aria-label="Gyors tyúkszám választás"
+                  >
+                    <button
+                      type="button"
+                      class="calc-preset"
+                      data-size="50"
+                      aria-pressed="true"
+                    >
+                      50
+                    </button>
+                    <button
+                      type="button"
+                      class="calc-preset"
+                      data-size="100"
+                      aria-pressed="false"
+                    >
+                      100
+                    </button>
+                    <button
+                      type="button"
+                      class="calc-preset"
+                      data-size="250"
+                      aria-pressed="false"
+                    >
+                      250
+                    </button>
+                  </div>
+                  <span class="calc-or">vagy</span>
+                  <div class="field calc-custom">
+                    <input
+                      id="calcHens"
+                      type="number"
+                      inputmode="numeric"
+                      min="1"
+                      max="5000"
+                      step="1"
+                      value="50"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="field calc-emp">
+                <label for="calcEmp">Munkatársak száma</label>
                 <input
-                  id="calcHens"
+                  id="calcEmp"
                   type="number"
                   inputmode="numeric"
                   min="1"
-                  max="5000"
+                  max="100000"
                   step="1"
-                  value="50"
+                  value="45"
+                  placeholder="pl. 45"
                 />
               </div>
-            </div>
-            <div class="field calc-emp">
-              <label for="calcEmp">Munkatársak száma</label>
-              <input
-                id="calcEmp"
-                type="number"
-                inputmode="numeric"
-                min="1"
-                max="100000"
-                step="1"
-                value="45"
-                placeholder="pl. 45"
-              />
             </div>
             <div class="calc-out" aria-live="polite">
               <div class="calc-stat">

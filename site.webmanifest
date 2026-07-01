@@ -1,0 +1,14 @@
+{
+  "name": "Remény Farm – Céges Tyúkcsapat Program",
+  "short_name": "Remény Farm",
+  "description": "Saját céges tyúkcsapat a Remény Farm szabadtartású, mobil óljaiban.",
+  "lang": "hu",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#004d40",
+  "icons": [
+    { "src": "/favicon-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

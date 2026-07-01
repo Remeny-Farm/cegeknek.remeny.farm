@@ -855,6 +855,14 @@
       .upgrade {
         background: var(--paper);
       }
+      .upgrade-head {
+        max-width: none;
+        margin-bottom: clamp(32px, 5vw, 56px);
+      }
+      .upgrade-title {
+        font-size: clamp(2.4rem, 5.4vw, 4.1rem);
+        color: var(--forest-deep);
+      }
       .upgrade-blueprint {
         margin: 0 0 clamp(28px, 5vw, 54px);
         overflow: hidden;
@@ -3298,6 +3306,10 @@
       <!-- COOP UPGRADES -->
       <section class="section upgrade" id="fejlesztesek">
         <div class="wrap">
+          <div class="head center upgrade-head" data-reveal>
+            <span class="eyebrow">2. fázis · opcionális</span>
+            <h2 class="upgrade-title">Konstruktőrök Bajnoksága</h2>
+          </div>
           <figure class="upgrade-blueprint" data-reveal>
             <img
               src="images/konstruktorok-bajnoksaga-header.webp"

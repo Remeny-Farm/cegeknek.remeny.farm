@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#004D40" />
+    <title>Süti tájékoztató – Céges Tyúkcsapat Program | Remény Farm</title>
+    <meta
+      name="description"
+      content="Milyen sütiket és helyi tárolást használ a cegeknek.remeny.farm oldal, és hogyan kezelheted a hozzájárulásodat."
+    />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://cegeknek.remeny.farm/suti-tajekoztato.html"
+    />
+    <!--
+      Megjegyzés a szerkesztőnek: ez a szöveg megfelelőségi tervezet, nem jogi tanács.
+      A süti-leltárt tartsd szinkronban azzal, amit az oldal ténylegesen tárol.
+    -->
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("/fonts/inter-100-900-normal-latin-ext.woff2") format("woff2");
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+          U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+          U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+          U+A720-A7FF;
+      }
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url("/fonts/inter-100-900-normal-latin.woff2") format("woff2");
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+          U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+          U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      :root {
+        --forest: #004d40;
+        --ink: #1a2b26;
+        --cream: #f7f4ec;
+        --muted: #5b6b66;
+        --line: rgba(0, 77, 64, 0.16);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 32px 20px 80px;
+      }
+      .back {
+        display: inline-block;
+        margin-bottom: 28px;
+        color: var(--forest);
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .back:hover {
+        text-decoration: underline;
+      }
+      h1 {
+        color: var(--forest);
+        font-size: clamp(28px, 5vw, 40px);
+        line-height: 1.15;
+        margin: 0 0 8px;
+        letter-spacing: -0.02em;
+      }
+      .meta {
+        color: var(--muted);
+        font-size: 14px;
+        margin: 0 0 32px;
+      }
+      h2 {
+        color: var(--forest);
+        font-size: 20px;
+        margin: 40px 0 12px;
+      }
+      h3 {
+        font-size: 16px;
+        margin: 24px 0 8px;
+      }
+      p {
+        margin: 0 0 14px;
+      }
+      a {
+        color: var(--forest);
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 8px 0 8px;
+      }
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 10px 12px;
+        text-align: left;
+        font-size: 14px;
+        vertical-align: top;
+      }
+      th {
+        background: rgba(0, 77, 64, 0.06);
+      }
+      .btn {
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 999px;
+        padding: 10px 20px;
+        font: inherit;
+        font-weight: 600;
+        color: #fff;
+        background: var(--forest);
+        border: 1px solid var(--forest);
+      }
+      .note {
+        background: rgba(0, 77, 64, 0.06);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 16px 18px;
+        font-size: 14px;
+      }
+      footer {
+        border-top: 1px solid var(--line);
+        margin-top: 48px;
+        padding-top: 20px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <a class="back" href="/">← Vissza a főoldalra</a>
+      <h1>Süti tájékoztató</h1>
+      <p class="meta">
+        Hogyan használ az oldal sütiket és helyi tárolást, és hogyan kezelheted a
+        hozzájárulásodat.
+      </p>
+
+      <h2>1. Mik azok a sütik?</h2>
+      <p>
+        A sütik (cookie-k) kis szöveges fájlok, amelyeket a böngésződ tárol.
+        Emellett az oldal a böngésző beépített tárolóit is használhatja
+        (localStorage, sessionStorage) beállítások és állapot megjegyzésére. Ezek
+        egy részére a működéshez van szükség, más részük csak a
+        <strong>hozzájárulásoddal</strong> aktiválódik.
+      </p>
+
+      <h2>2. Milyen sütiket / tárolást használunk?</h2>
+
+      <h3>2.1 Szükséges és funkcionális (mindig aktív)</h3>
+      <p>
+        Ezek az oldal működéséhez, illetve a beállításaid megjegyzéséhez kellenek,
+        és nem igényelnek hozzájárulást.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Név</th>
+            <th>Típus</th>
+            <th>Cél</th>
+            <th>Lejárat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>rf-cookie-consent</td>
+            <td>localStorage</td>
+            <td>A süti-hozzájárulásod megjegyzése</td>
+            <td>kb. 12 hónap (amíg nem törlöd)</td>
+          </tr>
+          <tr>
+            <td>rf_persona</td>
+            <td>sessionStorage</td>
+            <td>A kiválasztott nézőpont-fül megjegyzése (HR / marketing / ESG)</td>
+            <td>a böngésző munkamenetéig</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>2.2 Analitikai (csak hozzájárulással)</h3>
+      <p>
+        Anonimizált látogatottsági statisztikát a
+        <strong>Google Analytics 4</strong> segítségével gyűjtünk, hogy lássuk,
+        mely tartalmak hasznosak. Ezek a sütik
+        <strong>csak akkor kerülnek beállításra, ha az „Elfogadom" gombra
+        kattintasz</strong> a süti-sávban. Alapértelmezetten (Google Consent Mode
+        v2) tiltva vannak.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Név</th>
+            <th>Szolgáltató</th>
+            <th>Cél</th>
+            <th>Lejárat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>_ga</td>
+            <td>Google Analytics</td>
+            <td>Látogatók megkülönböztetése (statisztika)</td>
+            <td>2 év</td>
+          </tr>
+          <tr>
+            <td>_ga_5VBCSBQPNL</td>
+            <td>Google Analytics (GA4)</td>
+            <td>Munkamenet-állapot fenntartása</td>
+            <td>2 év</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Adatfeldolgozók</h2>
+      <p>
+        Az analitikai adatokat a <strong>Google LLC</strong> (Google Analytics)
+        dolgozza fel. A kapcsolatfelvételi (érdeklődési) űrlapon megadott adatokat
+        a <strong>MailerLite</strong> (UAB „MailerLite", EU/Litvánia) mint
+        adatfeldolgozó kezeli – ez nem sütihöz kötődik, hanem az űrlap
+        elküldéséhez; részletek az
+        <a href="https://www.remenyfarm.hu/adatvedelem/" rel="noopener noreferrer"
+          >adatvédelmi tájékoztatóban</a
+        >.
+      </p>
+
+      <h2>4. A süti-beállítások kezelése</h2>
+      <p>
+        Az első látogatáskor megjelenő sávban választhatsz a
+        <strong>„Csak a szükségesek"</strong> és az
+        <strong>„Elfogadom"</strong> között. Döntésedet később bármikor
+        módosíthatod: a főoldal láblécében a <strong>„Süti beállítások"</strong>
+        linkre kattintva újra előhívhatod a sávot, vagy az alábbi gombbal
+        visszaállíthatod a hozzájárulásodat.
+      </p>
+      <p>
+        <button type="button" class="btn" id="rfResetConsent">
+          Süti-hozzájárulás visszaállítása
+        </button>
+      </p>
+      <p class="note">
+        Emellett a böngésződ beállításaiban is bármikor törölheted vagy
+        letilthatod a sütiket. A szükséges sütik letiltása befolyásolhatja az
+        oldal működését.
+      </p>
+
+      <h2>5. Kapcsolódó dokumentumok</h2>
+      <p>
+        <a href="https://www.remenyfarm.hu/adatvedelem/" rel="noopener noreferrer"
+          >Adatvédelmi tájékoztató</a
+        >
+        · <a href="/impresszum.html">Impresszum</a>
+      </p>
+
+      <footer>© Remény Farm Kft. · Céges Tyúkcsapat Program</footer>
+    </div>
+
+    <script>
+      (function () {
+        var btn = document.getElementById("rfResetConsent");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          try {
+            localStorage.removeItem("rf-cookie-consent");
+          } catch (e) {}
+          // Vissza a főoldalra, ahol a süti-sáv újra megjelenik.
+          window.location.href = "/";
+        });
+      })();
+    </script>
+  </body>
+</html>

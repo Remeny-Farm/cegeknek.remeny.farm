@@ -1104,11 +1104,11 @@
         max-width: 42ch;
       }
       .pv-stage {
-        display: flex;
+        display: grid;
+        grid-template-columns: minmax(190px, 0.82fr) minmax(280px, 1.18fr);
         gap: 22px;
         align-items: stretch;
         justify-content: center;
-        flex-wrap: wrap;
       }
       .pv-card {
         background: linear-gradient(180deg, #0a4a3e, #063a30);
@@ -1116,14 +1116,21 @@
         border-radius: 20px;
         padding: 22px 18px 15px;
         text-align: center;
-        flex: 1 1 195px;
-        min-width: 185px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 322px;
       }
       .pv-card svg {
         width: 100%;
-        height: auto;
-        max-width: 220px;
+        height: 220px;
         margin: 0 auto;
+      }
+      .pv-card--egg svg {
+        max-width: 215px;
+      }
+      .pv-card--coop svg {
+        max-width: 300px;
       }
       .pv-card .cap {
         font-family: var(--mono);
@@ -2105,7 +2112,7 @@
           font-size: 16px;
         }
         .pv-stage {
-          flex-direction: column;
+          grid-template-columns: 1fr;
         }
         .field-row {
           grid-template-columns: 1fr;
@@ -3488,7 +3495,7 @@
               </p>
             </div>
             <div class="pv-stage" data-reveal>
-              <div class="pv-card">
+              <div class="pv-card pv-card--egg">
                 <svg
                   viewBox="0 0 200 240"
                   role="img"
@@ -3581,7 +3588,7 @@
                 </svg>
                 <div class="cap">A tojásbélyegzőtök</div>
               </div>
-              <div class="pv-card">
+              <div class="pv-card pv-card--coop">
                 <svg
                   viewBox="100 205 800 620"
                   role="img"

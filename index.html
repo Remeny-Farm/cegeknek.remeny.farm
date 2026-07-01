@@ -30,27 +30,115 @@
     <meta name="author" content="Remény Farm Kft." />
     <link rel="canonical" href="https://cegeknek.remeny.farm/" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,500;1,14..32,700&family=IBM+Plex+Mono:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Betűtípusok: self-hosted (lásd @font-face a <style>-ban) – nincs Google Fonts CDN -->
 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-5VBCSBQPNL"
-    ></script>
+    <!-- Google Consent Mode v2: alapból minden tiltva; a Google Analytics
+         csak süti-hozzájárulás (Elfogadom) után indul el. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-      gtag("config", "G-5VBCSBQPNL");
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+      });
+      window.RF_GA_ID = "G-5VBCSBQPNL";
+      window.RF_CONSENT_KEY = "rf-cookie-consent";
+      window.rfGaLoaded = false;
+      window.rfReadConsent = function () {
+        try {
+          var raw = localStorage.getItem(window.RF_CONSENT_KEY);
+          return raw ? JSON.parse(raw) : null;
+        } catch (e) {
+          return null;
+        }
+      };
+      window.rfEnableAnalytics = function () {
+        gtag("consent", "update", { analytics_storage: "granted" });
+        if (window.rfGaLoaded) return;
+        window.rfGaLoaded = true;
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + window.RF_GA_ID;
+        document.head.appendChild(s);
+        gtag("js", new Date());
+        gtag("config", window.RF_GA_ID);
+      };
+      (function () {
+        var c = window.rfReadConsent();
+        if (c && c.analytics === true) window.rfEnableAnalytics();
+      })();
     </script>
 
     <style>
+      /* ===== Self-hosted betűtípusok (nincs Google Fonts CDN – GDPR) ===== */
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('/fonts/ibm-plex-mono-500-normal-latin-ext.woff2') format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('/fonts/ibm-plex-mono-500-normal-latin.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('/fonts/ibm-plex-mono-600-normal-latin-ext.woff2') format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('/fonts/ibm-plex-mono-600-normal-latin.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: italic;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url('/fonts/inter-100-900-italic-latin-ext.woff2') format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: italic;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url('/fonts/inter-100-900-italic-latin.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url('/fonts/inter-100-900-normal-latin-ext.woff2') format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url('/fonts/inter-100-900-normal-latin.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
       :root {
         --forest: #004d40;
         --forest-deep: #00352c;
@@ -60,6 +148,10 @@
         --yolk-text: #8a5a00;
         --surface: #fffdf9;
         --on-forest: #f1f7f3;
+        --on-forest-soft: #cfe0d8;
+        --on-forest-muted: #d5e2db;
+        --on-forest-dim: #a6bbb1;
+        --on-forest-faint: #b6cac1;
         --paper: #fbf9f3;
         --paper-2: #f2ede1;
         --ink: #23271f;
@@ -207,6 +299,16 @@
       .head.center .eyebrow {
         justify-content: center;
       }
+      /* Breathing room between every title and its body copy.
+         .head is a plain block, so this collapses with the centered
+         variants' inline lead top-margins instead of stacking; the
+         panel/CTA headings below aren't wrapped in .head but share the
+         same flush-against-the-lead problem. */
+      .head h2,
+      .upgrade-panel h2,
+      .lead-intro h2 {
+        margin-bottom: 1.1rem;
+      }
 
       .btn {
         display: inline-flex;
@@ -319,8 +421,8 @@
         display: none;
         align-items: center;
         justify-content: center;
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         border: 1.5px solid var(--line);
         border-radius: 11px;
         background: transparent;
@@ -446,7 +548,7 @@
         color: var(--on-forest);
       }
       .capacity .lead {
-        color: #d5e2db;
+        color: var(--on-forest-muted);
       }
       .cap-box {
         background: rgba(251, 249, 243, 0.08);
@@ -463,7 +565,7 @@
         margin-bottom: 12px;
       }
       .cap-box p {
-        color: #d5e2db;
+        color: var(--on-forest-muted);
         margin: 0;
       }
       .cap-points {
@@ -474,7 +576,7 @@
       .cap-point {
         display: flex;
         gap: 11px;
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
         font-size: 0.96rem;
       }
       .cap-point::before {
@@ -572,7 +674,7 @@
         color: var(--on-forest);
       }
       .preview .lead {
-        color: #d5e2db;
+        color: var(--on-forest-muted);
       }
       .pv-grid {
         display: grid;
@@ -607,7 +709,7 @@
       }
       .pv-note {
         font-size: 0.85rem;
-        color: #a6bbb1;
+        color: var(--on-forest-dim);
         margin-top: 1rem;
         max-width: 42ch;
       }
@@ -656,7 +758,7 @@
         max-width: 18ch;
       }
       .preview-proof p {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
         max-width: 48ch;
         margin-top: 1rem;
       }
@@ -822,10 +924,42 @@
         color: var(--ink-soft);
         margin: 0;
       }
+      /* #honnan: editorial, top-ruled variant so it doesn't echo #elmeny's cards */
+      .exp--method .exp-grid {
+        gap: 2px 42px;
+      }
+      .exp--method .exp-card {
+        background: transparent;
+        border: none;
+        border-top: 2px solid var(--forest);
+        border-radius: 0;
+        padding: 22px 26px 26px 0;
+        gap: 16px;
+      }
+      .exp--method .exp-card .em {
+        width: auto;
+        height: auto;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        align-items: flex-start;
+      }
+      .exp--method .exp-card .em svg {
+        width: 30px;
+        height: 30px;
+      }
 
       /* COOP UPGRADES */
       .upgrade {
         background: var(--paper);
+      }
+      .upgrade-head {
+        max-width: none;
+        margin-bottom: clamp(32px, 5vw, 56px);
+      }
+      .upgrade-title {
+        font-size: clamp(2.4rem, 5.4vw, 4.1rem);
+        color: var(--forest-deep);
       }
       .upgrade-blueprint {
         margin: 0 0 clamp(28px, 5vw, 54px);
@@ -883,17 +1017,17 @@
         top: 92px;
       }
       .upgrade-panel h2 {
-        color: #fff;
+        color: var(--on-forest);
       }
       .upgrade-panel p {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
       }
       .upgrade-list {
         display: grid;
         gap: 16px;
       }
       .upgrade-item {
-        background: #fff;
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: var(--r);
         padding: 24px;
@@ -932,7 +1066,7 @@
         align-items: start;
       }
       .champ-score {
-        background: #fff;
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: var(--r-lg);
         padding: clamp(26px, 4vw, 38px);
@@ -1001,6 +1135,132 @@
         width: 100%;
         height: 100%;
         border: 0;
+      }
+      .media-value {
+        margin: 1.8rem 0 0.9rem;
+        max-width: 60ch;
+        color: var(--ink-soft);
+        font-size: 1.02rem;
+      }
+      .media-value b {
+        color: var(--forest-deep);
+      }
+      .media-channels {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2.6rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .media-channels li {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.01em;
+        color: var(--forest);
+        background: var(--paper-2);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 6px 14px;
+      }
+      .media-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 1rem;
+      }
+      .media-table caption {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .media-table thead th {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+        color: var(--yolk-text);
+        text-align: left;
+        padding: 0 24px 12px 0;
+      }
+      .media-table tbody th,
+      .media-table tbody td {
+        text-align: left;
+        vertical-align: baseline;
+        padding: 18px 24px 18px 0;
+        border-top: 1px solid var(--line);
+      }
+      .media-table tbody tr:first-child th,
+      .media-table tbody tr:first-child td {
+        border-top: 2px solid var(--forest);
+      }
+      .media-table tbody tr:last-child th,
+      .media-table tbody tr:last-child td {
+        border-bottom: 1px solid var(--line);
+      }
+      .media-table tbody th {
+        font-weight: 700;
+        color: var(--forest-deep);
+        white-space: nowrap;
+      }
+      .media-table tbody td {
+        color: var(--ink-soft);
+        width: 100%;
+      }
+      .media-table .idx {
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--yolk-text);
+        margin-right: 10px;
+      }
+      .media-note {
+        margin: 1.4rem 0 0;
+        max-width: 58ch;
+        font-size: 0.9rem;
+        color: var(--ink-soft);
+      }
+      .media-note b {
+        color: var(--forest-deep);
+      }
+      @media (max-width: 640px) {
+        .media-table thead {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+        }
+        .media-table,
+        .media-table tbody,
+        .media-table tr,
+        .media-table th,
+        .media-table td {
+          display: block;
+          width: auto;
+        }
+        .media-table tbody th {
+          white-space: normal;
+          padding: 16px 0 4px;
+          border-top: 2px solid var(--forest);
+        }
+        .media-table tbody td {
+          padding: 0 0 4px;
+          border-top: 0;
+        }
+        .media-table tbody tr:last-child td {
+          border-bottom: 1px solid var(--line);
+          padding-bottom: 16px;
+        }
+        .media-table tbody tr:last-child th {
+          border-bottom: 0;
+        }
       }
 
       /* STEPS */
@@ -1106,11 +1366,11 @@
         background: var(--yolk);
       }
       .commit .lead {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
         max-width: 60ch;
       }
       .commit .bullets li {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
       }
       .commit .bullets li::before {
         background: rgba(244, 183, 65, 0.16);
@@ -1177,11 +1437,11 @@
         align-items: start;
       }
       .lead-intro .lead {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
       }
       .lead-intro .small {
         font-size: 0.9rem;
-        color: #a6bbb1;
+        color: var(--on-forest-dim);
         margin-top: 1.2rem;
       }
       .form-card {
@@ -1318,7 +1578,7 @@
       /* FOOTER */
       footer.foot {
         background: var(--forest-deep);
-        color: #b6cac1;
+        color: var(--on-forest-faint);
         padding: 54px 0 28px;
       }
       .foot-top {
@@ -1353,7 +1613,7 @@
         flex-wrap: wrap;
       }
       .foot-links a {
-        color: #b6cac1;
+        color: var(--on-forest-faint);
         text-decoration: none;
         font-size: 0.88rem;
       }
@@ -1719,11 +1979,29 @@
         border-radius: var(--r-lg);
         padding: clamp(24px, 4vw, 36px);
       }
+      .calc-form {
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(210px, 0.72fr);
+        gap: 16px;
+        align-items: end;
+      }
+      .calc-label,
+      .calc-group > label {
+        display: block;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+      }
       .calc-control {
-        display: flex;
-        gap: 18px;
-        align-items: flex-end;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: auto auto minmax(130px, 1fr);
+        gap: 10px;
+        align-items: center;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 10px;
       }
       .calc-presets {
         display: inline-flex;
@@ -1736,8 +2014,18 @@
         background: var(--paper);
         color: var(--forest);
         border-radius: 999px;
-        padding: 0.5em 1.1em;
+        min-height: 42px;
+        padding: 0.5em 1.05em;
         cursor: pointer;
+        transition:
+          background 0.18s,
+          border-color 0.18s,
+          color 0.18s,
+          transform 0.18s;
+      }
+      .calc-preset:hover {
+        border-color: color-mix(in srgb, var(--forest) 42%, var(--line));
+        transform: translateY(-1px);
       }
       .calc-preset[aria-pressed="true"] {
         background: var(--forest);
@@ -1747,20 +2035,23 @@
       .calc-or {
         color: var(--ink-soft);
         font-size: 0.85rem;
-        padding-bottom: 0.7em;
+        font-weight: 600;
+        text-align: center;
+        white-space: nowrap;
       }
-      .calc-control .field {
-        margin-bottom: 0;
-        flex: 1 1 160px;
+      .calc-custom {
+        margin: 0;
+      }
+      .calc-custom input,
+      .calc-emp input {
+        min-height: 42px;
       }
       .calc-emp {
-        margin-top: 18px;
         margin-bottom: 0;
-        max-width: 280px;
       }
       .calc-out {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 14px;
         margin-top: 24px;
       }
@@ -1790,7 +2081,37 @@
         font-style: italic;
         margin-top: 16px;
       }
+      @media (max-width: 700px) {
+        .calc-form {
+          grid-template-columns: 1fr;
+        }
+      }
       @media (max-width: 520px) {
+        .calc-control {
+          grid-template-columns: 1fr;
+        }
+        .calc-presets {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        .calc-preset {
+          width: 100%;
+          padding-left: 0.75em;
+          padding-right: 0.75em;
+        }
+        .calc-or {
+          position: relative;
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+          gap: 10px;
+          align-items: center;
+        }
+        .calc-or::before,
+        .calc-or::after {
+          content: "";
+          height: 1px;
+          background: var(--line);
+        }
         .calc-out {
           grid-template-columns: 1fr;
         }
@@ -1844,11 +2165,11 @@
         margin-top: 1.6rem;
       }
       .founder-offer h3 {
-        color: #fff;
+        color: var(--on-forest);
         margin-bottom: 0.6rem;
       }
       .founder-offer .lead {
-        color: #d5e2db;
+        color: var(--on-forest-muted);
       }
       .founder-offer ul {
         list-style: none;
@@ -1860,7 +2181,7 @@
       .founder-offer li {
         display: flex;
         gap: 11px;
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
         font-size: 0.97rem;
       }
       .founder-offer li::before {
@@ -1919,7 +2240,7 @@
         border-top: 1px solid var(--line-dark);
       }
       .lead-book-q {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
         font-weight: 600;
         margin-bottom: 0.7rem;
       }
@@ -1927,7 +2248,7 @@
       /* FORM persona badge + championship hint */
       .form-persona {
         font-size: 0.85rem;
-        color: #a6bbb1;
+        color: var(--on-forest-dim);
         margin: -0.2rem 0 1rem;
       }
       .form-persona b {
@@ -2014,6 +2335,66 @@
           justify-content: center;
         }
       }
+      /* ===== Süti hozzájárulás banner ===== */
+      .rf-cookie {
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        z-index: 1000;
+        max-width: 720px;
+        margin: 0 auto;
+        background: #fff;
+        color: var(--forest, #004d40);
+        border: 1px solid rgba(0, 77, 64, 0.18);
+        border-radius: 14px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        padding: 18px 20px;
+        font-size: 14px;
+        line-height: 1.55;
+        display: none;
+      }
+      .rf-cookie.is-open {
+        display: block;
+      }
+      .rf-cookie h2 {
+        font-size: 16px;
+        margin: 0 0 6px;
+      }
+      .rf-cookie p {
+        margin: 0 0 14px;
+      }
+      .rf-cookie a {
+        color: inherit;
+        text-decoration: underline;
+      }
+      .rf-cookie-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .rf-cookie-actions button {
+        flex: 1 1 160px;
+        cursor: pointer;
+        border-radius: 999px;
+        padding: 10px 18px;
+        font: inherit;
+        font-weight: 600;
+        border: 1px solid var(--forest, #004d40);
+      }
+      .rf-cookie-accept {
+        background: var(--forest, #004d40);
+        color: #fff;
+      }
+      .rf-cookie-reject {
+        background: #fff;
+        color: var(--forest, #004d40);
+      }
+      @media (max-width: 520px) {
+        .rf-cookie-actions button {
+          flex-basis: 100%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -2092,7 +2473,7 @@
                 class="btn btn-ghost"
                 href="https://cal.com/remenyfarm/coop-orate"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 data-book-call="hero"
                 aria-label="Beszéljünk 20 percet – időpontfoglalás új lapon"
                 >Beszéljünk 20 percet</a
@@ -2110,10 +2491,17 @@
           <div class="hero-media" data-reveal>
             <img
               src="images/hero-chickens.jpg"
+              srcset="
+                images/hero-chickens-640.jpg 640w,
+                images/hero-chickens-960.jpg 960w,
+                images/hero-chickens.jpg 1280w
+              "
+              sizes="(max-width: 920px) min(460px, 92vw), 500px"
               alt="Szabadtartású tyúkok a Remény Farm mobil óljánál a legelőn"
-              width="1920"
-              height="1280"
+              width="1280"
+              height="853"
               loading="eager"
+              fetchpriority="high"
               onerror="
                 this.parentNode.style.background =
                   'linear-gradient(135deg,#0a5c4d,#00352c)'
@@ -2323,7 +2711,7 @@
                 class="btn btn-primary"
                 href="https://cal.com/remenyfarm/coop-orate"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 data-book-call="persona"
                 data-persona-cta="all"
                 aria-label="Beszéljünk 20 percet – időpontfoglalás új lapon"
@@ -2464,7 +2852,7 @@
       </section>
 
       <!-- HONNAN JÖN A TOJÁS / SZABADTARTÁS -->
-      <section class="section exp" id="honnan">
+      <section class="section exp exp--method" id="honnan">
         <div class="wrap">
           <div class="head" data-reveal>
             <span class="eyebrow">Honnan jön a tojás</span>
@@ -2832,64 +3220,69 @@
             </p>
           </div>
           <div class="calc-card" data-reveal>
-            <div class="calc-control">
-              <div class="calc-presets" role="group" aria-label="Tyúkok száma">
-                <button
-                  type="button"
-                  class="calc-preset"
-                  data-size="50"
-                  aria-pressed="true"
-                >
-                  50
-                </button>
-                <button
-                  type="button"
-                  class="calc-preset"
-                  data-size="100"
-                  aria-pressed="false"
-                >
-                  100
-                </button>
-                <button
-                  type="button"
-                  class="calc-preset"
-                  data-size="250"
-                  aria-pressed="false"
-                >
-                  250
-                </button>
-              </div>
-              <span class="calc-or">vagy</span>
-              <div class="field">
+            <div class="calc-form">
+              <div class="calc-group">
                 <label for="calcHens">Tyúkok száma</label>
+                <div class="calc-control">
+                  <div
+                    class="calc-presets"
+                    role="group"
+                    aria-label="Gyors tyúkszám választás"
+                  >
+                    <button
+                      type="button"
+                      class="calc-preset"
+                      data-size="50"
+                      aria-pressed="true"
+                    >
+                      50
+                    </button>
+                    <button
+                      type="button"
+                      class="calc-preset"
+                      data-size="100"
+                      aria-pressed="false"
+                    >
+                      100
+                    </button>
+                    <button
+                      type="button"
+                      class="calc-preset"
+                      data-size="250"
+                      aria-pressed="false"
+                    >
+                      250
+                    </button>
+                  </div>
+                  <span class="calc-or">vagy</span>
+                  <div class="field calc-custom">
+                    <input
+                      id="calcHens"
+                      type="number"
+                      inputmode="numeric"
+                      min="1"
+                      max="5000"
+                      step="1"
+                      value="50"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="field calc-emp">
+                <label for="calcEmp">Munkatársak száma</label>
                 <input
-                  id="calcHens"
+                  id="calcEmp"
                   type="number"
                   inputmode="numeric"
                   min="1"
-                  max="5000"
+                  max="100000"
                   step="1"
-                  value="50"
+                  value="45"
+                  placeholder="pl. 45"
                 />
               </div>
             </div>
-            <div class="field calc-emp">
-              <label for="calcEmp">Munkatársak száma</label>
-              <input
-                id="calcEmp"
-                type="number"
-                inputmode="numeric"
-                min="1"
-                max="100000"
-                step="1"
-                value="45"
-                placeholder="pl. 45"
-              />
-            </div>
             <div class="calc-out" aria-live="polite">
-              <div class="calc-stat">
-                <b>Becslés</b><span>élő állomány alapján</span>
-              </div>
               <div class="calc-stat">
                 <b id="calcEggs">525–665 db</b>
                 <span>tojás érkezik kéthetente az irodába</span>
@@ -3031,6 +3424,8 @@
             <img
               src="images/anna-eggs-apron.jpg"
               alt="Anna a Remény Farm tojásaival"
+              width="1600"
+              height="1067"
               loading="lazy"
               onerror="this.style.display = 'none'"
             />
@@ -3038,6 +3433,8 @@
               class="secondary"
               src="images/anna-david-farm.jpg"
               alt="Anna és Dávid a Remény Farmon"
+              width="1067"
+              height="1600"
               loading="lazy"
               onerror="this.style.display = 'none'"
             />
@@ -3276,9 +3673,13 @@
       <!-- COOP UPGRADES -->
       <section class="section upgrade" id="fejlesztesek">
         <div class="wrap">
+          <div class="head center upgrade-head" data-reveal>
+            <span class="eyebrow">2. fázis · opcionális</span>
+            <h2 class="upgrade-title">Konstruktőrök Bajnoksága</h2>
+          </div>
           <figure class="upgrade-blueprint" data-reveal>
             <img
-              src="images/konstruktorok-bajnoksaga-header.png"
+              src="images/konstruktorok-bajnoksaga-header.webp"
               alt="Csirkekollektív tyúkól szerkezeti tervrajz"
               width="1058"
               height="750"
@@ -3415,29 +3816,52 @@
                 allowfullscreen
               ></iframe>
             </div>
-            <ul class="bullets">
-              <li>
-                <b>Tájba épített reklámérték:</b> a céges coop látszik az útról,
-                a webcamen, a farmnapokon, a videók hátterében és a farmra
-                érkező látogatók előtt is.
-              </li>
-              <li>
-                <b>Coop Launch Content:</b> 1 forgatási nap, 1 fő short, 2–3
-                vágat.
-              </li>
-              <li>
-                <b>Employer Branding Story Pack:</b> tojásnap, farm és dolgozói
-                felhasználásra kész anyagok.
-              </li>
-              <li>
-                <b>Signature Media Campaign:</b> éves mini sorozat a cég saját
-                tyúkcsapatáról.
-              </li>
-              <li>
-                View-t nem garantálunk. Gyártást, darabszámot és historikus
-                elérési nagyságrendet kommunikálunk.
-              </li>
+            <p class="media-value">
+              <b>Tájba épített reklámérték.</b> A céges coop nem egy posztban
+              él: ott van mindenhol, ahol a farm látszik.
+            </p>
+            <ul class="media-channels" aria-label="Hol látszik a céges coop">
+              <li>Az útról</li>
+              <li>A webcamen</li>
+              <li>A farmnapokon</li>
+              <li>A videók hátterében</li>
+              <li>A látogatók előtt</li>
             </ul>
+
+            <table class="media-table">
+              <caption>Média-csomagok és tartalmuk</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Csomag</th>
+                  <th scope="col">Mit tartalmaz</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <span class="idx">01</span> Coop Launch Content
+                  </th>
+                  <td>1 forgatási nap, 1 fő short, 2–3 vágat.</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <span class="idx">02</span> Employer Branding Story Pack
+                  </th>
+                  <td>Tojásnap, farm és dolgozói felhasználásra kész anyagok.</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <span class="idx">03</span> Signature Media Campaign
+                  </th>
+                  <td>Éves mini sorozat a cég saját tyúkcsapatáról.</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="media-note">
+              <b>View-t nem garantálunk.</b> Gyártást, darabszámot és historikus
+              elérési nagyságrendet kommunikálunk.
+            </p>
           </div>
         </div>
       </section>
@@ -3746,7 +4170,7 @@
                 class="btn btn-light"
                 href="https://cal.com/remenyfarm/coop-orate"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 data-book-call="form"
                 aria-label="Beszéljünk 20 percet – időpontfoglalás új lapon"
                 >Beszéljünk 20 percet →</a
@@ -3866,7 +4290,7 @@
                   <a
                     href="https://www.remenyfarm.hu/adatvedelem/"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     >adatvédelmi tájékoztató</a
                   >
                   szerint.
@@ -3882,11 +4306,11 @@
             </p>
             <p class="privacy-note">
               Az adatokat ajánlatadás és kapcsolattartás céljából kezeljük. Az
-              érdeklődés MailerLite-ba kerül, részletek az
+              érdeklődés a MailerLite-ba (EU-s adatfeldolgozó) kerül, részletek az
               <a
                 href="https://www.remenyfarm.hu/adatvedelem/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 >adatvédelmi tájékoztatóban</a
               >.
             </p>
@@ -3923,6 +4347,9 @@
             <a href="https://tyuk.remeny.farm/">tyuk.remeny.farm</a>
             <a href="https://liget.remeny.farm/">liget.remeny.farm</a>
             <a href="https://www.remenyfarm.hu/adatvedelem/">Adatvédelem</a>
+            <a href="/impresszum.html">Impresszum</a>
+            <a href="/suti-tajekoztato.html">Süti tájékoztató</a>
+            <a href="#" data-cookie-settings>Süti beállítások</a>
             <a
               href="mailto:info@remenyfarm.hu?subject=Ceges%20Tyukcsapat%20Program%20erdeklodes"
               >info@remenyfarm.hu</a
@@ -3949,7 +4376,7 @@
             class="btn btn-light"
             href="https://cal.com/remenyfarm/coop-orate"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             data-book-call="sticky"
             aria-label="Beszéljünk 20 percet – időpontfoglalás új lapon"
             >Beszéljünk 20 percet</a
@@ -4023,11 +4450,16 @@
           navToggle.addEventListener("click", function () {
             var open = navLinks.classList.toggle("open");
             navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+            navToggle.setAttribute(
+              "aria-label",
+              open ? "Menü bezárása" : "Menü megnyitása",
+            );
           });
           navLinks.addEventListener("click", function (e) {
             if (e.target.closest("a")) {
               navLinks.classList.remove("open");
               navToggle.setAttribute("aria-expanded", "false");
+              navToggle.setAttribute("aria-label", "Menü megnyitása");
             }
           });
         }
@@ -4163,11 +4595,12 @@
 
         /* ===== Review-pass: analytics + interaktív komponensek ===== */
         function track(name, params) {
-          if (typeof gtag === "function") {
-            try {
-              gtag("event", name, params || {});
-            } catch (e) {}
-          }
+          // Csak akkor küldünk eseményt, ha a látogató hozzájárult az analitikához
+          // (a GA ilyenkor van betöltve). Hozzájárulás nélkül no-op.
+          if (!window.rfGaLoaded || typeof gtag !== "function") return;
+          try {
+            gtag("event", name, params || {});
+          } catch (e) {}
         }
         function storeGet(k) {
           try {
@@ -4415,6 +4848,79 @@
             hideSticky();
           });
         }
+      })();
+    </script>
+    <!-- SÜTI HOZZÁJÁRULÁS BANNER -->
+    <div
+      class="rf-cookie"
+      id="rfCookie"
+      role="dialog"
+      aria-live="polite"
+      aria-label="Süti beállítások"
+      hidden
+    >
+      <h2>Süti beállítások</h2>
+      <p>
+        Ez az oldal a működéshez szükséges tárolást használ, és
+        <b>hozzájárulásoddal</b> anonim látogatottsági statisztikát is (Google
+        Analytics). Részletek a
+        <a href="/suti-tajekoztato.html">Süti tájékoztatóban</a>.
+      </p>
+      <div class="rf-cookie-actions">
+        <button type="button" class="rf-cookie-reject" id="rfCookieReject">
+          Csak a szükségesek
+        </button>
+        <button type="button" class="rf-cookie-accept" id="rfCookieAccept">
+          Elfogadom
+        </button>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var el = document.getElementById("rfCookie");
+        if (!el) return;
+        var KEY = window.RF_CONSENT_KEY || "rf-cookie-consent";
+        function save(analytics) {
+          try {
+            localStorage.setItem(
+              KEY,
+              JSON.stringify({ analytics: analytics, ts: Date.now() }),
+            );
+          } catch (e) {}
+        }
+        function openBanner() {
+          el.removeAttribute("hidden");
+          el.classList.add("is-open");
+        }
+        function closeBanner() {
+          el.classList.remove("is-open");
+          el.setAttribute("hidden", "");
+        }
+        var accept = document.getElementById("rfCookieAccept");
+        var reject = document.getElementById("rfCookieReject");
+        if (accept)
+          accept.addEventListener("click", function () {
+            save(true);
+            if (typeof window.rfEnableAnalytics === "function")
+              window.rfEnableAnalytics();
+            closeBanner();
+          });
+        if (reject)
+          reject.addEventListener("click", function () {
+            save(false);
+            closeBanner();
+          });
+        // A footer „Süti beállítások" linkje bármikor újranyitja a bannert
+        var reopeners = document.querySelectorAll("[data-cookie-settings]");
+        Array.prototype.forEach.call(reopeners, function (a) {
+          a.addEventListener("click", function (ev) {
+            ev.preventDefault();
+            openBanner();
+          });
+        });
+        // Csak akkor jelenjen meg magától, ha még nincs korábbi döntés
+        var stored = window.rfReadConsent ? window.rfReadConsent() : null;
+        if (!stored) openBanner();
       })();
     </script>
   </body>

@@ -6,6 +6,11 @@ const jsonHeaders = {
   "access-control-allow-origin": "https://cegeknek.remeny.farm",
   "access-control-allow-methods": "POST, OPTIONS",
   "access-control-allow-headers": "content-type",
+  // Biztonsági fejlécek (defense-in-depth az API-válaszokon)
+  "x-content-type-options": "nosniff",
+  "x-frame-options": "DENY",
+  "referrer-policy": "strict-origin-when-cross-origin",
+  "strict-transport-security": "max-age=63072000; includeSubDomains; preload",
 };
 
 function jsonResponse(body, status = 200) {
@@ -55,6 +60,12 @@ export default {
     const championshipInterest = payload.championshipInterest ? "igen" : "nem";
     const privacyConsent = payload.privacyConsent ? "igen" : "nem";
     const message = cleanText(payload.message, 1000);
+
+    // Adatkezelési hozzájárulás szerver oldali kötelezővé tétele (GDPR):
+    // hozzájárulás nélkül nem továbbítunk adatot a MailerLite-ba.
+    if (!payload.privacyConsent) {
+      return jsonResponse({ ok: false, error: "consent_required" }, 422);
+    }
 
     if (!isEmail(email) || !company) {
       return jsonResponse({ ok: false, error: "missing_required_fields" }, 422);

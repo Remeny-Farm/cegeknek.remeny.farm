@@ -804,7 +804,39 @@
         margin-top: 1.5rem;
         font-size: clamp(1.05rem, 1.6vw, 1.22rem);
         color: var(--ink-soft);
-        max-width: 44ch;
+        max-width: 58ch;
+      }
+      .hero-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 1.2rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .hero-points li {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.42rem;
+        padding: 0.52rem 0.78rem;
+        border: 1px solid rgba(46, 93, 65, 0.18);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.62);
+        color: var(--forest-deep);
+        font-size: 0.92rem;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+      .hero-points span {
+        display: grid;
+        place-items: center;
+        width: 1.05rem;
+        height: 1.05rem;
+        border-radius: 999px;
+        background: var(--forest);
+        color: #fff;
+        font-size: 0.72rem;
+        line-height: 1;
       }
       .hero-kick {
         margin-top: 1rem;
@@ -2852,12 +2884,18 @@
               <span class="ital">amiről tényleg beszélnek.</span>
             </h1>
             <p class="hero-sub">
-              Saját céges tyúkcsapat a Remény Farm szabadtartású, mobil
-              óljaiban: a logózott ól a regenerálódó legelőn vándorol, élő
-              webcammal az irodába, kétheti tojásnappal, dolgozóknak digitálisan
-              örökbe fogadható tyúkokkal és opcionális tartalomgyártással milliós
-              elérésű farmcsatornán.
+              Leköttök egy saját céges tyúkcsapatot a Remény Farmon. Mi
+              gondozzuk az állatokat, kéthetente szállítjuk a tojást az
+              irodába, ti pedig egész évben követhető farmtörténetet, dolgozói
+              élményt és kommunikálható márkaanyagot kaptok.
             </p>
+            <ul class="hero-points" aria-label="A program fő elemei">
+              <li><span aria-hidden="true">✓</span>Kétheti tojásnap</li>
+              <li><span aria-hidden="true">✓</span>Logózott mobil ól</li>
+              <li><span aria-hidden="true">✓</span>Élő webcam</li>
+              <li><span aria-hidden="true">✓</span>Dolgozói tyúkkódok</li>
+              <li><span aria-hidden="true">✓</span>Opcionális tartalomgyártás</li>
+            </ul>
             <p class="hero-kick">
               Nem stock CSR. Nem sablon juttatás. Szabadtartás, mozgó ól, élő
               legelő – egy működő farmon.
@@ -2927,7 +2965,7 @@
         <div class="wrap">
           <div class="head center" data-reveal>
             <span class="eyebrow">Honnan nézed?</span>
-            <h2>Mi hozott ide?</h2>
+            <h2>Neked mit kell ebből házon belül bizonyítanod?</h2>
             <p class="lead" style="margin: 0.6rem auto 0">
               Egy program, három céges cél: employer branding, márkaépítés vagy
               ESG. Válasszátok ki, nálatok melyik a legerősebb.
@@ -3041,7 +3079,7 @@
                 </li>
                 <li>
                   Ha megérik: a Signature Media Campaign (forgatás, rövid videók,
-                  történetcsomag) opcionális 2. fázisú bővítés.
+                  történetcsomag) opcionális média-bővítés.
                 </li>
               </ul>
               <a
@@ -3947,8 +3985,14 @@
                 <tr>
                   <th scope="row">Kétheti tojásszállítás</th>
                   <td>✓</td>
-                  <td>✓ (tojásnap)</td>
-                  <td>✓ (tojásnap)</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <th scope="row">Kétheti tojásmennyiség</th>
+                  <td>kb. 525–665 tojás / kétheti tojásnap</td>
+                  <td>kb. 1 050–1 330 tojás / kétheti tojásnap</td>
+                  <td>kb. 2 625–3 325 tojás / kétheti tojásnap</td>
                 </tr>
                 <tr>
                   <th scope="row">Dolgozói kódok / tyúkok</th>
@@ -4025,8 +4069,8 @@
               </p>
               <ul>
                 <li>
-                  <b>10% alapítói kedvezmény</b> az első 12 hónapra (vagy örökös
-                  alapítói ár).
+                  <b>10% alapítói kedvezmény</b> az első 12 hónapra, és
+                  elsőbbségi hosszabbítási lehetőség a következő szezonra.
                 </li>
                 <li>
                   Közvetlen vonal hozzánk, és beleszólás abba, mi épüljön a
@@ -4234,7 +4278,7 @@
       <section class="section upgrade" id="fejlesztesek">
         <div class="wrap">
           <div class="head center upgrade-head" data-reveal>
-            <span class="eyebrow">2. fázis · opcionális</span>
+            <span class="eyebrow">opcionális</span>
             <h2 class="upgrade-title">Konstruktőrök Bajnoksága</h2>
           </div>
           <figure class="upgrade-blueprint" data-reveal>
@@ -4248,7 +4292,6 @@
           </figure>
           <div class="upgrade-grid">
             <div class="upgrade-panel" data-reveal>
-              <span class="phase-badge">2. fázis · opcionális</span>
               <span class="eyebrow">Saját coop fejlesztések</span>
               <h2>Legyen a tyúkól tényleg a cégeteké.</h2>
               <p class="lead">
@@ -4301,8 +4344,6 @@
       <section class="section championship" id="konstruktorok">
         <div class="wrap champ-grid">
           <div class="head" data-reveal>
-            <span class="phase-badge">2. fázis · opcionális</span>
-            <span class="eyebrow">Konstruktőrök Bajnoksága</span>
             <h2>Építsetek jobb coopot, ne csak béreljetek tyúkokat.</h2>
             <p class="lead">
               Opcionális coop-verseny, privát vagy választható nyilvános
@@ -4354,7 +4395,7 @@
               Külön, projektalapon árazott média-komponens –
               <b>nem automatikus része a coopnak</b>. Az alapcsomag a logózott
               ólat, a webcamet és a tojásnapot tartalmazza; a tartalomgyártás
-              ezekre épülő, opcionális 2. fázisú bővítés.
+              ezekre épülő, opcionális média-bővítés.
             </p>
           </div>
           <div data-reveal>

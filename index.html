@@ -7,7 +7,7 @@
     <title>Céges Tyúkcsapat Program – Remény Farm</title>
     <meta
       name="description"
-      content="Saját céges tyúkcsapat a Remény Farm szabadtartású, mobil óljaiban: a logózott ól a regenerálódó legelőn vándorol, élő webcam az irodába, kétheti tojásnap, dolgozói kódok, egyedi tojásbélyegzés és prémium tartalomgyártás milliós elérésű farmcsatornával. Szabadtartású, mobil ólas, regeneratív gazdaság a Bükk-vidéken. Nem stock CSR."
+      content="Saját céges tyúkcsapat a Remény Farm szabadtartású, mobil óljaiban: logózott ól a legelőn, élő webcam, kétheti tojásnap és egyedi tojásbélyegzés. Nem stock CSR."
     />
     <meta
       property="og:title"
@@ -21,14 +21,319 @@
       property="og:image"
       content="https://cegeknek.remeny.farm/images/hero-chickens.jpg"
     />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="853" />
+    <meta
+      property="og:image:alt"
+      content="Szabadtartású tyúkok a Remény Farm mobil óljánál a legelőn"
+    />
     <meta property="og:url" content="https://cegeknek.remeny.farm/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Remény Farm – Cégeknek" />
     <meta property="og:locale" content="hu_HU" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Céges Tyúkcsapat Program – Remény Farm"
+    />
+    <meta
+      name="twitter:description"
+      content="Nem stock CSR. Saját, logózott céges tyúkcsapat a szabadtartású Remény Farmon: élő webcam, kétheti tojásnap, egyedi tojásbélyegzés."
+    />
+    <meta
+      name="twitter:image"
+      content="https://cegeknek.remeny.farm/images/hero-chickens.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Szabadtartású tyúkok a Remény Farm mobil óljánál a legelőn"
+    />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Remény Farm Kft." />
     <link rel="canonical" href="https://cegeknek.remeny.farm/" />
+
+    <!-- Favicon / app icons (files provided by a sibling task) -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Structured data (JSON-LD) for search engines and AI crawlers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": [
+            "Organization",
+            "Farm"
+          ],
+          "@id": "https://cegeknek.remeny.farm/#organization",
+          "name": "Remény Farm Kft.",
+          "url": "https://www.remenyfarm.hu/",
+          "logo": "https://cegeknek.remeny.farm/images/logo-quarter.png",
+          "image": "https://cegeknek.remeny.farm/images/hero-chickens.jpg",
+          "email": "info@remenyfarm.hu",
+          "telephone": "+36307343662",
+          "description": "Regeneratív, bio-tanúsított szabadtartású tojógazdaság a Bükk alján. A Céges Tyúkcsapat Program keretében cégek saját, logózott mobil ólas tyúkcsapatot kapnak élő webcammal, kétheti tojásnappal és egyedi tojásbélyegzéssel.",
+          "founder": [
+            {
+              "@type": "Person",
+              "name": "Anna"
+            },
+            {
+              "@type": "Person",
+              "name": "Dávid"
+            }
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Szabadság utca 50.",
+            "addressLocality": "Bekölce",
+            "postalCode": "3343",
+            "addressRegion": "Heves",
+            "addressCountry": "HU"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 48.05,
+            "longitude": 20.25
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Magyarország"
+          },
+          "vatID": "HU26667089",
+          "taxID": "26667089-2-10",
+          "sameAs": [
+            "https://www.remenyfarm.hu/",
+            "https://tyuk.remeny.farm/",
+            "https://liget.remeny.farm/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://cegeknek.remeny.farm/#website",
+          "url": "https://cegeknek.remeny.farm/",
+          "name": "Remény Farm – Céges Tyúkcsapat Program",
+          "inLanguage": "hu",
+          "publisher": {
+            "@id": "https://cegeknek.remeny.farm/#organization"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://cegeknek.remeny.farm/#service",
+          "name": "Céges Tyúkcsapat Program",
+          "serviceType": "Céges tyúkcsapat – employer branding és ESG program",
+          "provider": {
+            "@id": "https://cegeknek.remeny.farm/#organization"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "Magyarország"
+          },
+          "description": "12 hónapos céges program: saját, logózott mobil ólas tyúkcsapat a Remény Farm szabadtartású legelőjén, élő webcammal, kétheti tojásnappal, dolgozói kódokkal és egyedi, céges logós tojásbélyegzéssel.",
+          "offers": {
+            "@type": "OfferCatalog",
+            "name": "Céges coop csomagok",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Iroda Coop – 50 tyúk",
+                "description": "Belépő céges csomag: céges logó az ólnál, saját webcam, kétheti tojásszállítás, dolgozói kódok, co-branded oldal, évi 1 farmlátogatás. 4990 Ft + ÁFA / tyúk / hó -tól, 12 hónapos lekötés.",
+                "priceCurrency": "HUF",
+                "price": "249500",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "249500",
+                  "priceCurrency": "HUF",
+                  "valueAddedTaxIncluded": false,
+                  "unitText": "hó",
+                  "description": "50 tyúk, 4990 Ft + ÁFA / tyúk / hó -tól, 12 hónapos lekötés"
+                },
+                "eligibleDuration": {
+                  "@type": "QuantitativeValue",
+                  "value": 12,
+                  "unitCode": "MON"
+                },
+                "availability": "https://schema.org/LimitedAvailability",
+                "seller": {
+                  "@id": "https://cegeknek.remeny.farm/#organization"
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Team Coop – 100 tyúk",
+                "description": "A legtöbb cégnek: egyedi tojásbélyegzés, részleges ponyva branding, kétheti tojásnap, csapatlátogatás, opcionális faültetés. 4990 Ft + ÁFA / tyúk / hó -tól, 12 hónapos lekötés.",
+                "priceCurrency": "HUF",
+                "price": "499000",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "499000",
+                  "priceCurrency": "HUF",
+                  "valueAddedTaxIncluded": false,
+                  "unitText": "hó",
+                  "description": "100 tyúk, 4990 Ft + ÁFA / tyúk / hó -tól, 12 hónapos lekötés"
+                },
+                "eligibleDuration": {
+                  "@type": "QuantitativeValue",
+                  "value": 12,
+                  "unitCode": "MON"
+                },
+                "availability": "https://schema.org/LimitedAvailability",
+                "seller": {
+                  "@id": "https://cegeknek.remeny.farm/#organization"
+                }
+              },
+              {
+                "@type": "Offer",
+                "name": "Signature Coop – 250 tyúk",
+                "description": "Flagship: teljes ponyva branding, dedikált app/landing, nagyobb farmnap, éves CSR / employer branding anyag. 4990 Ft + ÁFA / tyúk / hó -tól, 12 hónapos lekötés.",
+                "priceCurrency": "HUF",
+                "price": "1247500",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "1247500",
+                  "priceCurrency": "HUF",
+                  "valueAddedTaxIncluded": false,
+                  "unitText": "hó",
+                  "description": "250 tyúk, 4990 Ft + ÁFA / tyúk / hó -tól, 12 hónapos lekötés"
+                },
+                "eligibleDuration": {
+                  "@type": "QuantitativeValue",
+                  "value": 12,
+                  "unitCode": "MON"
+                },
+                "availability": "https://schema.org/LimitedAvailability",
+                "seller": {
+                  "@id": "https://cegeknek.remeny.farm/#organization"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://cegeknek.remeny.farm/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Hova szállítotok, és milyen gyakran?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A tojás kéthetente érkezik, 30-as tálcákon, közvetlenül az irodátokba; a dolgozók saját 10-es tartóval viszik haza az adagjukat. A pontos szállítási kört és ritmust az ajánlatkérésnél egyeztetjük a telephelyetek alapján."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Élelmiszerbiztonság, engedélyek?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A működés bejelentett, a tojás nyomonkövethető, a szállítás dokumentált hűtési lánccal történik. Céges beszerzésnek és HR-nek is odaadható, auditálható papírral – kérésre megküldjük a vonatkozó dokumentációt. A tojás a saját, lekötött céges tyúkcsapatotokból érkezik."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hogyan élnek a tyúkok? Tényleg szabadtartás?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Igen. A tyúkok mobil ólban élnek, amit hetente odébb húzunk a friss legelőre – a juhok és a szarvasmarhák nyomában. Friss zöldet, magvakat és rovarokat csipegetnek egy gyógynövényekkel teli tájon; a rotáció természetes kártevő- és parazita-kontroll vegyszer nélkül, a trágya pedig visszatáplálja a talajt. Ez látszik a tojáson is: mélyebb, narancsosabb sárgája. Kutatások szerint a legelőn tartott tyúkok tojása több omega-3-at, E- és A-vitamint és karotinoidot tartalmaz; az érték az évszakkal és a legelővel változik. A legjobb, ha kijöttök és élőben megnézitek."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Mennyibe kerül egy csomag?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Minden csomag egyedi árazású a coop méretétől (50 / 100 / 250 tyúk), a branding mélységétől (ponyva, tojásbélyegző, dedikált oldal) és a szállítási körtől függően. A tartalomgyártás és a Konstruktőrök Bajnoksága opcionális, külön árazott bővítés – nem terheli az alapcsomagot. Alapító partnereknek 10% kedvezmény az első évre. A pontos számokat egy 20 perces híváson vagy az ajánlatkérés után percek alatt megadjuk."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Melyik csomag illik hozzánk?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kisebb irodának és vezetői csapatnak az Iroda Coop (50), a legtöbb HR/employer branding célra a Team Coop (100, egyedi tojásbélyegzéssel), nagy márkatörténethez és multiknak a Signature Coop (250, teljes branded identitással). Az érdeklődésnél segítünk választani."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Tényleg minden tojáson rajta lehet a logónk?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Igen, az egyedi tojásbélyegzés a Team és a Signature csomag része. A bélyegző arculatát közösen véglegesítjük, mielőtt élesedik. A tojás a saját, lekötött céges tyúkcsapatotokból érkezik."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Mit kapunk az ESG-jelentésünkbe?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Dokumentált, valódi tartalmat: szabadtartású, mobil ólas farmélmény, a Ligetben telepített fák, a coopotokról készült fotó/videó és évről évre követhető tájregeneráció és biodiverzitás. Fontos: ez dokumentált terepi munka és tartalom, nem garantált karbonsemlegesítés és nem zöldre festett logó."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Hogyan működik a tartalomgyártás?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Külön média-komponens: forgatási nappal, stábidővel, vágással és brand safety jóváhagyási körrel. A Remény Farm rövid videói rendszeresen több százezres, gyakran milliós elérést hoznak – de view-t nem garantálunk, gyártást, darabszámot és historikus elérési nagyságrendet kommunikálunk."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ez tojástermelési verseny?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nem. A nyers tojásszám önmagában nem cél. A Konstruktőrök Bajnokságában a relatív tojáshozam csak állatjóléti és aktivitási mutatókkal együtt számít. A cél a jobb coop, nem a túlhajtott tyúk."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Mi döntjük el, mit változtatunk az ólon vagy a takarmányozáson?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ötletelhettek, de minden változtatást a Remény Farm hagy jóvá. Élő állatokkal dolgozunk, ezért csak olyan fejlesztés kerülhet be, ami a tyúkoknak is jó."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kötelező nyilvánosan szerepelni a toplistán?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nem. A leaderboard opt-in. Ha szeretnétek, nyilvánosan versenyeztek. Ha nem, a pontszámok és riportok privát dashboardban maradnak."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Bizalmasan kezelitek a cégünk adatait és terveit?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Igen. A megadott cégadatokat, HR- és employer branding célokat, valamint az üzeneteket csak az ajánlatkérés feldolgozásához, egyeztetéshez és szerződés-előkészítéshez használjuk. Nyilvános kommunikáció, logóhasználat vagy esettanulmány csak külön jóváhagyás után történik."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kész már a dolgozói app?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A dolgozói belépés most webfiókkal indul: minden munkatárs saját kóddal válthatja be az általa digitálisan örökbe fogadott tyúkot. A tyúknál látszik a fotó, az aktivitás és a történet, így a program nem csak céges dashboard, hanem hazavihető családi sztori is. Az iPhone- és Android-app későbbi, külön jelzett bővítés."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Miért 12 hónap, és lemondható-e?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Élő állatokkal dolgozunk, ezért a program 12 hónapos kapacitáslekötéssel indul – tyúkállományt, brandinget, szállítási ritmust és gyártási kapacitást foglalunk le. Korai lezárás esetén kapacitáslezárási díj érvényes; a részleteket a szerződésben rögzítjük."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
     <!-- Betűtípusok: self-hosted (lásd @font-face a <style>-ban) – nincs Google Fonts CDN -->
 
@@ -2395,6 +2700,58 @@
           flex-basis: 100%;
         }
       }
+
+      /* Package comparison table (Task 3) */
+      .pkg-compare-wrap {
+        overflow-x: auto;
+        margin-top: 2.5rem;
+      }
+      .pkg-compare {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 640px;
+        font-size: 0.95rem;
+      }
+      .pkg-compare caption {
+        caption-side: top;
+        text-align: left;
+        color: var(--forest);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        max-width: 60ch;
+      }
+      .pkg-compare th,
+      .pkg-compare td {
+        padding: 0.65rem 0.8rem;
+        border-bottom: 1px solid var(--line, #e4dccb);
+        text-align: center;
+        vertical-align: top;
+      }
+      .pkg-compare thead th {
+        background: var(--paper-2, #f2ede1);
+        color: var(--forest);
+      }
+      .pkg-compare tbody th {
+        text-align: left;
+        font-weight: 500;
+      }
+
+      /* Static, crawler-readable calculator line (Task 4) */
+      .calc-static {
+        margin-top: 12px;
+      }
+
+      /* Footer postal / contact address (Task 5) */
+      .foot-address {
+        font-style: normal;
+        line-height: 1.6;
+        margin-top: 0.75rem;
+        font-size: 0.95rem;
+      }
+      .foot-address a {
+        color: inherit;
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -3299,6 +3656,12 @@
               a sztorinak: a másik a minőség – szabadtartású, legelőn, zöldhöz és
               rovarhoz hozzáférő tyúkok mélysárga tojása.
             </p>
+            <!-- Static, JS-free magnitude line so crawlers/LLMs can read the numbers -->
+            <p class="calc-static calc-note">
+              Nagyságrend: 100 tyúk nagyjából 1000–1300 tojást ad kéthetente
+              (~75–95% tojáshozam), ami egy 30 fős irodánál körülbelül 30–45
+              tojás fejenként. A pontos számot a fenti kalkulátor adja.
+            </p>
           </div>
         </div>
       </section>
@@ -3413,6 +3776,86 @@
                 >Beszéljünk róla</a
               >
             </div>
+          </div>
+          <!-- Package comparison table (crawler/AI readable) -->
+          <div class="pkg-compare-wrap" data-reveal>
+            <table class="pkg-compare">
+              <caption>
+                Csomag-összehasonlítás — minden ár nettó, + ÁFA, 12 hónapos
+                lekötésre. Egységár: 4990 Ft + ÁFA / tyúk / hó -tól. Alapító
+                partnereknek −10% az első évben.
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Jellemző</th>
+                  <th scope="col">Iroda Coop</th>
+                  <th scope="col">Team Coop</th>
+                  <th scope="col">Signature Coop</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Tyúkszám</th>
+                  <td>50</td>
+                  <td>100</td>
+                  <td>250</td>
+                </tr>
+                <tr>
+                  <th scope="row">Kezdőár (nettó / hó)</th>
+                  <td>249 500 Ft-tól</td>
+                  <td>499 000 Ft-tól</td>
+                  <td>1 247 500 Ft-tól</td>
+                </tr>
+                <tr>
+                  <th scope="row">Céges logó az ólnál</th>
+                  <td>✓</td>
+                  <td>✓ (nagyobb / ponyva)</td>
+                  <td>✓ (teljes ponyva)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Élő webcam</th>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <th scope="row">Kétheti tojásszállítás</th>
+                  <td>✓</td>
+                  <td>✓ (tojásnap)</td>
+                  <td>✓ (tojásnap)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dolgozói kódok / tyúkok</th>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <th scope="row">Egyedi tojásbélyegzés</th>
+                  <td>–</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <th scope="row">Dedikált app / landing</th>
+                  <td>co-branded oldal</td>
+                  <td>–</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <th scope="row">Farmlátogatás / farmnap</th>
+                  <td>évi 1 látogatás</td>
+                  <td>csapatlátogatás</td>
+                  <td>nagyobb farmnap</td>
+                </tr>
+                <tr>
+                  <th scope="row">Éves CSR / employer branding anyag</th>
+                  <td>–</td>
+                  <td>opcionális</td>
+                  <td>✓</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -4341,6 +4784,13 @@
               Regeneratív, bio-tanúsított gazdaság a Bükk-vidéken. Céges
               Tyúkcsapat Program.
             </p>
+            <address class="foot-address">
+              Remény Farm Kft.<br />
+              3343 Bekölce, Szabadság utca 50.<br />
+              Adószám: 26667089-2-10<br />
+              <a href="tel:+36307343662">+36 30 734 3662</a> ·
+              <a href="mailto:info@remenyfarm.hu">info@remenyfarm.hu</a>
+            </address>
           </div>
           <div class="foot-links">
             <a href="https://www.remenyfarm.hu/">remenyfarm.hu</a>

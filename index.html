@@ -211,10 +211,14 @@
       .head.center .eyebrow {
         justify-content: center;
       }
-      /* Breathing room between every section title and its body copy.
+      /* Breathing room between every title and its body copy.
          .head is a plain block, so this collapses with the centered
-         variants' inline lead top-margins instead of stacking. */
-      .head h2 {
+         variants' inline lead top-margins instead of stacking; the
+         panel/CTA headings below aren't wrapped in .head but share the
+         same flush-against-the-lead problem. */
+      .head h2,
+      .upgrade-panel h2,
+      .lead-intro h2 {
         margin-bottom: 1.1rem;
       }
 

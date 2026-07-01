@@ -1240,9 +1240,6 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 22px;
       }
-      .photo-figure + .exp-grid {
-        margin-top: clamp(24px, 4vw, 38px);
-      }
       .exp-card {
         background: var(--paper);
         border: 1px solid var(--line);
@@ -1354,6 +1351,10 @@
         max-width: 760px;
         margin-left: auto;
         margin-right: auto;
+      }
+      .photo-figure + *,
+      .trust-proof + * {
+        margin-top: clamp(30px, 4.5vw, 46px);
       }
       .upgrade-grid {
         display: grid;

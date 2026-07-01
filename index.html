@@ -1896,6 +1896,12 @@
         grid-template-columns: 1fr 1fr;
         gap: 15px;
       }
+      .field-row .field label {
+        min-height: 2.35em;
+        display: flex;
+        align-items: flex-end;
+        line-height: 1.25;
+      }
       .check-field {
         display: flex;
         gap: 12px;
@@ -2116,6 +2122,10 @@
         }
         .field-row {
           grid-template-columns: 1fr;
+        }
+        .field-row .field label {
+          min-height: 0;
+          display: block;
         }
       }
 

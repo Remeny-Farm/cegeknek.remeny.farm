@@ -804,7 +804,39 @@
         margin-top: 1.5rem;
         font-size: clamp(1.05rem, 1.6vw, 1.22rem);
         color: var(--ink-soft);
-        max-width: 44ch;
+        max-width: 58ch;
+      }
+      .hero-points {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 1.2rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .hero-points li {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.42rem;
+        padding: 0.52rem 0.78rem;
+        border: 1px solid rgba(46, 93, 65, 0.18);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.62);
+        color: var(--forest-deep);
+        font-size: 0.92rem;
+        font-weight: 700;
+        line-height: 1.1;
+      }
+      .hero-points span {
+        display: grid;
+        place-items: center;
+        width: 1.05rem;
+        height: 1.05rem;
+        border-radius: 999px;
+        background: var(--forest);
+        color: #fff;
+        font-size: 0.72rem;
+        line-height: 1;
       }
       .hero-kick {
         margin-top: 1rem;
@@ -2852,12 +2884,18 @@
               <span class="ital">amiről tényleg beszélnek.</span>
             </h1>
             <p class="hero-sub">
-              Saját céges tyúkcsapat a Remény Farm szabadtartású, mobil
-              óljaiban: a logózott ól a regenerálódó legelőn vándorol, élő
-              webcammal az irodába, kétheti tojásnappal, dolgozóknak digitálisan
-              örökbe fogadható tyúkokkal és opcionális tartalomgyártással milliós
-              elérésű farmcsatornán.
+              Leköttök egy saját céges tyúkcsapatot a Remény Farmon. Mi
+              gondozzuk az állatokat, kéthetente szállítjuk a tojást az
+              irodába, ti pedig egész évben követhető farmtörténetet, dolgozói
+              élményt és kommunikálható márkaanyagot kaptok.
             </p>
+            <ul class="hero-points" aria-label="A program fő elemei">
+              <li><span aria-hidden="true">✓</span>Kétheti tojásnap</li>
+              <li><span aria-hidden="true">✓</span>Logózott mobil ól</li>
+              <li><span aria-hidden="true">✓</span>Élő webcam</li>
+              <li><span aria-hidden="true">✓</span>Dolgozói tyúkkódok</li>
+              <li><span aria-hidden="true">✓</span>Opcionális tartalomgyártás</li>
+            </ul>
             <p class="hero-kick">
               Nem stock CSR. Nem sablon juttatás. Szabadtartás, mozgó ól, élő
               legelő – egy működő farmon.

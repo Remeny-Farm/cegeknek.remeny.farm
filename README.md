@@ -15,8 +15,8 @@ Az ajanlatkero form nem kozvetlen MailerLite API-t hiv a frontendbol, mert az AP
 - Worker fajl: `worker.js`
 - Route: `cegeknek.remeny.farm/api/lead`
 - MailerLite group: `Ceges Tyukcsapat - Erdeklodok` (`191694239954896441`)
-- Custom fields: dolgozoi letszam, iroda helyszin, csomag, nezopont, konstruktori bajnoksag, adatkezeles, megjegyzes
-- FONTOS: a `ceges_tyukcsapat_nezopont` es `ceges_tyukcsapat_adatkezeles` mezoket a MailerLite-ban (Subscribers -> Fields) letre kell hozni, kulonben az API csendben eldobja az erteket.
+- Custom fields: dolgozoi letszam, iroda helyszin, irodai jelenlet, elsoleges cel, csomag, nezopont, eves keret, idealis indulas, konstruktori bajnoksag, adatkezeles, megjegyzes
+- FONTOS: a `ceges_tyukcsapat_nezopont`, `ceges_tyukcsapat_adatkezeles`, `ceges_tyukcsapat_irodai_jelenlet`, `ceges_tyukcsapat_elsoleges_cel`, `ceges_tyukcsapat_eves_keret` es `ceges_tyukcsapat_idealis_indulas` mezoket a MailerLite-ban (Subscribers -> Fields) letre kell hozni, kulonben az API csendben eldobja az erteket.
 - Secret binding: `MAILERLITE_API_KEY`
 
 A `cegeknek.remeny.farm` DNS rekord Cloudflare proxied modban van, hogy a Worker route fusson, mikozben a statikus oldalt tovabbra is a GitHub Pages szolgalja ki.

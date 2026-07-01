@@ -55,8 +55,12 @@ export default {
     const company = cleanText(payload.company, 180);
     const teamSize = cleanText(payload.teamSize, 80);
     const location = cleanText(payload.location, 180);
+    const officePresence = cleanText(payload.officePresence, 80);
+    const primaryGoal = cleanText(payload.primaryGoal, 120);
     const packageInterest = cleanText(payload.packageInterest, 180);
     const perspective = cleanText(payload.perspective, 80);
+    const annualBudget = cleanText(payload.annualBudget, 80);
+    const idealStart = cleanText(payload.idealStart, 80);
     const championshipInterest = payload.championshipInterest ? "igen" : "nem";
     const privacyConsent = payload.privacyConsent ? "igen" : "nem";
     const message = cleanText(payload.message, 1000);
@@ -78,8 +82,12 @@ export default {
         company,
         ceges_tyukcsapat_dolgozoi_letszam: teamSize,
         ceges_tyukcsapat_iroda_helyszin: location,
+        ceges_tyukcsapat_irodai_jelenlet: officePresence,
+        ceges_tyukcsapat_elsoleges_cel: primaryGoal,
         ceges_tyukcsapat_csomag: packageInterest,
         ceges_tyukcsapat_nezopont: perspective,
+        ceges_tyukcsapat_eves_keret: annualBudget,
+        ceges_tyukcsapat_idealis_indulas: idealStart,
         ceges_tyukcsapat_konstruktorok_bajnoksaga: championshipInterest,
         ceges_tyukcsapat_adatkezeles: privacyConsent,
         ceges_tyukcsapat_megjegyzes: message,

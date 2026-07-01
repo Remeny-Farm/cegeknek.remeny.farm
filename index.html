@@ -148,6 +148,10 @@
         --yolk-text: #8a5a00;
         --surface: #fffdf9;
         --on-forest: #f1f7f3;
+        --on-forest-soft: #cfe0d8;
+        --on-forest-muted: #d5e2db;
+        --on-forest-dim: #a6bbb1;
+        --on-forest-faint: #b6cac1;
         --paper: #fbf9f3;
         --paper-2: #f2ede1;
         --ink: #23271f;
@@ -407,8 +411,8 @@
         display: none;
         align-items: center;
         justify-content: center;
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
         border: 1.5px solid var(--line);
         border-radius: 11px;
         background: transparent;
@@ -534,7 +538,7 @@
         color: var(--on-forest);
       }
       .capacity .lead {
-        color: #d5e2db;
+        color: var(--on-forest-muted);
       }
       .cap-box {
         background: rgba(251, 249, 243, 0.08);
@@ -551,7 +555,7 @@
         margin-bottom: 12px;
       }
       .cap-box p {
-        color: #d5e2db;
+        color: var(--on-forest-muted);
         margin: 0;
       }
       .cap-points {
@@ -562,7 +566,7 @@
       .cap-point {
         display: flex;
         gap: 11px;
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
         font-size: 0.96rem;
       }
       .cap-point::before {
@@ -660,7 +664,7 @@
         color: var(--on-forest);
       }
       .preview .lead {
-        color: #d5e2db;
+        color: var(--on-forest-muted);
       }
       .pv-grid {
         display: grid;
@@ -695,7 +699,7 @@
       }
       .pv-note {
         font-size: 0.85rem;
-        color: #a6bbb1;
+        color: var(--on-forest-dim);
         margin-top: 1rem;
         max-width: 42ch;
       }
@@ -744,7 +748,7 @@
         max-width: 18ch;
       }
       .preview-proof p {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
         max-width: 48ch;
         margin-top: 1rem;
       }
@@ -910,10 +914,42 @@
         color: var(--ink-soft);
         margin: 0;
       }
+      /* #honnan: editorial, top-ruled variant so it doesn't echo #elmeny's cards */
+      .exp--method .exp-grid {
+        gap: 2px 42px;
+      }
+      .exp--method .exp-card {
+        background: transparent;
+        border: none;
+        border-top: 2px solid var(--forest);
+        border-radius: 0;
+        padding: 22px 26px 26px 0;
+        gap: 16px;
+      }
+      .exp--method .exp-card .em {
+        width: auto;
+        height: auto;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        align-items: flex-start;
+      }
+      .exp--method .exp-card .em svg {
+        width: 30px;
+        height: 30px;
+      }
 
       /* COOP UPGRADES */
       .upgrade {
         background: var(--paper);
+      }
+      .upgrade-head {
+        max-width: none;
+        margin-bottom: clamp(32px, 5vw, 56px);
+      }
+      .upgrade-title {
+        font-size: clamp(2.4rem, 5.4vw, 4.1rem);
+        color: var(--forest-deep);
       }
       .upgrade-blueprint {
         margin: 0 0 clamp(28px, 5vw, 54px);
@@ -971,17 +1007,17 @@
         top: 92px;
       }
       .upgrade-panel h2 {
-        color: #fff;
+        color: var(--on-forest);
       }
       .upgrade-panel p {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
       }
       .upgrade-list {
         display: grid;
         gap: 16px;
       }
       .upgrade-item {
-        background: #fff;
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: var(--r);
         padding: 24px;
@@ -1020,7 +1056,7 @@
         align-items: start;
       }
       .champ-score {
-        background: #fff;
+        background: var(--surface);
         border: 1px solid var(--line);
         border-radius: var(--r-lg);
         padding: clamp(26px, 4vw, 38px);
@@ -1177,11 +1213,11 @@
         background: var(--yolk);
       }
       .commit .lead {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
         max-width: 60ch;
       }
       .commit .bullets li {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
       }
       .commit .bullets li::before {
         background: rgba(244, 183, 65, 0.16);
@@ -1248,11 +1284,11 @@
         align-items: start;
       }
       .lead-intro .lead {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
       }
       .lead-intro .small {
         font-size: 0.9rem;
-        color: #a6bbb1;
+        color: var(--on-forest-dim);
         margin-top: 1.2rem;
       }
       .form-card {
@@ -1389,7 +1425,7 @@
       /* FOOTER */
       footer.foot {
         background: var(--forest-deep);
-        color: #b6cac1;
+        color: var(--on-forest-faint);
         padding: 54px 0 28px;
       }
       .foot-top {
@@ -1424,7 +1460,7 @@
         flex-wrap: wrap;
       }
       .foot-links a {
-        color: #b6cac1;
+        color: var(--on-forest-faint);
         text-decoration: none;
         font-size: 0.88rem;
       }
@@ -1915,11 +1951,11 @@
         margin-top: 1.6rem;
       }
       .founder-offer h3 {
-        color: #fff;
+        color: var(--on-forest);
         margin-bottom: 0.6rem;
       }
       .founder-offer .lead {
-        color: #d5e2db;
+        color: var(--on-forest-muted);
       }
       .founder-offer ul {
         list-style: none;
@@ -1931,7 +1967,7 @@
       .founder-offer li {
         display: flex;
         gap: 11px;
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
         font-size: 0.97rem;
       }
       .founder-offer li::before {
@@ -1990,7 +2026,7 @@
         border-top: 1px solid var(--line-dark);
       }
       .lead-book-q {
-        color: #cfe0d8;
+        color: var(--on-forest-soft);
         font-weight: 600;
         margin-bottom: 0.7rem;
       }
@@ -1998,7 +2034,7 @@
       /* FORM persona badge + championship hint */
       .form-persona {
         font-size: 0.85rem;
-        color: #a6bbb1;
+        color: var(--on-forest-dim);
         margin: -0.2rem 0 1rem;
       }
       .form-persona b {
@@ -2241,10 +2277,17 @@
           <div class="hero-media" data-reveal>
             <img
               src="images/hero-chickens.jpg"
+              srcset="
+                images/hero-chickens-640.jpg 640w,
+                images/hero-chickens-960.jpg 960w,
+                images/hero-chickens.jpg 1280w
+              "
+              sizes="(max-width: 920px) min(460px, 92vw), 500px"
               alt="Szabadtartású tyúkok a Remény Farm mobil óljánál a legelőn"
-              width="1920"
-              height="1280"
+              width="1280"
+              height="853"
               loading="eager"
+              fetchpriority="high"
               onerror="
                 this.parentNode.style.background =
                   'linear-gradient(135deg,#0a5c4d,#00352c)'
@@ -2595,7 +2638,7 @@
       </section>
 
       <!-- HONNAN JÖN A TOJÁS / SZABADTARTÁS -->
-      <section class="section exp" id="honnan">
+      <section class="section exp exp--method" id="honnan">
         <div class="wrap">
           <div class="head" data-reveal>
             <span class="eyebrow">Honnan jön a tojás</span>
@@ -3162,6 +3205,8 @@
             <img
               src="images/anna-eggs-apron.jpg"
               alt="Anna a Remény Farm tojásaival"
+              width="1600"
+              height="1067"
               loading="lazy"
               onerror="this.style.display = 'none'"
             />
@@ -3169,6 +3214,8 @@
               class="secondary"
               src="images/anna-david-farm.jpg"
               alt="Anna és Dávid a Remény Farmon"
+              width="1067"
+              height="1600"
               loading="lazy"
               onerror="this.style.display = 'none'"
             />
@@ -3407,9 +3454,13 @@
       <!-- COOP UPGRADES -->
       <section class="section upgrade" id="fejlesztesek">
         <div class="wrap">
+          <div class="head center upgrade-head" data-reveal>
+            <span class="eyebrow">2. fázis · opcionális</span>
+            <h2 class="upgrade-title">Konstruktőrök Bajnoksága</h2>
+          </div>
           <figure class="upgrade-blueprint" data-reveal>
             <img
-              src="images/konstruktorok-bajnoksaga-header.png"
+              src="images/konstruktorok-bajnoksaga-header.webp"
               alt="Csirkekollektív tyúkól szerkezeti tervrajz"
               width="1058"
               height="750"
@@ -4147,11 +4198,16 @@
           navToggle.addEventListener("click", function () {
             var open = navLinks.classList.toggle("open");
             navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+            navToggle.setAttribute(
+              "aria-label",
+              open ? "Menü bezárása" : "Menü megnyitása",
+            );
           });
           navLinks.addEventListener("click", function (e) {
             if (e.target.closest("a")) {
               navLinks.classList.remove("open");
               navToggle.setAttribute("aria-expanded", "false");
+              navToggle.setAttribute("aria-label", "Menü megnyitása");
             }
           });
         }

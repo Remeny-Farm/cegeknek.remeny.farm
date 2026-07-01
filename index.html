@@ -1119,6 +1119,23 @@
         max-width: 30ch;
         letter-spacing: -0.01em;
       }
+      .media-embed {
+        max-width: 340px;
+        margin: 28px auto 0;
+        aspect-ratio: 9 / 16;
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        background: #000;
+      }
+      .media-embed iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
       .media-value {
         margin: 1.8rem 0 0.9rem;
         max-width: 60ch;
@@ -3789,6 +3806,16 @@
               kreatív komponens: forgatási nappal, stábidővel, vágással és brand
               safety folyamattal.
             </p>
+            <div class="media-embed" data-reveal>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/s6waPMghqDE?rel=0&modestbranding=1"
+                title="Remény Farm – rövid videó a céges tyúkcsapatról"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
             <p class="media-value">
               <b>Tájba épített reklámérték.</b> A céges coop nem egy posztban
               él: ott van mindenhol, ahol a farm látszik.

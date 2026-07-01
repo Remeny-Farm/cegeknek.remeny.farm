@@ -30,27 +30,115 @@
     <meta name="author" content="Remény Farm Kft." />
     <link rel="canonical" href="https://cegeknek.remeny.farm/" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,500;1,14..32,700&family=IBM+Plex+Mono:wght@500;600&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Betűtípusok: self-hosted (lásd @font-face a <style>-ban) – nincs Google Fonts CDN -->
 
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-5VBCSBQPNL"
-    ></script>
+    <!-- Google Consent Mode v2: alapból minden tiltva; a Google Analytics
+         csak süti-hozzájárulás (Elfogadom) után indul el. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-      gtag("config", "G-5VBCSBQPNL");
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+      });
+      window.RF_GA_ID = "G-5VBCSBQPNL";
+      window.RF_CONSENT_KEY = "rf-cookie-consent";
+      window.rfGaLoaded = false;
+      window.rfReadConsent = function () {
+        try {
+          var raw = localStorage.getItem(window.RF_CONSENT_KEY);
+          return raw ? JSON.parse(raw) : null;
+        } catch (e) {
+          return null;
+        }
+      };
+      window.rfEnableAnalytics = function () {
+        gtag("consent", "update", { analytics_storage: "granted" });
+        if (window.rfGaLoaded) return;
+        window.rfGaLoaded = true;
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + window.RF_GA_ID;
+        document.head.appendChild(s);
+        gtag("js", new Date());
+        gtag("config", window.RF_GA_ID);
+      };
+      (function () {
+        var c = window.rfReadConsent();
+        if (c && c.analytics === true) window.rfEnableAnalytics();
+      })();
     </script>
 
     <style>
+      /* ===== Self-hosted betűtípusok (nincs Google Fonts CDN – GDPR) ===== */
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('/fonts/ibm-plex-mono-500-normal-latin-ext.woff2') format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url('/fonts/ibm-plex-mono-500-normal-latin.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('/fonts/ibm-plex-mono-600-normal-latin-ext.woff2') format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'IBM Plex Mono';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('/fonts/ibm-plex-mono-600-normal-latin.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: italic;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url('/fonts/inter-100-900-italic-latin-ext.woff2') format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: italic;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url('/fonts/inter-100-900-italic-latin.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url('/fonts/inter-100-900-normal-latin-ext.woff2') format('woff2');
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+        src: url('/fonts/inter-100-900-normal-latin.woff2') format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
       :root {
         --forest: #004d40;
         --forest-deep: #00352c;
@@ -1997,6 +2085,66 @@
           justify-content: center;
         }
       }
+      /* ===== Süti hozzájárulás banner ===== */
+      .rf-cookie {
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        z-index: 1000;
+        max-width: 720px;
+        margin: 0 auto;
+        background: #fff;
+        color: var(--forest, #004d40);
+        border: 1px solid rgba(0, 77, 64, 0.18);
+        border-radius: 14px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        padding: 18px 20px;
+        font-size: 14px;
+        line-height: 1.55;
+        display: none;
+      }
+      .rf-cookie.is-open {
+        display: block;
+      }
+      .rf-cookie h2 {
+        font-size: 16px;
+        margin: 0 0 6px;
+      }
+      .rf-cookie p {
+        margin: 0 0 14px;
+      }
+      .rf-cookie a {
+        color: inherit;
+        text-decoration: underline;
+      }
+      .rf-cookie-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .rf-cookie-actions button {
+        flex: 1 1 160px;
+        cursor: pointer;
+        border-radius: 999px;
+        padding: 10px 18px;
+        font: inherit;
+        font-weight: 600;
+        border: 1px solid var(--forest, #004d40);
+      }
+      .rf-cookie-accept {
+        background: var(--forest, #004d40);
+        color: #fff;
+      }
+      .rf-cookie-reject {
+        background: #fff;
+        color: var(--forest, #004d40);
+      }
+      @media (max-width: 520px) {
+        .rf-cookie-actions button {
+          flex-basis: 100%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -2075,7 +2223,7 @@
                 class="btn btn-ghost"
                 href="https://cal.com/remenyfarm/coop-orate"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 data-book-call="hero"
                 aria-label="Beszéljünk 20 percet – időpontfoglalás új lapon"
                 >Beszéljünk 20 percet</a
@@ -2306,7 +2454,7 @@
                 class="btn btn-primary"
                 href="https://cal.com/remenyfarm/coop-orate"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 data-book-call="persona"
                 data-persona-cta="all"
                 aria-label="Beszéljünk 20 percet – időpontfoglalás új lapon"
@@ -3719,7 +3867,7 @@
                 class="btn btn-light"
                 href="https://cal.com/remenyfarm/coop-orate"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 data-book-call="form"
                 aria-label="Beszéljünk 20 percet – időpontfoglalás új lapon"
                 >Beszéljünk 20 percet →</a
@@ -3839,7 +3987,7 @@
                   <a
                     href="https://www.remenyfarm.hu/adatvedelem/"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                     >adatvédelmi tájékoztató</a
                   >
                   szerint.
@@ -3855,11 +4003,11 @@
             </p>
             <p class="privacy-note">
               Az adatokat ajánlatadás és kapcsolattartás céljából kezeljük. Az
-              érdeklődés MailerLite-ba kerül, részletek az
+              érdeklődés a MailerLite-ba (EU-s adatfeldolgozó) kerül, részletek az
               <a
                 href="https://www.remenyfarm.hu/adatvedelem/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 >adatvédelmi tájékoztatóban</a
               >.
             </p>
@@ -3896,6 +4044,9 @@
             <a href="https://tyuk.remeny.farm/">tyuk.remeny.farm</a>
             <a href="https://liget.remeny.farm/">liget.remeny.farm</a>
             <a href="https://www.remenyfarm.hu/adatvedelem/">Adatvédelem</a>
+            <a href="/impresszum.html">Impresszum</a>
+            <a href="/suti-tajekoztato.html">Süti tájékoztató</a>
+            <a href="#" data-cookie-settings>Süti beállítások</a>
             <a
               href="mailto:info@remenyfarm.hu?subject=Ceges%20Tyukcsapat%20Program%20erdeklodes"
               >info@remenyfarm.hu</a
@@ -3922,7 +4073,7 @@
             class="btn btn-light"
             href="https://cal.com/remenyfarm/coop-orate"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             data-book-call="sticky"
             aria-label="Beszéljünk 20 percet – időpontfoglalás új lapon"
             >Beszéljünk 20 percet</a
@@ -4136,11 +4287,12 @@
 
         /* ===== Review-pass: analytics + interaktív komponensek ===== */
         function track(name, params) {
-          if (typeof gtag === "function") {
-            try {
-              gtag("event", name, params || {});
-            } catch (e) {}
-          }
+          // Csak akkor küldünk eseményt, ha a látogató hozzájárult az analitikához
+          // (a GA ilyenkor van betöltve). Hozzájárulás nélkül no-op.
+          if (!window.rfGaLoaded || typeof gtag !== "function") return;
+          try {
+            gtag("event", name, params || {});
+          } catch (e) {}
         }
         function storeGet(k) {
           try {
@@ -4388,6 +4540,79 @@
             hideSticky();
           });
         }
+      })();
+    </script>
+    <!-- SÜTI HOZZÁJÁRULÁS BANNER -->
+    <div
+      class="rf-cookie"
+      id="rfCookie"
+      role="dialog"
+      aria-live="polite"
+      aria-label="Süti beállítások"
+      hidden
+    >
+      <h2>Süti beállítások</h2>
+      <p>
+        Ez az oldal a működéshez szükséges tárolást használ, és
+        <b>hozzájárulásoddal</b> anonim látogatottsági statisztikát is (Google
+        Analytics). Részletek a
+        <a href="/suti-tajekoztato.html">Süti tájékoztatóban</a>.
+      </p>
+      <div class="rf-cookie-actions">
+        <button type="button" class="rf-cookie-reject" id="rfCookieReject">
+          Csak a szükségesek
+        </button>
+        <button type="button" class="rf-cookie-accept" id="rfCookieAccept">
+          Elfogadom
+        </button>
+      </div>
+    </div>
+    <script>
+      (function () {
+        var el = document.getElementById("rfCookie");
+        if (!el) return;
+        var KEY = window.RF_CONSENT_KEY || "rf-cookie-consent";
+        function save(analytics) {
+          try {
+            localStorage.setItem(
+              KEY,
+              JSON.stringify({ analytics: analytics, ts: Date.now() }),
+            );
+          } catch (e) {}
+        }
+        function openBanner() {
+          el.removeAttribute("hidden");
+          el.classList.add("is-open");
+        }
+        function closeBanner() {
+          el.classList.remove("is-open");
+          el.setAttribute("hidden", "");
+        }
+        var accept = document.getElementById("rfCookieAccept");
+        var reject = document.getElementById("rfCookieReject");
+        if (accept)
+          accept.addEventListener("click", function () {
+            save(true);
+            if (typeof window.rfEnableAnalytics === "function")
+              window.rfEnableAnalytics();
+            closeBanner();
+          });
+        if (reject)
+          reject.addEventListener("click", function () {
+            save(false);
+            closeBanner();
+          });
+        // A footer „Süti beállítások" linkje bármikor újranyitja a bannert
+        var reopeners = document.querySelectorAll("[data-cookie-settings]");
+        Array.prototype.forEach.call(reopeners, function (a) {
+          a.addEventListener("click", function (ev) {
+            ev.preventDefault();
+            openBanner();
+          });
+        });
+        // Csak akkor jelenjen meg magától, ha még nincs korábbi döntés
+        var stored = window.rfReadConsent ? window.rfReadConsent() : null;
+        if (!stored) openBanner();
       })();
     </script>
   </body>

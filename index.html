@@ -140,7 +140,7 @@
             "itemListElement": [
               {
                 "@type": "Offer",
-                "name": "Iroda Coop – 50 tyúk",
+                "name": "Iroda Coop – min. 50 tyúk",
                 "description": "Belépő céges csomag: céges logó az ólnál, saját webcam, kétheti tojásszállítás, dolgozói kódok, co-branded oldal, egyéni látogatások. Nettó 4990 Ft/tyúk/hó ártól, 12 hónapos lekötés.",
                 "priceCurrency": "HUF",
                 "price": "249500",
@@ -2704,6 +2704,11 @@
         text-align: left;
         font-weight: 500;
       }
+      .pkg-compare-note {
+        margin: 0.75rem 0 0;
+        font-size: 0.85rem;
+        color: var(--muted, #6b6256);
+      }
 
       /* Static, crawler-readable calculator line (Task 4) */
       .calc-static {
@@ -3679,75 +3684,55 @@
             első 12 hónapra.
           </p>
           <div class="pkg-grid">
+            <!-- PKG:CARDS:START -->
             <div class="pkg" data-reveal>
-              <div class="count"><b>50</b> tyúk</div>
+              <div class="count"><b>min. 50</b> tyúk</div>
               <p class="price">
                 Nettó 249 500 Ft/hó-tól<span class="term">12 hónapos lekötés</span>
               </p>
               <h3>Iroda Coop</h3>
               <p class="desc">
-                30–70 fős irodáknak, ügynökségeknek, vezetői csapatoknak vagy
-                olyan cégeknek, ahol a tojásnap prémium belső élmény.
+                30–70 fős irodáknak, ügynökségeknek, vezetői csapatoknak vagy olyan cégeknek, ahol a tojásnap prémium belső élmény.
               </p>
               <ul>
-                <li>céges logó az ólnál</li>
+                <li>kéthetente tojásszállítás az irodába</li>
+                <li>céges logó az ólnál (közös ól másokkal)</li>
                 <li>saját webcam stream</li>
-                <li>kétheti tojásszállítás</li>
                 <li>dolgozói kódok és kiosztható tyúkok</li>
                 <li>co-branded digitális oldal</li>
                 <li>egyéni látogatások</li>
+                <li>logó elhelyezése a weboldalon</li>
+                <li>éves CSR / employer branding anyag</li>
               </ul>
-              <a
-                class="btn btn-ghost"
-                href="#erdeklodes"
-                data-package-cta="Iroda Coop (50 tyúk)"
-                style="justify-content: center"
-                >Érdeklődöm</a
-              >
+              <a class="btn btn-ghost" href="#erdeklodes" data-package-cta="Iroda Coop (50 tyúk)" style="justify-content: center">Érdeklődöm</a>
             </div>
             <div class="pkg feature" data-reveal>
               <span class="flag">A legtöbb cégnek</span>
               <div class="count"><b>100</b> tyúk</div>
               <p class="price">
-                Nettó 499 000 Ft/hó-tól<span class="term"
-                  >12 hónapos lekötés · a legjobb ár-érték</span
-                >
+                Nettó 499 000 Ft/hó-tól<span class="term">12 hónapos lekötés · a legjobb ár-érték</span>
               </p>
               <h3>Team Coop</h3>
               <p class="desc">
-                80–180 fős hibrid irodáknak, ahol kéthetente 80–130 munkatárs
-                ténylegesen át tud venni tojást, és a HR/employer branding a fő
-                cél.
+                80–180 fős hibrid irodáknak, ahol kéthetente 80–130 munkatárs ténylegesen át tud venni tojást, és a HR/employer branding a fő cél.
               </p>
               <ul>
                 <li>minden, ami az Iroda csomagban, plusz</li>
+                <li>saját önálló ól (akár egyedi)</li>
                 <li>nagyobb logó / részleges ponyva branding</li>
-                <li>webcamen és videós háttérben látható céges megjelenés</li>
-                <li>egyedi tojásbélyegzés</li>
-                <li>dolgozói saját tyúk történetek</li>
-                <li>csapatlátogatás és kisebb farmbemutató</li>
-                <li>opcionális faültetési kiegészítő</li>
+                <li>évente csapatlátogatás és 1 órás farmbemutató</li>
+                <li>önálló tartalomgyártási lehetőségek</li>
               </ul>
-              <a
-                class="btn btn-primary"
-                href="#erdeklodes"
-                data-package-cta="Team Coop (100 tyúk)"
-                style="justify-content: center"
-                >Érdeklődöm</a
-              >
+              <a class="btn btn-primary" href="#erdeklodes" data-package-cta="Team Coop (100 tyúk)" style="justify-content: center">Érdeklődöm</a>
             </div>
             <div class="pkg" data-reveal>
               <div class="count"><b>250</b> tyúk</div>
               <p class="price">
-                Nettó 1 499 000 Ft/hó-tól<span class="term"
-                  >12 hónapos lekötés</span
-                >
+                Nettó 1 499 000 Ft/hó-tól<span class="term">12 hónapos lekötés</span>
               </p>
               <h3>Signature Coop</h3>
               <p class="desc">
-                Nagyvállalati vagy kampányszintű programhoz, ahol a tojásnap
-                mellett a branded coop, farmnap, médiaanyag és éves
-                CSR/employer branding történet is fontos.
+                Nagyvállalati vagy kampányszintű programhoz, ahol a tojásnap mellett a branded coop, farmnap, médiaanyag és éves CSR/employer branding történet is fontos.
               </p>
               <ul>
                 <li>minden, ami a Team csomagban, plusz</li>
@@ -3756,24 +3741,20 @@
                 <li>dedikált webes / landing élmény</li>
                 <li>útról is látható, fotózható farmjelenlét</li>
                 <li>egyedi tojásbélyegzés</li>
-                <li>csapatépítő nap</li>
-                <li>negyedévente egy short / TikTok videó</li>
-                <li>éves CSR / employer branding anyag</li>
+                <li>csapatépítő nap évente</li>
+                <li>negyedévente egy short / TikTok videó tőlünk</li>
+                <li>közös tartalomgyártási stratégia</li>
               </ul>
-              <a
-                class="btn btn-ghost"
-                href="#erdeklodes"
-                data-package-cta="Signature Coop (250 tyúk)"
-                style="justify-content: center"
-                >Beszéljünk róla</a
-              >
+              <a class="btn btn-ghost" href="#erdeklodes" data-package-cta="Signature Coop (250 tyúk)" style="justify-content: center">Beszéljünk róla</a>
             </div>
+            <!-- PKG:CARDS:END -->
           </div>
           <!-- Package comparison table (crawler/AI readable) -->
           <details class="pkg-compare-details" data-reveal>
             <summary>Részletes összehasonlítás — mind a 3 csomag egymás mellett</summary>
             <div class="pkg-compare-wrap">
             <table class="pkg-compare">
+              <!-- PKG:TABLE:START -->
               <thead>
                 <tr>
                   <th scope="col">Jellemző</th>
@@ -3796,10 +3777,16 @@
                   <td>1 499 000 Ft-tól</td>
                 </tr>
                 <tr>
+                  <th scope="row">Önálló saját ól</th>
+                  <td>–</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
                   <th scope="row">Céges logó az ólnál</th>
                   <td>✓</td>
                   <td>✓ (nagyobb / ponyva)</td>
-                  <td>✓ (teljes ponyva)</td>
+                  <td>✓ (teljes ponyva branding)</td>
                 </tr>
                 <tr>
                   <th scope="row">Élő webcam</th>
@@ -3828,30 +3815,50 @@
                 <tr>
                   <th scope="row">Egyedi tojásbélyegzés</th>
                   <td>–</td>
-                  <td>✓</td>
+                  <td>–</td>
                   <td>✓</td>
                 </tr>
                 <tr>
                   <th scope="row">Dedikált webes / landing</th>
-                  <td>co-branded oldal</td>
                   <td>–</td>
+                  <td>✓</td>
                   <td>✓</td>
                 </tr>
                 <tr>
                   <th scope="row">Farmlátogatás / farmnap</th>
                   <td>egyéni látogatás</td>
                   <td>csapatlátogatás</td>
-                  <td>nagyobb farmnap</td>
+                  <td>teljes csapatépítő nap</td>
                 </tr>
                 <tr>
                   <th scope="row">Éves CSR / employer branding anyag</th>
+                  <td>✓</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <th scope="row">Önálló tartalomgyártás az ólnál - tyúkokkal</th>
+                  <td>–</td>
+                  <td>✓</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <th scope="row">negyedévente egy short / TikTok videó tőlünk</th>
+                  <td>–</td>
+                  <td>* Feláras</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <th scope="row">közös tartalomgyártási stratégia</th>
                   <td>–</td>
                   <td>–</td>
                   <td>✓</td>
                 </tr>
               </tbody>
+              <!-- PKG:TABLE:END -->
             </table>
             </div>
+            <p class="pkg-compare-note">* Feláras: külön, egyedileg árazott kiegészítő.</p>
           </details>
         </div>
       </section>

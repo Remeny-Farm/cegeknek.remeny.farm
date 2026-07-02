@@ -16,7 +16,7 @@ X-Content-Type-Options: nosniff
 X-Frame-Options: DENY
 Referrer-Policy: strict-origin-when-cross-origin
 Permissions-Policy: camera=(), microphone=(), geolocation=()
-Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://c.clarity.ms https://c.bing.com; font-src 'self'; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
 ```
 
 > **CSP megjegyzés:** a `script-src`/`style-src` `'unsafe-inline'`-t tartalmaz, mert
@@ -25,9 +25,10 @@ Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' h
 > hash/nonce. A `frame-ancestors 'none'` a clickjacking ellen véd (ezt csak valódi
 > HTTP-fejléc tudja, `<meta>` nem).
 >
-> A Google Analytics csak süti-hozzájárulás után tölt be; a CSP a
-> `googletagmanager.com` (script) és a `*.google-analytics.com` /
-> `*.analytics.google.com` (beacon, `connect-src`) hosztokat engedélyezi.
+> A Google Analytics és a Microsoft Clarity csak süti-hozzájárulás után tölt be;
+> a CSP a Google (`googletagmanager.com`, `*.google-analytics.com`) és a
+> Clarity/Bing (`www.clarity.ms`, `*.clarity.ms`, `c.bing.com`) hosztokat
+> engedélyezi.
 
 ---
 
@@ -70,9 +71,9 @@ const SECURITY_HEADERS = {
   "Referrer-Policy": "strict-origin-when-cross-origin",
   "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
   "Content-Security-Policy":
-    "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; " +
-    "style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; " +
-    "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; " +
+    "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms; " +
+    "style-src 'self' 'unsafe-inline'; img-src 'self' data: https://c.clarity.ms https://c.bing.com; font-src 'self'; " +
+    "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.clarity.ms https://*.clarity.ms https://c.bing.com; " +
     "frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
 };
 
@@ -102,4 +103,5 @@ curl -sI https://cegeknek.remeny.farm/ | grep -iE \
 - Clickjacking-teszt: az oldalt egy külső `<iframe src="https://cegeknek.remeny.farm">`-be
   ágyazva a böngésző blokkolja (`frame-ancestors 'none'` + `X-Frame-Options: DENY`).
 - A süti-sávban „Elfogadom" után a GA-kérések (`googletagmanager.com`,
-  `*.google-analytics.com`) nem ütköznek CSP-hibába a konzolon.
+  `*.google-analytics.com`) és a Clarity-kérések (`www.clarity.ms`,
+  `*.clarity.ms`, `c.bing.com`) nem ütköznek CSP-hibába a konzolon.

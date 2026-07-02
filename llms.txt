@@ -40,6 +40,7 @@ Egységár: nettó 4990 Ft/tyúk/hó ártól (Iroda és Team csomag); a Signatur
 - https://www.remenyfarm.hu/ (anyamárka)
 - https://tyuk.remeny.farm/
 - https://liget.remeny.farm/
+- https://cegeknek.remeny.farm/sajto.html (sajtószoba: tények, letölthető fotók, sajtókapcsolat)
 - https://cegeknek.remeny.farm/impresszum.html (impresszum)
 - https://cegeknek.remeny.farm/suti-tajekoztato.html (süti tájékoztató)
 - https://www.remenyfarm.hu/adatvedelem/ (adatvédelmi tájékoztató)

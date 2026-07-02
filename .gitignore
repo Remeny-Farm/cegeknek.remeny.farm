@@ -1,5 +1,1 @@
 .devswarm-temp/
-
-# Lokális, csak-fejlesztői csomag-szerkesztő (nem deployolódik a GitHub Pages-re,
-# és nem szemeteli a repót). Az élesítést a generate.js viszi be index.html + llms.txt-be.
-tools/

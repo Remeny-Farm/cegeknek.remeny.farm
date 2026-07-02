@@ -1,54 +1,68 @@
-# B2C sajtóközlemény — KIKÜLDHETŐ VÁLTOZAT (2026. 07. 02.)
+# B2C sajtóközlemény — KIKÜLDHETŐ VÁLTOZAT v2 (2026. 07. 02., deep research után)
 
-Kiküldés előtt 5 perc — ezt a négyet erősítsétek meg:
-1. **„130"** — a ma érvényes mecénás-szám kerüljön be (ha több/kevesebb, átírni).
-2. **Dávid idézete:** az első két mondat szó szerint a hírlevélből van; az utolsó mondat („Ha nincs rá pályázat…") általam írt — hagyd jóvá vagy írd át a saját szavaidra. Anna idézete félig a site tagline-ja, félig javaslat — ugyanez.
-3. **Bevétel-állítás:** a szöveg azt mondja, a program bevétele a fásítást/regenerálást alapozza meg — a hírlevél ezt sugallja, de ti tudjátok, pontosan így vállalható-e.
-4. **Szállítási dátum:** ha már fix a nap, a „július második hetében" helyére a konkrét dátum kerüljön.
+A v2 a 105-ügynökös kutatás igazolt tényeire épül (22 megerősített állítás, 3 kilőtt). Fő változások a v1-hez képest: a pályázat-lezárás hivatalos névvel és dátummal (KAP-RD21-RD22-1-25, 2026. 01. 15. — független tény), Mikófalva/Bekölce szétválasztva, friss TikTok-platformadat, nemzetközi sajtó-referencia, EOV-említés törölve (nincs nyilvános nyoma).
 
-Szándékosan NINCS benne: céges program említése (az őszi B2B sztori apropóját nem égetjük — `00-kampanyterv.md`), webcam/app ígéret, garantált darabszám, partnernév.
+**Kiküldés előtt — 6 pont (10 perc):**
+1. **Pályáztatok-e ténylegesen a KAP-RD21-RD22-1-25-re, vagy készültetek rá?** A szöveg törzse szándékosan nem állítja, hogy pályáztatok (erre nincs nyilvános bizonyíték) — csak Dávid idézete mondja ki, hogy „lefújták". Ha be is adtátok a kérelmet, mondjátok meg, és beleírjuk tényként — az még erősebb.
+2. **„130"** — a ma érvényes mecénás-szám.
+3. **Idézetek:** Dávid idézetének első két mondata szó szerint a hírlevélből; a záró mondat javaslat. Anna idézete javaslat (fele a site tagline-ja). Jóváhagyás vagy átírás.
+4. **Névforma:** a sajtó korábban Juhász Szép Anna és Goldmann Dávid néven írt rólatok — a közleményben teljes név ajánlott (első említésnél), utána keresztnév.
+5. **Bio-tanúsítvány:** a szövegben „Bio Garancia által ellenőrzött" szerepel — a tanúsítványszám legyen kéznél, mert nyilvános regiszterben nem találtuk, és egy jó újságíró rákérdez.
+6. **Szállítási dátum:** ha fix, a „a tervek szerint július második hetében" helyére konkrét nap.
+
+Szándékosan NINCS benne: céges program (őszi apropó védve), webcam/app, EOV, garantált darabszám, Facebook-szám (elavult lehet). Kanonikus URL mindenhol: tyuk.remeny.farm.
 
 ---
 
 **SAJTÓKÖZLEMÉNY — AZONNAL KÖZÖLHETŐ**
-Bekölce / Budapest, 2026. július 2.
+Mikófalva / Budapest, 2026. július 2.
 
-# Lefújták a fás legelő pályázatot — erre 130 „tyúkmecénás" állt be egy bükkaljai farm mögé
+# Januárban lezárták a fás legelőket támogató pályázatot — nyárra 130 „tyúkmecénás" állt be egy bükkaljai farm fásítása mögé
 
-**A Remény Farm arra készült, hogy pályázati forrásból telepít fás legelőt a Bükk alján. A pályázat idén elmaradt — a bio-tanúsított farm ezért a nyilvánossághoz fordult: Tyúkmecénás programjában magánszemélyek bérelnek névre szóló tyúkot havi 4990 forintért, és ezzel a táj fásítását, regenerálását finanszírozzák. Az első körben 130-an csatlakoztak, még mielőtt egyetlen tojást kézhez kaptak volna. Az első budapesti tojásszállítás július második hetében érkezik.**
+**Az agrár-erdészeti rendszerek telepítését — köztük a fás legelőkét — támogató KAP-felhívást az irányító hatóság 2026. január 15-én lezárta, az új kiírás pedig azóta sem jelent meg. A Bükk-vidéki Remény Farm nem várt tovább: Tyúkmecénás programjában magánszemélyek bérelnek névre szóló tyúkot havi 4990 forintért, és ezzel a farm mikófalvi területén épülő, 29 hektáros fáslegelőt, a Ligetet finanszírozzák. Az első körben 130-an csatlakoztak — még azelőtt, hogy egyetlen tojást kézhez kaptak volna. Az első budapesti tojásszállítás a tervek szerint július második hetében érkezik.**
 
-A fás legelő — fákkal tarkított, extenzíven legeltetett gyep — Európa egyik legfajgazdagabb élőhelytípusa: árnyékot ad az állatoknak, szenet köt a talajban, és életet hoz vissza a tájba. A bekölcei Remény Farm 29 hektáron gazdálkodik regeneratív módszerekkel; a fásítás a gazdaság hosszú távú tervének alapeleme. Amikor az erre szánt pályázati forrás idén elmaradt, a farm úgy döntött, nem vár tovább.
+A fás legelő — fákkal tarkított, extenzíven legeltetett gyep — Európa egyik legfajgazdagabb élőhelytípusa: árnyékot ad az állatoknak, szenet köt a talajban, és életet hoz vissza a tájba. Telepítését Magyarországon az „Agrár-erdészeti rendszerek telepítése, ápolása és fenntartása" című felhívás (KAP-RD21-RD22-1-25) támogatta, amelyet a KAP Nemzeti Irányító Hatóság idén január 15-én lezárt. A hatóság akkor azt közölte, a pályázat új feltételekkel kerül újra meghirdetésre — ez azóta nem történt meg.
 
-„Az egész Tyúkmecénás program onnan indult, hogy lefújták a fás legelő pályázatot. Nekünk viszont a területeink fásítása, regenerálása és hosszú távú élővé tétele kulcsfontosságú — nem »szép lenne egyszer« típusú ügy, hanem a farm jövőjének egyik alapja. Ha nincs rá pályázat, megcsináljuk mecénásokkal" — mondta Dávid, a Remény Farm alapítója.
+„Az egész Tyúkmecénás program onnan indult, hogy lefújták a fás legelő pályázatot. Nekünk viszont a területeink fásítása, regenerálása és hosszú távú élővé tétele kulcsfontosságú — nem »szép lenne egyszer« típusú ügy, hanem a farm jövőjének egyik alapja. Ha nincs rá pályázat, megcsináljuk mecénásokkal" — mondta Goldmann Dávid, a Remény Farm társalapítója.
 
-A program mecénásai havi 4990 forintért saját, névvel és számmal ellátott tyúkot választanak, amelyet a farm gondoz: a tyúkok mobil ólakban élnek, amelyeket hetente húznak odébb friss legelőre a juhok és a marhák után — vegyszer helyett ez adja a természetes kártevő-kontrollt. Cserébe havonta várhatóan 22–29 bio tojás jár, 10-es csomagokban, budapesti átvételi pontokon (Gazdagrét, Óbuda, Zugló). Előleg és belépési díj nincs, a bérlés bármikor, kötbér nélkül lemondható. A tyúkok június 9-én költöztek a legelőre; a mostani, első csoport helyei a valós kapacitáshoz kötöttek, betelte után várólista nyílik.
+A program mecénásai havi 4990 forintért saját, névvel és számmal ellátott tyúkot választanak, amelyet a farm gondoz: a tyúkok mobil ólakban élnek a legelőn, az ólakat rendszeresen friss gyepre húzzák odébb. Cserébe havonta várhatóan 22–29 bio tojás jár, 10 darabos csomagokban, budapesti átvételi pontokon (Gazdagrét, Óbuda, Zugló). Előleg és belépési díj nincs, a bérlés bármikor, kötbér nélkül lemondható. A tojók június 9-én költöztek a mikófalvi legelőre; az első csoport helyei a valós kapacitáshoz kötöttek, betelte után várólista nyílik.
 
-A farm szokatlanul őszinte abban is, mit nem ígér. A tojások száma nem garantált — „élő állat, nem gép" —, és darabra számolva a mecénás-tojás nem feltétlenül olcsóbb a boltinál: havi 4990 forintért 22–29 tojás nagyjából 170–230 forintos darabárat jelent. A 130 mecénás tehát nem árelőnyt vett, hanem mást.
+A farm szokatlanul őszinte abban is, mit nem ígér. A tojások száma nem garantált — élő állat, nem gép —, és darabra számolva a mecénás-tojás nem feltétlenül olcsóbb a boltinál: havi 4990 forintért 22–29 tojás nagyjából 170–230 forintos darabárat jelent. A 130 mecénás tehát nem árelőnyt vett, hanem mást.
 
-„Azt szeretnénk, hogy a reggeli tojásodnak újra legyen arca. Aki mecénás lesz, az nem csak tojást kap: egy darab élő táj újraépítésébe száll be" — mondta Anna, a farm társalapítója.
+„Azt szeretnénk, hogy a reggeli tojásodnak újra legyen arca. Aki mecénás lesz, az nem csak tojást kap: egy darab élő táj újraépítésébe száll be" — mondta Juhász Szép Anna, a farm társalapítója.
 
-**A Remény Farmról:** A Remény Farm Kft. regeneratív, a Bio Garancia Kft. által tanúsított biogazdaság a Bükk alján: 29 hektár regenerálódó táj, 500 juh, 80 szarvasmarha. A területek fejlődését EOV-alapú éves ökológiai monitoring követi. A farm csatornáit több mint 500 ezren követik. Alapítók: Anna és Dávid.
+**A Remény Farmról:** A Remény Farmot Juhász Szép Anna és Goldmann Dávid alapította 2019-ben a Heves megyei Bekölcén — az első telet még lakókocsiban töltötték. Ma Bio Garancia által ellenőrzött, regeneratív családi biogazdaságot visznek a Bükk-vidéken juhokkal, szarvasmarhákkal és szabadtartású tyúkokkal; mikófalvi területükön épül a 29 hektáros Liget fáslegelő. A farm TikTok-csatornáját több mint 520 ezren követik, videói összesen 7,5 millió kedvelést gyűjtöttek — mindössze 61 videóval. Történetükről a dán Politiken is beszámolt, az EU CAP Network pedig jó gyakorlatként mutatja be a gazdaságot.
 
-**Sajtókapcsolat:** Dávid · info@remenyfarm.hu · +36 30 734 3662
+**Sajtókapcsolat:** Goldmann Dávid · info@remenyfarm.hu · +36 30 734 3662
 **Sajtófotók (szabadon felhasználhatók „Fotó: Remény Farm" megjelöléssel):** https://cegeknek.remeny.farm/sajto.html
-**A program:** https://tyuk.remeny.farm/
+**A program:** https://tyuk.remeny.farm/ · **A Liget:** https://liget.remeny.farm/
 
 ###
 
 ---
 
-## Kísérő e-mail a kiküldéshez (rövid, személyre szabható)
+## Kísérő e-mail a kiküldéshez
 
-**Tárgy:** Lefújt pályázat, 130 tyúkmecénás — jövő héten jön az első tojásszállítás
+**Tárgy:** Lezárt agrár-erdészeti pályázat, 130 tyúkmecénás — jövő héten jön az első tojásszállítás
 
 > Kedves [név],
 >
-> Rövid sztori a nyárra: amikor elmaradt a fás legelő pályázatunk, nem vártunk tovább — mecénásprogramot indítottunk, és 130 ember bérelt névre szóló tyúkot még az első tojás előtt. Jövő héten érkezik az első szállítás Budapestre; ha érdekel helyszíni jelenlét vagy interjú (alapítók + mecénás), örömmel szervezem. Közlemény alább, fotók: cegeknek.remeny.farm/sajto.html
+> Rövid nyári sztori, két ellenőrizhető ténnyel: januárban lezárták a fás legelők telepítését támogató KAP-felhívást (KAP-RD21-RD22-1-25, azóta sincs új kiírás) — mi pedig nem vártunk: mecénásprogramot indítottunk, és 130 ember bérelt névre szóló tyúkot még az első tojás előtt, hogy a mikófalvi fáslegelőnk felépüljön. Jövő héten érkezik az első szállítás Budapestre; ha érdekel helyszíni jelenlét vagy interjú (alapítók + mecénás), örömmel szervezem. Közlemény alább, fotók: cegeknek.remeny.farm/sajto.html
 >
-> Dávid · Remény Farm · +36 30 734 3662
+> Goldmann Dávid · Remény Farm · +36 30 734 3662
 
-## Alternatív címsor-variánsok (orgánum szerint)
+## Orgánum-specifikus címsor-variánsok
 
-- Gazdasági (G7, Pénzcentrum): **„Darabra drágább, mint a bolti — mégis 130-an fizetnek elő a bükkaljai farm tojására"**
-- Színes/élet (Telex, 24.hu): **„130 budapesti bérelt tyúkot látatlanban — jövő héten veszik át az első tojásaikat"**
-- Helyi (heol.hu): **„Országos mecénáskör állt be a bükkaljai farm fásítása mögé"**
+- **Gazdasági (G7, Pénzcentrum):** „Darabra drágább, mint a bolti — mégis 130-an fizetnek elő a bükkaljai farm tojására"
+- **Agrárpolitikai (Agrárszektor, Agroinform):** „Lezárt agrár-erdészeti pályázat után közösségi finanszírozásból épül fáslegelő Mikófalván"
+- **Színes/élet (Telex, 24.hu):** „130 budapesti bérelt tyúkot látatlanban — jövő héten veszik át az első tojásaikat"
+- **Helyi (heol.hu — 2023-ban már írtak rólatok!):** „A lakókocsiból indult bekölcei farm mögé országos mecénáskör állt be"
+
+## Kutatási lábjegyzet (belső — mit honnan tudunk)
+
+- Pályázat-lezárás: kap.gov.hu (4/2026. IH közlemény, 2026. 01. 15.) + NAK + Agroinform — független, hivatkozható.
+- Liget = 29 ha, Mikófalva: tyuk.remeny.farm + liget.remeny.farm. Bekölce = Kft.-székhely.
+- TikTok: platformadat 2026-07-02 (520 600 követő, 7,5 M lájk, 61 videó).
+- Politiken (2025-05-08, Goldmann Dávid név szerint) + EU CAP Network „Hope Farm" profil: függetlenül igazolt.
+- 2019-es indulás, lakókocsi: heol.hu/nool.hu (2023) + remenyfarm.hu.
+- NEM igazolt nyilvánosan: a farm tényleges pályázati kérelme, bio-tanúsítványszám, EOV-monitoring — ezek a szövegben ennek megfelelően vannak kezelve.

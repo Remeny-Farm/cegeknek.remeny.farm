@@ -10,8 +10,18 @@ Videós csapat heti ritmusa: szerdai tartalom-nap (forgatás + jóváhagyás), A
 
 | Csatorna | Tartalom | Cél |
 |---|---|---|
+| FB/Insta | **Bejelentő poszt** (előrehozva W1-ből): a program létezik + „küldd tovább a HR-nek/főnöködnek" mechanika — a követők a célcégek dolgozói, ők a belső bajnokok. Szövegjavaslat lentebb. | Belső bajnokok aktiválása, organikus B2B-elérés |
 | Videós csapat | **Forgatási stock építése:** ól-építés/festés folyamat, tojásnap-előkészítés, webcam-nézőpont, Anna+Dávid „miért csináljuk" interjú-nyersanyag | W1–W5 tartalom-alapanyag |
 | MailerLite | Semmi kimenő — szegmentálás: HR/marketing/ESG tag-ek, céges vs. magán feliratkozó szétválasztás | W1 warm-up előkészítése |
+
+**W0 bejelentő poszt — szövegjavaslat (FB/Insta):**
+
+> **Mostantól a cégeknek is van tyúkcsapatunk.** 🐔
+> Elindult a Céges Tyúkcsapat Program: cégek köthetnek le saját, logózott mobil ólat a farmon — élő webkamerával az irodába, kéthetente tojásnappal, és minden kolléga örökbe fogad egy tyúkot.
+> Az első körben 5–10 alapító partnert veszünk fel, mert ennyi ólkapacitásunk van. Nem többet.
+> Ha szeretnéd, hogy a ti irodátokba járjon a tojás: küldd tovább ezt a HR-nek vagy a főnöködnek → cegeknek.remeny.farm
+
+*Megjegyzés: a B2C tyúkbérlés-kampány saját tartalomnaptára a `10-b2c-kampany.md` ütemtervében (első szállítás napi dokumentálás!).*
 
 ## W1 (júl. 21. – aug. 20.) — teaser, kíváncsiság
 

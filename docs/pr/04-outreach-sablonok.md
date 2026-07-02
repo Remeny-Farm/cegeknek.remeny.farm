@@ -71,6 +71,22 @@ Szabályok:
 
 ---
 
+## Sajtó-háttérbeszélgetés felkérő (W0–W1 — meglévő, jó kapcsolatoknak)
+
+Ez NEM pitch: nem kérünk cikket, hanem előre szólunk és exkluzivitást ígérünk. A launch-sztorit nem égeti el — épp lefoglalja.
+
+**Tárgy:** háttér: ősszel lesz egy sztorink — előbb neked szólok
+
+> Szia [név],
+>
+> [1 mondat személyes kapcsolódás.]
+>
+> Háttér-jelleggel (nem kérek most cikket): ősszel indul a farmunk céges programja — cégek kötnek le saját, logózott tyúkólat, élő webkamerával és irodai tojásnappal. Most zárjuk az első partnerkört; amikor meglesznek az aláírt cégek, az lesz a sztori, névvel és számokkal.
+>
+> Két okból írok előre: egyrészt kíváncsi vagyok a szempontjaidra (mitől lenne ez neked jó anyag?), másrészt ha érdekel, szívesen adom neked elsőként — exkluzívan. Ha van kedved, beszéljünk 15 percet nyáron valamikor.
+>
+> [Anna/Dávid] · +36 30 734 3662
+
 ## Sajtó-pitchek (W4 — csak ha már van aláírt partner)
 
 ### Tier 1 — personalizált, exkluzív-gyanús (Anna/Dávid küldi)

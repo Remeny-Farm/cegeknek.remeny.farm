@@ -34,7 +34,10 @@ Heti ritmus: minden péntek 30 perces belső státusz — hol áll a tölcsér, 
 - Anna + Dávid: a **15–20 legmelegebb személyes kontakt** megkeresése (nem tömeg-pitch, személyes hang; sablon: `04-outreach-sablonok.md` / W0). Nyáron is működik, mert személyes.
 - Esemény-logisztika lekötése MOST (busz, catering — szeptemberre még olcsó és elérhető). Barter-megkeresés: buszos cég / térségi turisztikai szereplő a TikTok-elérésért cserébe.
 - Press kit váz + sajtóoldal élesítése (`sajto.html`).
+- Saját csatorna: a program **bejelentő posztja** (FB/Insta) a „küldd tovább a HR-nek" mechanikával — a követők nagy része a célcégek dolgozója, ők a belső bajnokok. (Szöveg: `06-tartalomnaptar.md` / W0.)
+- Sajtó-előkészítés (NEM pitch!): **háttérbeszélgetés** a 2-3 legjobb meglévő sajtókontakttal — „ősszel lesz egy sztorink aláírt cégekkel, akarod elsőként?" Exkluzív-ígéret, kapcsolatépítés; a launch-sztorit nem égeti el. (Sablon: `04-outreach-sablonok.md`.)
 - Videós csapat brief: milyen B2B-releváns felvételek kellenek (ól-építés, tojásnap, webcam-nézet).
+- **Párhuzamos sáv: B2C tyúkbérlés-kampány** (130 bérlő, első szállítás júl. 2. hete — időkritikus): terv és anyagok a `10-b2c-kampany.md`-ben. A nyári B2C-megjelenések hitelesítő rétegként dolgoznak a szeptemberi B2B outreach alá; az alapítók B2B meleg-köre marad az első prioritás.
 
 ### W1 — Nyári lassú tűz (júl. 21. – aug. 20.)
 - Saját csatornák: **nem-sales teaser tartalom** (ól-építés kulisszatitkok, „valami készül a cégeknek" — kíváncsiság, nem pitch). Naptár: `06-tartalomnaptar.md`.

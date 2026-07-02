@@ -23,11 +23,11 @@ A `cegeknek.remeny.farm` DNS rekord Cloudflare proxied modban van, hogy a Worker
 
 ## Jogi / GDPR megfeleles
 
-- **Suti-hozzajarulas:** a Google Analytics (`G-5VBCSBQPNL`) csak hozzajarulas utan tolt be. Google Consent Mode v2 alapertelmezetten mindent tilt (`analytics_storage: denied`); a lablecben megjeleno suti-sav "Elfogadom" gombja engedelyezi (`window.rfEnableAnalytics`). A dontes a `rf-cookie-consent` localStorage kulcsban tarolodik. A lablec "Suti beallitasok" linkje (`data-cookie-settings`) barmikor ujranyitja a savot.
+- **Suti-hozzajarulas:** a Google Analytics (`G-5VBCSBQPNL`) es a Microsoft Clarity (`xg3iejzdq5`) csak hozzajarulas utan tolt be. Google Consent Mode v2 alapertelmezetten mindent tilt (`analytics_storage: denied`), a Clarity ConsentV2 analytics tarhelye szinten tiltva indul; a lablecben megjeleno suti-sav "Elfogadom" gombja engedelyezi (`window.rfEnableAnalytics`). A dontes a `rf-cookie-consent` localStorage kulcsban tarolodik. A lablec "Suti beallitasok" linkje (`data-cookie-settings`) barmikor ujranyitja a savot. A lead form es az elo brand-elonezet Clarity-maszkolast kap (`data-clarity-mask="True"`).
 - **Self-hosted betutipusok:** az Inter es IBM Plex Mono a `fonts/` mappabol tolt be (nincs Google Fonts CDN -> nincs latogatoi IP a Google fele). A `@font-face` szabalyok az `index.html` inline `<style>` blokkjaban vannak; latin + latin-ext subset (magyar ekezetek).
 - **Impresszum:** `impresszum.html` (Ekertv. szerinti cegadatok).
 - **Suti tajekoztato:** `suti-tajekoztato.html`.
-- **Adatvedelmi tajekoztato:** kulso oldal, `remenyfarm.hu/adatvedelem/`. Ellenorizni, hogy nevesiti a MailerLite-ot es a Google Analytics-et.
+- **Adatvedelmi tajekoztato:** kulso oldal, `remenyfarm.hu/adatvedelem/`. Ellenorizni, hogy nevesiti a MailerLite-ot, a Google Analytics-et es a Microsoft Clarity-t.
 - **Worker consent-gate:** a `/api/lead` `privacyConsent: false` eseten `422 consent_required` valaszt ad, nem tovabbit MailerLite-ba.
 - **Biztonsagi fejlecek:** a HTML dokumentumra Cloudflare-en at (Transform Rule vagy Worker) — lasd `cloudflare-headers.md`. A `worker.js` valaszai mar tartalmaznak biztonsagi fejleceket.
 

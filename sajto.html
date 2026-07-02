@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#004D40" />
-    <title>Sajtószoba – Remény Farm | Céges Tyúkcsapat Program</title>
+    <title>Sajtószoba - Remény Farm | Tyúkmecénás program</title>
     <meta
       name="description"
-      content="Sajtóanyagok a Remény Farm Céges Tyúkcsapat Programjáról: tények és számok, idézhető mondatok, letölthető fotók, alapítói háttér és sajtókapcsolat."
+      content="Kész sajtóanyagok a Remény Farm Tyúkmecénás programjáról: közölhető közlemény, címjavaslatok, ténydoboz, idézetek, fotók és sajtókapcsolat."
     />
-    <meta property="og:title" content="Sajtószoba – Remény Farm | Céges Tyúkcsapat Program" />
+    <meta property="og:title" content="Sajtószoba - Remény Farm | Tyúkmecénás program" />
     <meta
       property="og:description"
-      content="Tények, számok, letölthető sajtófotók és kapcsolat a Remény Farm Céges Tyúkcsapat Programjához."
+      content="Kész közlemény, címjavaslatok, tények, idézetek, letölthető sajtófotók és kapcsolat a Remény Farm Tyúkmecénás programjához."
     />
     <meta property="og:image" content="https://cegeknek.remeny.farm/images/hero-chickens.jpg" />
     <meta property="og:url" content="https://cegeknek.remeny.farm/sajto.html" />
@@ -163,6 +163,167 @@
         color: var(--ink-soft);
         max-width: 62ch;
         margin: 0 0 10px;
+      }
+      .intro-panel {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-top: 4px solid var(--yolk);
+        border-radius: var(--r-lg);
+        padding: clamp(22px, 4vw, 34px);
+        margin: 28px 0 18px;
+      }
+      .intro-panel p:last-child {
+        margin-bottom: 0;
+      }
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px 0 0;
+      }
+      .button,
+      button.button {
+        appearance: none;
+        border: 0;
+        border-radius: 999px;
+        background: var(--forest);
+        color: var(--paper);
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0.76em 1.25em;
+        font: inherit;
+        font-weight: 700;
+        line-height: 1.1;
+        text-decoration: none;
+      }
+      .button.secondary {
+        background: var(--yolk);
+        color: var(--forest-deep);
+      }
+      .button.ghost {
+        background: transparent;
+        border: 1.5px solid var(--forest);
+        color: var(--forest);
+      }
+      .button:hover {
+        transform: translateY(-1px);
+      }
+      .copy-status {
+        min-height: 1.4em;
+        margin-top: 10px;
+      }
+      .summary-grid,
+      .quote-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        margin: 16px 0 8px;
+      }
+      .mini-card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-top: 2px solid var(--forest);
+        border-radius: var(--r);
+        padding: 16px 18px;
+      }
+      .mini-card h3,
+      .release h3,
+      details h3 {
+        color: var(--forest);
+        font-size: 1rem;
+        line-height: 1.25;
+        margin: 0 0 8px;
+      }
+      .mini-card p,
+      .mini-card li {
+        font-size: 0.95rem;
+      }
+      .headline-list {
+        counter-reset: headline;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .headline-list li {
+        counter-increment: headline;
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 10px;
+        align-items: start;
+        border-top: 1px solid var(--line);
+        padding: 12px 0;
+        margin: 0;
+      }
+      .headline-list li::before {
+        content: counter(headline);
+        display: inline-grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 999px;
+        background: rgba(244, 183, 65, 0.24);
+        color: var(--yolk-text);
+        font-weight: 800;
+        line-height: 1;
+      }
+      .release {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        margin: 18px 0 24px;
+        overflow: hidden;
+      }
+      .release-header {
+        background: var(--forest-deep);
+        color: #f1f7f3;
+        padding: 24px 26px;
+      }
+      .release-header p,
+      .release-header h2 {
+        color: inherit;
+        margin-bottom: 8px;
+      }
+      .release-header .meta {
+        color: #cfe0d8;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+      .release-body {
+        padding: clamp(22px, 4vw, 34px);
+      }
+      .release-body h2 {
+        margin-top: 0;
+      }
+      .release-body p {
+        max-width: 70ch;
+      }
+      .release-body blockquote {
+        margin: 18px 0;
+      }
+      .supporting {
+        border-top: 1px solid var(--line);
+        margin-top: 44px;
+        padding-top: 30px;
+      }
+      details {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        margin: 12px 0;
+        padding: 0;
+      }
+      summary {
+        color: var(--forest);
+        cursor: pointer;
+        font-weight: 800;
+        padding: 16px 18px;
+      }
+      details > div {
+        border-top: 1px solid var(--line);
+        padding: 18px;
       }
       h2 {
         font-family: "Fraunces", "Inter", ui-serif, Georgia, serif;
@@ -336,6 +497,24 @@
         outline: 3px solid #e0991f;
         outline-offset: 2px;
       }
+      @media (max-width: 560px) {
+        .button-row {
+          align-items: stretch;
+          flex-direction: column;
+        }
+        .button {
+          width: 100%;
+        }
+        .release-header,
+        .contact-card {
+          padding: 22px 20px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .button:hover {
+          transform: none;
+        }
+      }
     </style>
   </head>
   <body>
@@ -343,87 +522,186 @@
       <a class="back" href="/">← Vissza a főoldalra</a>
 
       <p class="eyebrow">Sajtószoba</p>
-      <h1>Sajtóanyagok a Céges Tyúkcsapat Programról</h1>
+      <h1>Kész sajtóanyag a Tyúkmecénás programról</h1>
       <p class="lead">
-        Ezen az oldalon minden megvan, ami egy cikkhez, interjúhoz vagy
-        forgatáshoz kell: tények és számok, idézhető mondatok, letölthető
-        fotók és közvetlen elérhetőség. Interjúra, helyszíni forgatásra
-        szívesen látunk a farmon — írjatok vagy hívjatok.
+        Az alábbi anyag szabadon felhasználható, rövidíthető és idézhető.
+        Interjúhoz, helyszíni forgatáshoz, bérlői háttérhez vagy további
+        adatokhoz: Dávid, <a href="mailto:info@remenyfarm.hu">info@remenyfarm.hu</a>,
+        <a href="tel:+36307343662">+36 30 734 3662</a>.
       </p>
 
-      <h2>A program egy bekezdésben</h2>
-      <p>
-        A Céges Tyúkcsapat Programban cégek kötnek le saját, a logójukkal
-        ellátott mobil tyúkólat 12 hónapra a Remény Farm bükkaljai, bio-tanúsított
-        gazdaságában (50, 100 vagy 250 tyúk). Az ól hetente vándorol a
-        regenerálódó legelőn a juhok és marhák után. A cég dolgozói élő
-        webkamerán nézik a saját csapatukat, kéthetente tojásnap van az
-        irodában 30-as tálcákkal, és minden munkatárs digitálisan örökbe fogad
-        egy tyúkot. Employer branding, marketing és ESG egyben — valódi,
-        mért farmmunkára építve, nem „stock CSR"-ként.
-      </p>
-
-      <h2>Tények és számok</h2>
-      <div class="facts">
-        <div class="fact"><b>29 hektár</b><span>mért, regenerálódó táj a Bükk alján</span></div>
-        <div class="fact"><b>500 juh · 80 marha</b><span>a mobil ólak előttük járó legelést követik</span></div>
-        <div class="fact"><b>~13 000 tojás/hét</b><span>coop-kapacitás</span></div>
-        <div class="fact"><b>500k+ követő</b><span>a farm saját csatornáin; videónként 400k–4M megtekintés nagyságrend</span></div>
-        <div class="fact"><b>Bio Garancia</b><span>tanúsított biogazdaság</span></div>
-        <div class="fact"><b>EOV-monitoring</b><span>éves ökológiai mérés: talaj, vegetáció, biodiverzitás</span></div>
+      <div class="intro-panel">
+        <p class="eyebrow">Rövid sztori</p>
+        <p>
+          Lefújták a fás legelő pályázatot, ezért a Remény Farm nem várt
+          tovább: elindította a Tyúkmecénás programot, ahol magánszemélyek
+          havi 4990 forintért bérelnek névre szóló tyúkot. Az első körben
+          130-an csatlakoztak, még mielőtt egyetlen tojást kézhez kaptak volna.
+          A pénz nem csak tojásra megy, hanem a bükkaljai táj fásítására és
+          regenerálására is.
+        </p>
+        <div class="button-row">
+          <button class="button secondary" type="button" data-copy-target="release-text">
+            Közlemény másolása
+          </button>
+          <a class="button" href="#sajtofotok">Sajtófotók</a>
+          <a class="button ghost" href="https://tyuk.remeny.farm/">Programoldal</a>
+        </div>
+        <p class="note copy-status" id="copy-status" aria-live="polite"></p>
       </div>
-      <p class="note">
-        Minden szám ellenőrizhető; dokumentáció (tanúsítás, monitoring-riport,
-        élelmiszerbiztonsági papírok) kérésre elérhető.
-      </p>
 
-      <h2>Csomagok és árak</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Csomag</th>
-            <th>Méret</th>
-            <th>Ár</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Iroda Coop</td>
-            <td>min. 50 tyúk</td>
-            <td>nettó 249 500 Ft/hó-tól</td>
-          </tr>
-          <tr>
-            <td>Team Coop</td>
-            <td>100 tyúk</td>
-            <td>nettó 499 000 Ft/hó-tól</td>
-          </tr>
-          <tr>
-            <td>Signature Coop</td>
-            <td>250 tyúk</td>
-            <td>nettó 1 499 000 Ft/hó-tól</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="note">
-        12 hónapos kapacitáslekötés; alapító partnereknek 10% kedvezmény az
-        első 12 hónapra. A helyek a farm valós állat- és ólkapacitásához
-        kötöttek. Részletek: <a href="/">cegeknek.remeny.farm</a>
-      </p>
+      <h2>Három mondatban</h2>
+      <div class="summary-grid">
+        <div class="mini-card">
+          <h3>Mi történt?</h3>
+          <p>
+            A Remény Farm a fás legelő pályázat lefújása után közösségi
+            finanszírozással indította el a Tyúkmecénás programot.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Miért érdekes?</h3>
+          <p>
+            130 ember fizetett elő névre szóló tyúkra havi 4990 forintért
+            úgy, hogy az első tojásszállítás még csak július második hetében
+            érkezik Budapestre.
+          </p>
+        </div>
+        <div class="mini-card">
+          <h3>Miért most?</h3>
+          <p>
+            A tyúkok június 9-én költöztek a legelőre, a program első
+            budapesti átvételi köre most indul.
+          </p>
+        </div>
+      </div>
 
-      <h2>Amit a program nem ígér</h2>
+      <h2>Címjavaslatok</h2>
+      <div class="card">
+        <ol class="headline-list">
+          <li>Lefújták a fás legelő pályázatot: 130 tyúkmecénás állt egy bükkaljai farm mögé</li>
+          <li>Bio tojás helyett élő tájat vesznek: 130-an csatlakoztak a Tyúkmecénás programhoz</li>
+          <li>Megéri-e tyúkot bérelni? A farm szerint darabra nem, és mégis 130-an fizetnek</li>
+          <li>Pályázat helyett tyúkmecénásokkal fásítana tovább a Remény Farm</li>
+        </ol>
+      </div>
+
+      <h2>Ténydoboz</h2>
+      <div class="facts">
+        <div class="fact"><b>130</b><span>első körös tyúkmecénás az első tojások előtt</span></div>
+        <div class="fact"><b>4990 Ft/hó</b><span>névre szóló tyúk gondozással és budapesti átvétellel</span></div>
+        <div class="fact"><b>22-29 tojás</b><span>várható havi mennyiség, nem garantált darabszám</span></div>
+        <div class="fact"><b>június 9.</b><span>a tyúkok ekkor költöztek a legelőre</span></div>
+        <div class="fact"><b>3 budapesti pont</b><span>Gazdagrét, Óbuda, Zugló</span></div>
+        <div class="fact"><b>29 hektár</b><span>bio-tanúsított, regeneratív gazdaság a Bükk alján</span></div>
+      </div>
+
+      <h2>Kiemelhető idézetek</h2>
+      <div class="quote-grid">
+        <blockquote>
+          „Az egész Tyúkmecénás program onnan indult, hogy lefújták a fás
+          legelő pályázatot. Ha nincs rá pályázat, megcsináljuk mecénásokkal."
+        </blockquote>
+        <blockquote>
+          „Azt szeretnénk, hogy a reggeli tojásodnak újra legyen arca. Aki
+          mecénás lesz, az nem csak tojást kap: egy darab élő táj
+          újraépítésébe száll be."
+        </blockquote>
+      </div>
+
+      <article class="release" id="release-text" aria-labelledby="release-heading">
+        <div class="release-header">
+          <p class="eyebrow">Sajtóközlemény</p>
+          <h2 id="release-heading">Azonnal közölhető</h2>
+          <p class="meta">Bekölce / Budapest, 2026. július 2.</p>
+        </div>
+        <div class="release-body">
+          <h2>Lefújták a fás legelő pályázatot: erre 130 „tyúkmecénás" állt be egy bükkaljai farm mögé</h2>
+
+          <p>
+            A Remény Farm arra készült, hogy pályázati forrásból telepít fás
+            legelőt a Bükk alján. A pályázat idén elmaradt, a bio-tanúsított
+            farm ezért a nyilvánossághoz fordult: Tyúkmecénás programjában
+            magánszemélyek bérelnek névre szóló tyúkot havi 4990 forintért,
+            és ezzel a táj fásítását, regenerálását finanszírozzák. Az első
+            körben 130-an csatlakoztak, még mielőtt egyetlen tojást kézhez
+            kaptak volna. Az első budapesti tojásszállítás július második
+            hetében érkezik.
+          </p>
+
+          <p>
+            A fás legelő, fákkal tarkított, extenzíven legeltetett gyep,
+            Európa egyik legfajgazdagabb élőhelytípusa: árnyékot ad az
+            állatoknak, szenet köt a talajban, és életet hoz vissza a tájba.
+            A bekölcei Remény Farm 29 hektáron gazdálkodik regeneratív
+            módszerekkel; a fásítás a gazdaság hosszú távú tervének
+            alapeleme. Amikor az erre szánt pályázati forrás idén elmaradt,
+            a farm úgy döntött, nem vár tovább.
+          </p>
+
+          <blockquote>
+            „Az egész Tyúkmecénás program onnan indult, hogy lefújták a fás
+            legelő pályázatot. Nekünk viszont a területeink fásítása,
+            regenerálása és hosszú távú élővé tétele kulcsfontosságú, nem
+            »szép lenne egyszer« típusú ügy, hanem a farm jövőjének egyik
+            alapja. Ha nincs rá pályázat, megcsináljuk mecénásokkal" -
+            mondta Dávid, a Remény Farm alapítója.
+          </blockquote>
+
+          <p>
+            A program mecénásai havi 4990 forintért saját, névvel és számmal
+            ellátott tyúkot választanak, amelyet a farm gondoz. A tyúkok
+            mobil ólakban élnek, amelyeket hetente húznak odébb friss
+            legelőre a juhok és a marhák után; vegyszer helyett ez adja a
+            természetes kártevő-kontrollt. Cserébe havonta várhatóan 22-29
+            bio tojás jár, 10-es csomagokban, budapesti átvételi pontokon
+            (Gazdagrét, Óbuda, Zugló). Előleg és belépési díj nincs, a
+            bérlés bármikor, kötbér nélkül lemondható. A tyúkok június 9-én
+            költöztek a legelőre; a mostani, első csoport helyei a valós
+            kapacitáshoz kötöttek, betelte után várólista nyílik.
+          </p>
+
+          <p>
+            A farm szokatlanul őszinte abban is, mit nem ígér. A tojások
+            száma nem garantált, „élő állat, nem gép", és darabra számolva a
+            mecénás-tojás nem feltétlenül olcsóbb a boltinál: havi 4990
+            forintért 22-29 tojás nagyjából 170-230 forintos darabárat
+            jelent. A 130 mecénás tehát nem árelőnyt vett, hanem mást.
+          </p>
+
+          <blockquote>
+            „Azt szeretnénk, hogy a reggeli tojásodnak újra legyen arca. Aki
+            mecénás lesz, az nem csak tojást kap: egy darab élő táj
+            újraépítésébe száll be" - mondta Anna, a farm társalapítója.
+          </blockquote>
+
+          <p>
+            <strong>A Remény Farmról:</strong> A Remény Farm Kft. regeneratív,
+            a Bio Garancia Kft. által tanúsított biogazdaság a Bükk alján:
+            29 hektár regenerálódó táj, 500 juh, 80 szarvasmarha. A területek
+            fejlődését EOV-alapú éves ökológiai monitoring követi. A farm
+            csatornáit több mint 500 ezren követik. Alapítók: Anna és Dávid.
+          </p>
+
+          <p>
+            <strong>Sajtókapcsolat:</strong> Dávid ·
+            <a href="mailto:info@remenyfarm.hu">info@remenyfarm.hu</a> ·
+            <a href="tel:+36307343662">+36 30 734 3662</a><br />
+            <strong>Sajtófotók:</strong> cegeknek.remeny.farm/sajto.html ·
+            <strong>A program:</strong> tyuk.remeny.farm
+          </p>
+        </div>
+      </article>
+
+      <h2>Mit nem állítunk</h2>
       <div class="card">
         <ul>
-          <li>Megtekintésszámot nem garantálunk — azt senki nem tud tisztességesen garantálni.</li>
-          <li>Nem ígérünk fix tojásdarabszámot: élő állat, nem gép.</li>
-          <li>Nem karbonkredit és nem offset — a cégek valódi, mért regeneratív munkát kötnek le, nem „kiváltják" a lábnyomukat.</li>
+          <li>A tojások darabszáma nem garantált: élő állat, nem gép.</li>
+          <li>Nem állítjuk, hogy darabra olcsóbb a boltinál.</li>
+          <li>Nem ígérünk tyúkonkénti tojás-nyomonkövetést: a tojásokat csoportonként gyűjtjük.</li>
+          <li>Nem egészségügyi állítás a sztori, hanem eredet, tájépítés, bio tartás és átlátható működés.</li>
         </ul>
       </div>
-
-      <h2>Idézhető mondatok</h2>
-      <blockquote>„Nem stock CSR. Nem sablon juttatás."</blockquote>
-      <blockquote>„Mért farmmunka, nem zöld állítás."</blockquote>
-      <blockquote>„Egy juttatás, amiről hétfőn is beszélnek."</blockquote>
-      <blockquote>„A Remény Farm nemcsak farm. Saját médiafelület is."</blockquote>
 
       <h2>Az alapítók</h2>
       <div class="founders">
@@ -445,7 +723,7 @@
         </div>
       </div>
 
-      <h2>Letölthető sajtófotók</h2>
+      <h2 id="sajtofotok">Letölthető sajtófotók</h2>
       <p class="note">
         A fotók szerkesztőségi felhasználásra szabadon használhatók
         „Fotó: Remény Farm" forrásmegjelöléssel. Nagyobb felbontásért vagy
@@ -496,6 +774,59 @@
         </figure>
       </div>
 
+      <div class="supporting">
+        <p class="eyebrow">Háttér</p>
+        <h2>Céges Tyúkcsapat Program röviden</h2>
+        <p>
+          A nyári Tyúkmecénás-sztori a lakossági programról szól. A farmnak
+          van céges konstrukciója is: vállalatok 12 hónapra kötnek le saját,
+          logózott mobil tyúkólat a Remény Farmon, élő webkamerával, kétheti
+          tojásnappal, dolgozói tyúk-örökbefogadással és auditálható
+          regeneratív háttérrel.
+        </p>
+
+        <details>
+          <summary>Céges program: tények és árak</summary>
+          <div>
+            <div class="facts">
+              <div class="fact"><b>29 hektár</b><span>mért, regenerálódó táj a Bükk alján</span></div>
+              <div class="fact"><b>500 juh · 80 marha</b><span>a mobil ólak előttük járó legelést követik</span></div>
+              <div class="fact"><b>~13 000 tojás/hét</b><span>coop-kapacitás</span></div>
+              <div class="fact"><b>Bio Garancia</b><span>tanúsított biogazdaság</span></div>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Csomag</th>
+                  <th>Méret</th>
+                  <th>Ár</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Iroda Coop</td>
+                  <td>min. 50 tyúk</td>
+                  <td>nettó 249 500 Ft/hó-tól</td>
+                </tr>
+                <tr>
+                  <td>Team Coop</td>
+                  <td>100 tyúk</td>
+                  <td>nettó 499 000 Ft/hó-tól</td>
+                </tr>
+                <tr>
+                  <td>Signature Coop</td>
+                  <td>250 tyúk</td>
+                  <td>nettó 1 499 000 Ft/hó-tól</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="note">
+              A céges program részletei: <a href="/">cegeknek.remeny.farm</a>.
+            </p>
+          </div>
+        </details>
+      </div>
+
       <div class="contact-card">
         <h2>Sajtókapcsolat</h2>
         <p>
@@ -505,12 +836,30 @@
         </p>
         <p>
           Interjú, helyszíni forgatás, további háttéranyag: írjatok, 24 órán
-          belül válaszolunk. Gépi összefoglaló az ajánlatról:
+          belül válaszolunk. Gépi összefoglaló a céges ajánlatról:
           <a href="/llms.txt">llms.txt</a>
         </p>
       </div>
 
-      <footer>© Remény Farm Kft. · Céges Tyúkcsapat Program · <a href="/impresszum.html">Impresszum</a></footer>
+      <footer>© Remény Farm Kft. · Sajtószoba · <a href="/impresszum.html">Impresszum</a></footer>
     </div>
+    <script>
+      const copyButton = document.querySelector("[data-copy-target]");
+      const copyStatus = document.querySelector("#copy-status");
+
+      copyButton?.addEventListener("click", async () => {
+        const target = document.getElementById(copyButton.dataset.copyTarget);
+        const text = target?.innerText.trim();
+        if (!text) return;
+
+        try {
+          await navigator.clipboard.writeText(text);
+          copyStatus.textContent = "A közlemény vágólapra másolva.";
+        } catch {
+          copyStatus.textContent =
+            "A másolás nem sikerült automatikusan, jelöld ki a közleményt kézzel.";
+        }
+      });
+    </script>
   </body>
 </html>
